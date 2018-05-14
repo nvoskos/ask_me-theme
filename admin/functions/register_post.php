@@ -508,7 +508,7 @@ function vpanel_question_meta() {
 add_action( 'save_post', 'vpanel_question_meta_save', 1, 2 );
 function vpanel_question_meta_save( $post_id, $post ) {
 	global $wpdb,$post;
-	if ( !isset($_POST) ) return $post_id;
+	if ( !$_POST ) return $post_id;
 	if ( isset($post) && $post->post_type != 'question' ) return $post_id;
 	if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) return $post_id;
 	if ( !isset($_POST['vpanel_save_question_meta_nonce']) || !wp_verify_nonce( $_POST['vpanel_save_question_meta_nonce'], 'vpanel_save_question_meta' )) return $post_id;

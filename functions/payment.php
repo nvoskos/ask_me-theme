@@ -95,7 +95,7 @@ switch ((isset($_GET['action'])?$_GET['action']:"")) {
 					
 					/* Number of my payments */
 					$_payments = get_user_meta($user_id,$user_id."_payments",true);
-					if ($_payments == "") {
+					if (!$_payments) {
 						$_payments = 0;
 					}
 					$_payments++;
@@ -123,7 +123,7 @@ switch ((isset($_GET['action'])?$_GET['action']:"")) {
 					
 					/* New */
 					$new_payments = get_option("new_payments");
-					if ($new_payments == "") {
+					if (!$new_payments) {
 						$new_payments = 0;
 					}
 					$new_payments++;
@@ -140,7 +140,7 @@ switch ((isset($_GET['action'])?$_GET['action']:"")) {
 					
 					/* All the payments */
 					$payments_option = get_option("payments_option");
-					if ($payments_option == "") {
+					if (!$payments_option) {
 						$payments_option = 0;
 					}
 					$payments_option++;
@@ -165,9 +165,6 @@ switch ((isset($_GET['action'])?$_GET['action']:"")) {
 							"coupon_value" => $_coupon_value
 						)
 					);
-					
-					delete_user_meta($user_id,$user_id."_coupon",true);
-					delete_user_meta($user_id,$user_id."_coupon_value",true);
 					
 					/* All money */
 					$all_money = get_option("all_money_".$item_currency);
@@ -207,7 +204,7 @@ switch ((isset($_GET['action'])?$_GET['action']:"")) {
 					}else {
 						/* Number allow to ask question */
 						$_allow_to_ask = get_user_meta($user_id,$user_id."_allow_to_ask",true);
-						if ($_allow_to_ask == "") {
+						if (!$_allow_to_ask) {
 							$_allow_to_ask = 0;
 						}
 						$_allow_to_ask++;

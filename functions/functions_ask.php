@@ -80,7 +80,7 @@ function question_vote_up() {
 	$active_points = vpanel_options("active_points");
 	
 	$count = get_post_meta($id,'question_vote',true);
-	if ($count == "") {
+	if (!$count) {
 		$count = 0;
 	}
 	
@@ -136,7 +136,7 @@ function question_vote_down() {
 	$active_points = vpanel_options("active_points");
 	
 	$count = get_post_meta($id,'question_vote',true);
-	if ($count == "") {
+	if (!$count) {
 		$count = 0;
 	}
 	
@@ -227,7 +227,7 @@ function comment_vote_up() {
 		$count = get_comment_meta($id,'comment_vote',true);
 	}
 	
-	if ($count == "") {
+	if (!$count) {
 		$count = 0;
 	}
 	$count++;
@@ -286,7 +286,7 @@ function comment_vote_down() {
 		$count = get_comment_meta($id,'comment_vote',true);
 	}
 	
-	if ($count == "") {
+	if (!$count) {
 		$count = 0;
 	}
 	$count--;
@@ -574,7 +574,7 @@ function best_answer() {
 			update_user_meta($user_id,"points",$points_user+(vpanel_options("point_best_answer") != ""?vpanel_options("point_best_answer"):5));
 		}
 		$the_best_answer_u = get_user_meta($user_id,"the_best_answer",true);
-		if ($the_best_answer_u == "" || $the_best_answer_u < 0) {
+		if (!$the_best_answer_u || $the_best_answer_u < 0) {
 			$the_best_answer_u = 0;
 		}
 		$the_best_answer_u++;
@@ -583,7 +583,7 @@ function best_answer() {
 	update_comment_meta($comment_id,"best_answer_comment","best_answer_comment");
 	$option_name = "best_answer_option";
 	$best_answer_option = get_option($option_name);
-	if ($best_answer_option == "" || $best_answer_option < 0) {
+	if (!$best_answer_option || $best_answer_option < 0) {
 		$best_answer_option = 0;
 	}
 	$best_answer_option++;
@@ -660,7 +660,7 @@ function best_answer_re() {
 	delete_comment_meta($comment_id,"best_answer_comment");
 	$option_name = "best_answer_option";
 	$best_answer_option = get_option($option_name);
-	if ($best_answer_option == "") {
+	if (!$best_answer_option) {
 		$best_answer_option = 0;
 	}
 	$best_answer_option--;
@@ -1540,7 +1540,7 @@ function process_new_posts() {
 			$pay_ask = vpanel_options("pay_ask");
 			if ($pay_ask == 1) {
 				$_allow_to_ask = get_user_meta($user_id,$user_id."_allow_to_ask",true);
-				if ($_allow_to_ask == "") {
+				if (!$_allow_to_ask) {
 					$_allow_to_ask = 0;
 				}
 				$_allow_to_ask--;
@@ -2605,7 +2605,7 @@ function add_favorite() {
 	}
 	
 	$count = get_post_meta($post_id,'question_favorites',true);
-	if ($count == "") {
+	if (!$count) {
 		$count = 0;
 	}
 	$count++;
@@ -2643,7 +2643,7 @@ function remove_favorite() {
 	}
 	
 	$count = get_post_meta($post_id,'question_favorites',true);
-	if ($count == "") {
+	if (!$count) {
 		$count = 0;
 	}
 	$count--;
