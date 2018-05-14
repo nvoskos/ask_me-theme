@@ -73,11 +73,17 @@ if (!isset($hide_form)) {?>
 					echo '<div class="col-md-4 user-filter-div'.(isset($search_type) && $search_type == "users"?" user-filter-show":" ask-hide").'">
 						<span class="styled-select user-filter">
 							<select'.(isset($search_type) && $search_type == "users"?' name="user_filter"':'').'>
-								<option value="display_name" '.selected((isset($user_sort) && $user_sort != ""?$user_sort:""),"display_name",false).'>'.esc_html__('Name','vbegy').'</option>';
+								<option value="user_registered" '.selected((isset($user_sort) && $user_sort != ""?$user_sort:""),"user_registered",false).'>'.esc_html__('Register','vbegy').'</option>
+								<option value="display_name" '.selected((isset($user_sort) && $user_sort != ""?$user_sort:""),"display_name",false).'>'.esc_html__('Name','vbegy').'</option>
+								<option value="ID" '.selected((isset($user_sort) && $user_sort != ""?$user_sort:""),"ID",false).'>'.esc_html__('ID','vbegy').'</option>
+								<option value="question_count" '.selected((isset($user_sort) && $user_sort != ""?$user_sort:""),"question_count",false).'>'.esc_html__('Questions','vbegy').'</option>
+								<option value="answers" '.selected((isset($user_sort) && $user_sort != ""?$user_sort:""),"answers",false).'>'.esc_html__('Answers','vbegy').'</option>
+								<option value="the_best_answer" '.selected((isset($user_sort) && $user_sort != ""?$user_sort:""),"the_best_answer",false).'>'.esc_html__('Best Answers','vbegy').'</option>';
 								if ($active_points == 1) {
-									echo '';
+									echo '<option value="points" '.selected((isset($user_sort) && $user_sort != ""?$user_sort:""),"points",false).'>'.esc_html__('Points','vbegy').'</option>';
 								}
-								echo '
+								echo '<option value="post_count" '.selected((isset($user_sort) && $user_sort != ""?$user_sort:""),"post_count",false).'>'.esc_html__('Posts','vbegy').'</option>
+								<option value="comments" '.selected((isset($user_sort) && $user_sort != ""?$user_sort:""),"comments",false).'>'.esc_html__('Comments','vbegy').'</option>
 							</select>
 						</span>
 					</div>';

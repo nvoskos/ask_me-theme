@@ -9,7 +9,7 @@
 			$yes_private = ask_private($post->ID,$post->post_author,$user_get_current_user_id);
 			$vbegy_what_post = rwmb_meta('vbegy_what_post','select',$post->ID);
 			$vbegy_sidebar_all = rwmb_meta('vbegy_sidebar','select',$post->ID);
-
+			
 			$comment_count = get_post_meta($post->ID,"comment_count",true);
 			if ($post->comment_count > 0) {
 				$comment_count = get_post_meta($post->ID,"comment_count",true);
@@ -17,7 +17,7 @@
 					update_post_meta($post->ID,"comment_count",$post->comment_count);
 				}
 			}
-
+			
 			$the_best_answer = get_post_meta($post->ID,"the_best_answer",true);
 			if (isset($the_best_answer) && $the_best_answer != "") {
 				$get_comment = get_comment($the_best_answer);
@@ -25,18 +25,18 @@
 					delete_post_meta($post->ID,"the_best_answer");
 				}
 			}
-
+			
 			$question_poll = get_post_meta($post->ID,'question_poll',true);
 			$question_type = ($question_poll == 1?" question-type-poll":" question-type-normal");
 			$closed_question = get_post_meta($post->ID,"closed_question",true);
 			$question_favorites = get_post_meta($post->ID,'question_favorites',true);
-
+			
 			$the_author = get_user_by("login",get_the_author());
 			$user_login_id_l = get_user_by("id",$post->post_author);
 			if ($post->post_author != 0) {
 				$user_profile_page = esc_url(add_query_arg("u", $user_login_id_l->user_login,get_page_link(vpanel_options('user_profile_page'))));
 			}
-
+			
 			if (!is_super_admin($user_get_current_user_id) && $yes_private != 1) {?>
 				<article class="question private-question">
 					<p class="question-desc"><?php _e("Sorry it a private question.","vbegy");?></p>
@@ -51,13 +51,13 @@
 				$active_reports = vpanel_options("active_reports");
 				$active_logged_reports = vpanel_options("active_logged_reports");
 				$question_type = ($active_reports == 1 && (is_user_logged_in || (!is_user_logged_in && $active_logged_reports != 1))?$question_type:$question_type." no_reports");
-
+				
 				$_paid_question = get_post_meta($post->ID, '_paid_question', true);
-
+				
 				if ((is_super_admin($user_get_current_user_id) || ($anonymously_user > 0 && $user_get_current_user_id == $anonymously_user) || ($post->post_author > 0 && $user_get_current_user_id == $post->post_author)) && (isset($_paid_question) && $_paid_question == "paid")) {
 					echo '<div class="alert-message info"><i class="icon-ok"></i><p><span>'.__("Paid question","vbegy").'</span><br>'.__("This is a paid question.","vbegy").'</p></div>';
 				}
-
+				
 				$question_sticky = "";
 				$end_sticky_time = get_post_meta($post->ID,"end_sticky_time",true);
 				if (is_sticky()) {
@@ -71,18 +71,18 @@
 				}else {
 					$end_sticky_time = "";
 				}
-
+				
 				if (is_super_admin($user_get_current_user_id) && ((isset($_paid_question) && $_paid_question == "paid") || is_sticky())) {
 					if (isset($_paid_question) && $_paid_question == "paid") {
 						$item_transaction = get_post_meta($post->ID, 'item_transaction', true);
 						$paypal_sandbox = get_post_meta($post->ID, 'paypal_sandbox', true);
 					}
-
+					
 					if (is_sticky()) {
 						$item_transaction_sticky = get_post_meta($post->ID, 'item_transaction_sticky', true);
 						$paypal_sandbox_sticky = get_post_meta($post->ID, 'paypal_sandbox_sticky', true);
 					}
-
+					
 					if ((isset($_paid_question) && $_paid_question == "paid" && ((isset($item_transaction) && $item_transaction != "") || (isset($paypal_sandbox) && $paypal_sandbox != "" && $paypal_sandbox = "sandbox"))) || (is_sticky() && ((isset($item_transaction_sticky) && $item_transaction_sticky != "") || (isset($paypal_sandbox_sticky) && $paypal_sandbox_sticky != "" && $paypal_sandbox_sticky = "sandbox")))) {
 						echo '<a href="#" class="paid-details color button small f_left">'.__("Paid details","vbegy").'</a>
 						<div class="clearfix"></div>
@@ -95,7 +95,7 @@
 									echo '<div class="alert-message error"><i class="icon-ok"></i><p><span>'.__("PayPal sandbox","vbegy").'</span><br>'.__("This transaction is from PayPal sandbox.","vbegy").'</p></div>';
 								}
 							}
-
+							
 							if (is_sticky()) {
 								if (isset($item_transaction_sticky) && $item_transaction_sticky != "") {
 									echo '<div class="alert-message warning"><i class="icon-ok"></i><p><span>'.__("Transaction id","vbegy").'</span><br>'.__("The transaction id for sticky question","vbegy").' : '.$item_transaction_sticky.'</p></div>';
@@ -107,7 +107,7 @@
 						echo '</div>';
 					}
 				}
-
+				
 				if (($post->post_author != 0 && $post->post_author == $user_get_current_user_id) || is_super_admin($user_get_current_user_id)) {
 					$question_delete = vpanel_options("question_delete");
 					if ($question_delete == 1) {
@@ -130,13 +130,14 @@
 					$question_control_style = vpanel_options("question_control_style");
 					$following_questions = get_post_meta($post->ID,"following_questions",true);
 					if ($question_control_style == "style_1" && (($post->post_author != 0 && $post->post_author == $user_get_current_user_id) || ($question_follow == 1 && is_user_logged_in) || ($post->post_author != 0 && $post->post_author == $user_get_current_user_id) || ($anonymously_user != 0 && $anonymously_user == $user_get_current_user_id) || is_super_admin($user_get_current_user_id))) {?>
-						<div class="edit-delete-follow-close-2">
-							<?php $question_edit = vpanel_options("question_edit");
-							if (($post->post_author != 0 && $post->post_author == $user_get_current_user_id) || is_super_admin($user_get_current_user_id)) {
-								if ($question_edit == 1 || is_super_admin($user_get_current_user_id)) {?>
-									<div class="question-edit">
-										<a href="<?php echo esc_url(add_query_arg("q", $post->ID,get_page_link(vpanel_options('edit_question'))))?>" original-title="<?php _e("Edit the question","vbegy")?>" class="tooltip-n button button-edit small margin_0 f_left"><?php _e("Edit","vbegy")?></a>
-									</div>
+						<div class="edit-delete-follow-close">
+							<h2>
+								<?php $question_edit = vpanel_options("question_edit");
+								if (($post->post_author != 0 && $post->post_author == $user_get_current_user_id) || is_super_admin($user_get_current_user_id)) {
+									if ($question_edit == 1 || is_super_admin($user_get_current_user_id)) {?>
+										<span class="question-edit">
+											<a href="<?php echo esc_url(add_query_arg("q", $post->ID,get_page_link(vpanel_options('edit_question'))))?>" original-title="<?php _e("Edit the question","vbegy")?>" class="tooltip-n"><i class="icon-edit"></i></a>
+										</span>
 									<?php }
 									if ($question_delete == 1 || is_super_admin($user_get_current_user_id)) {?>
 										<span class="question-delete">
@@ -144,12 +145,13 @@
 										</span>
 									<?php }
 								}
+								
 								if (($question_follow == 1 || is_super_admin($user_get_current_user_id)) && is_user_logged_in && $user_get_current_user_id != $get_question_user_id && (($user_get_current_user_id != $post->post_author && $post->post_author > 0) || ($anonymously_user != "" && $anonymously_user != $user_get_current_user_id))) {?>
 									<span class="question-follow">
 										<?php if (isset($following_questions) && is_array($following_questions) && in_array($user_get_current_user_id,$following_questions)) {?>
-											<a href="#" original-title="<?php _e("Turn off notifications for this post","vbegy")?>" class="tooltip-n unfollow-question"><i class="icon-bell" style="font-size:25px;"></i></a>
+											<a href="#" original-title="<?php _e("Unfollow the question","vbegy")?>" class="tooltip-n unfollow-question"><i class="icon-circle-arrow-down"></i></a>
 										<?php }else {?>
-											<a href="#" original-title="<?php _e("Turn on notifications for this post","vbegy")?>" class="tooltip-n"><i class="icon-bell-alt" style="font-size:25px;"></i></a>
+											<a href="#" original-title="<?php _e("Follow the question","vbegy")?>" class="tooltip-n"><i class="icon-circle-arrow-up"></i></a>
 										<?php }?>
 									</span>
 								<?php }
@@ -303,9 +305,9 @@
 										}
 									}
 								}?>
-
+								
 								<div class="content-text" itemprop="text"><?php the_content();?></div>
-
+								
 								<?php if ($featured_image_single == 1 && wp_get_attachment_image_srcset($thumb) && $featured_position == "after") {
 									echo "<div class='featured_image_question featured_image_after'>".askme_resize_img($featured_image_question_width,$featured_image_question_height,$img_lightbox)."</div>
 									<div class='clearfix'></div>";
@@ -342,7 +344,7 @@
 											$coupons        = get_option("coupons");
 											$days_sticky    = (int)vpanel_options("days_sticky");
 											$days_sticky    = ($days_sticky > 0?$days_sticky:7);
-
+											
 											$_allow_to_sticky = get_user_meta($user_get_current_user_id,$user_get_current_user_id."_allow_to_sticky",true);
 											if (isset($_POST["process"]) && $_POST["process"] == "sticky") {
 												update_post_meta($post->ID,"sticky",1);
@@ -360,56 +362,61 @@
 												wp_safe_redirect(get_the_permalink());
 												die();
 											}
-
+											
 											if ((($anonymously_user > 0 && $user_get_current_user_id == $anonymously_user) || ($post->post_author > 0 && $user_get_current_user_id == $post->post_author)) && (($end_sticky_time != "" && $end_sticky_time < strtotime(date("Y-m-d"))) || (!is_sticky())) && isset($_allow_to_sticky) && (int)$_allow_to_sticky < 1 && $pay_to_sticky == 1) {
 												$pay_sticky_payment = $last_payment = (int)vpanel_options("pay_sticky_payment");
 												echo '<a href="#" class="pay-to-sticky color button small f_left">'.__("Pay to sticky question","vbegy").'</a>
 												<div class="clearfix"></div>
 												<div class="pay-to-sticky-area">';
-													if ($active_coupons == 1 && isset($_POST["add_coupon"]) && $_POST["add_coupon"] == "submit") {
-														$coupon_name = esc_attr($_POST["coupon_name"]);
-														$coupons_not_exist = "no";
-
-														if (isset($coupons) && is_array($coupons)) {
-															foreach ($coupons as $coupons_k => $coupons_v) {
-																if (is_array($coupons_v) && in_array($coupon_name,$coupons_v)) {
-																	$coupons_not_exist = "yes";
-
-																	if (isset($coupons_v["coupon_date"]) && $coupons_v["coupon_date"] != "") {
-																		$coupons_v["coupon_date"] = !is_numeric($coupons_v["coupon_date"]) ? strtotime($coupons_v["coupon_date"]):$coupons_v["coupon_date"];
-																	}
-
-																	if (isset($coupons_v["coupon_date"]) && $coupons_v["coupon_date"] != "" && current_time( 'timestamp' ) > $coupons_v["coupon_date"]) {
-																		echo '<div class="alert-message error"><p>'.__("This coupon has expired.","vbegy").'</p></div>';
-																	}else if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "percent" && (int)$coupons_v["coupon_amount"] > 100) {
-																		echo '<div class="alert-message error"><p>'.__("This coupon is not valid.","vbegy").'</p></div>';
-																	}else if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "discount" && (int)$coupons_v["coupon_amount"] > $pay_sticky_payment) {
-																		echo '<div class="alert-message error"><p>'.__("This coupon is not valid.","vbegy").'</p></div>';
-																	}else {
-																		if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "percent") {
-																			$the_discount = ($pay_sticky_payment*$coupons_v["coupon_amount"])/100;
-																			$last_payment = $pay_sticky_payment-$the_discount;
-																		}else if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "discount") {
-																			$last_payment = $pay_sticky_payment-$coupons_v["coupon_amount"];
+													if ($active_coupons == 1) {
+														if (isset($_POST["add_coupon"]) && $_POST["add_coupon"] == "submit") {
+															$coupon_name = esc_attr($_POST["coupon_name"]);
+															$coupons_not_exist = "no";
+															
+															if (isset($coupons) && is_array($coupons)) {
+																foreach ($coupons as $coupons_k => $coupons_v) {
+																	if (is_array($coupons_v) && in_array($coupon_name,$coupons_v)) {
+																		$coupons_not_exist = "yes";
+																		
+																		if (isset($coupons_v["coupon_date"]) && $coupons_v["coupon_date"] != "") {
+																			$coupons_v["coupon_date"] = !is_numeric($coupons_v["coupon_date"]) ? strtotime($coupons_v["coupon_date"]):$coupons_v["coupon_date"];
 																		}
-																		echo '<div class="alert-message success"><p>'.sprintf(__("Coupon ".'"%s"'." applied successfully.","vbegy"),$coupon_name).'</p></div>';
-
-																		update_user_meta($user_get_current_user_id,$user_get_current_user_id."_coupon",esc_attr($coupons_v["coupon_name"]));
-																		update_user_meta($user_get_current_user_id,$user_get_current_user_id."_coupon_value",($last_payment <= 0?"free":$last_payment));
+																		
+																		if (isset($coupons_v["coupon_date"]) && $coupons_v["coupon_date"] != "" && current_time( 'timestamp' ) > $coupons_v["coupon_date"]) {
+																			echo '<div class="alert-message error"><p>'.__("This coupon has expired.","vbegy").'</p></div>';
+																		}else if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "percent" && (int)$coupons_v["coupon_amount"] > 100) {
+																			echo '<div class="alert-message error"><p>'.__("This coupon is not valid.","vbegy").'</p></div>';
+																		}else if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "discount" && (int)$coupons_v["coupon_amount"] > $pay_sticky_payment) {
+																			echo '<div class="alert-message error"><p>'.__("This coupon is not valid.","vbegy").'</p></div>';
+																		}else {
+																			if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "percent") {
+																				$the_discount = ($pay_sticky_payment*$coupons_v["coupon_amount"])/100;
+																				$last_payment = $pay_sticky_payment-$the_discount;
+																			}else if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "discount") {
+																				$last_payment = $pay_sticky_payment-$coupons_v["coupon_amount"];
+																			}
+																			echo '<div class="alert-message success"><p>'.sprintf(__("Coupon ".'"%s"'." applied successfully.","vbegy"),$coupon_name).'</p></div>';
+																			
+																			update_user_meta($user_get_current_user_id,$user_get_current_user_id."_coupon",esc_attr($coupons_v["coupon_name"]));
+																			update_user_meta($user_get_current_user_id,$user_get_current_user_id."_coupon_value",($last_payment <= 0?"free":$last_payment));
+																		}
 																	}
 																}
 															}
-														}
-
-														if ($coupons_not_exist == "no" && $coupon_name == "") {
-															echo '<div class="alert-message error"><p>'.__("Coupon does not exist!.","vbegy").'</p></div>';
-														}else if ($coupons_not_exist == "no") {
-															echo '<div class="alert-message error"><p>'.sprintf(__("Coupon ".'"%s"'." does not exist!.","vbegy"),$coupon_name).'</p></div>';
+															
+															if ($coupons_not_exist == "no" && $coupon_name == "") {
+																echo '<div class="alert-message error"><p>'.__("Coupon does not exist!.","vbegy").'</p></div>';
+															}else if ($coupons_not_exist == "no") {
+																echo '<div class="alert-message error"><p>'.sprintf(__("Coupon ".'"%s"'." does not exist!.","vbegy"),$coupon_name).'</p></div>';
+															}
+														}else {
+															delete_user_meta($user_get_current_user_id,$user_get_current_user_id."_coupon");
+															delete_user_meta($user_get_current_user_id,$user_get_current_user_id."_coupon_value");
 														}
 													}
-
+													
 													echo '<div class="alert-message success"><i class="icon-ok"></i><p><span>'.__("Pay to sticky","vbegy").'</span><br>'.__("Please make a payment to allow to be able to sticky the question.","vbegy").' "'.$last_payment." ".$currency_code.'" '.sprintf(__("For %s days.","vbegy"),$days_sticky).'</p></div>';
-
+													
 													if (isset($coupons) && is_array($coupons) && $free_coupons == 1 && $active_coupons == 1) {
 														foreach ($coupons as $coupons_k => $coupons_v) {
 															$pay_sticky_payments = $last_payments = (int)vpanel_options("pay_sticky_payment");
@@ -419,21 +426,21 @@
 															}else if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "discount") {
 																$last_payments = $pay_sticky_payments-$coupons_v["coupon_amount"];
 															}
-
+															
 															if ($last_payments <= 0) {
 																if (isset($coupons_v["coupon_date"]) && $coupons_v["coupon_date"] != "") {
 																	$coupons_v["coupon_date"] = !is_numeric($coupons_v["coupon_date"]) ? strtotime($coupons_v["coupon_date"]):$coupons_v["coupon_date"];
 																}
-
+																
 																if ((isset($coupons_v["coupon_date"]) && $coupons_v["coupon_date"] != "" && current_time( 'timestamp' ) > $coupons_v["coupon_date"]) && (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "percent" && (int)$coupons_v["coupon_amount"] > 100) && (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "discount" && (int)$coupons_v["coupon_amount"] > $pay_sticky_payments)) {
-
+																	
 																}else {
 																	echo '<div class="alert-message warning"><i class="icon-ok"></i><p><span>'.__("Free","vbegy").'</span><br>'.__("Sticky question free? Add this coupon.","vbegy").' "'.$coupons_v["coupon_name"].'"</p></div>';
 																}
 															}
 														}
 													}
-
+													
 													if ($active_coupons == 1) {
 														echo '<div class="coupon_area">
 															<form method="post" action="">
@@ -443,9 +450,9 @@
 															</form>
 														</div>';
 													}
-
+													
 													echo '<div class="clearfix"></div>';
-
+													
 													if ($last_payment > 0) {
 														echo '<div class="payment_area">
 															<form method="post" action="?action=process">
@@ -464,7 +471,7 @@
 														</div>';
 													}else {
 														$ask_find_coupons = ask_find_coupons($coupons,$_POST["coupon_name"]);
-
+														
 														echo '<div class="process_area">
 															<form method="post" action="'.get_the_permalink().'">
 																<input type="submit" class="button" value="'.__("Process","vbegy").'">
@@ -485,16 +492,16 @@
 								<?php
 								$added_file = get_post_meta($post->ID, 'added_file', true);
 								if ($added_file != "") {
-									echo "<div class='clearfix'></div><br><a class='attachment-link' href='".wp_get_attachment_url($added_file)."'><i class='icon-paper-clip'></i>".__("Attachment","vbegy")."</a>";
+									echo "<div class='clearfix'></div><br><a class='attachment-link' href='".wp_get_attachment_url($added_file)."'><i class='icon-link'></i>".__("Attachment","vbegy")."</a>";
 								}
 								$attachment_m = get_post_meta($post->ID, 'attachment_m',true);
 								if (isset($attachment_m) && is_array($attachment_m) && !empty($attachment_m)) {
 									foreach ($attachment_m as $key => $value) {
-										echo "<div class='clearfix'></div><br><a class='attachment-link' href='".wp_get_attachment_url($value["added_file"])."'><i class='icon-paper-clip'></i>".__("Attachment","vbegy")."</a>";
+										echo "<div class='clearfix'></div><br><a class='attachment-link' href='".wp_get_attachment_url($value["added_file"])."'><i class='icon-link'></i>".__("Attachment","vbegy")."</a>";
 									}
 								}?>
 								<div class='clearfix'></div>
-
+								
 								<?php if ($question_control_style == "style_2" && (is_super_admin($user_get_current_user_id) || ($post->post_author != 0 && $post->post_author == $user_get_current_user_id) || ($post->post_author != 0 && $post->post_author == $user_get_current_user_id) || ($question_follow == 1 && is_user_logged_in && $user_get_current_user_id != $get_question_user_id && (($user_get_current_user_id != $post->post_author && $post->post_author > 0) || ($anonymously_user != "" && $anonymously_user != $user_get_current_user_id))))) {?>
 									<div class="edit-delete-follow-close-2">
 										<?php $question_edit = vpanel_options("question_edit");
@@ -510,13 +517,13 @@
 												</div>
 											<?php }
 										}
-
+										
 										if (($question_follow == 1 || is_super_admin($user_get_current_user_id)) && is_user_logged_in && $user_get_current_user_id != $get_question_user_id && (($user_get_current_user_id != $post->post_author && $post->post_author > 0) || ($anonymously_user != "" && $anonymously_user != $user_get_current_user_id))) {?>
 											<div class="question-follow">
 												<?php if (isset($following_questions) && is_array($following_questions) && in_array($user_get_current_user_id,$following_questions)) {?>
-													<a style="color:#006bb4;font-size:20px;" href="#" original-title="<?php _e("Turn off notifications for this post","vbegy")?>" class="tooltip-n unfollow-question color button small margin_0 f_left"><?php _e("Turn off notifications","vbegy")?></a>
+													<a href="#" original-title="<?php _e("Unfollow the question","vbegy")?>" class="tooltip-n unfollow-question color button small margin_0 f_left"><?php _e("Unfollow","vbegy")?></a>
 												<?php }else {?>
-													<a href="#" original-title="<?php _e("Turn on notifications for this post","vbegy")?>" class="tooltip-n color button small margin_0 f_left"><?php _e("Turn on notifications","vbegy")?></a>
+													<a href="#" original-title="<?php _e("Follow the question","vbegy")?>" class="tooltip-n color button small margin_0 f_left"><?php _e("Follow","vbegy")?></a>
 												<?php }?>
 											</div>
 										<?php }
@@ -618,7 +625,7 @@
 						<div class="clearfix"></div>
 					</div>
 				</article>
-
+				
 				<?php $terms = wp_get_object_terms( $post->ID, 'question_tags' );
 				$post_share = vpanel_options("question_share");
 				if ($terms || (($post_share == 1 && $post_share_s == "") || ($post_share == 1 && isset($custom_page_setting) && $custom_page_setting == 0) || ($post_share == 1 && isset($custom_page_setting) && $custom_page_setting == 1 && isset($post_share_s) && $post_share_s != 0) || (isset($custom_page_setting) && $custom_page_setting == 1 && isset($post_share_s) && $post_share_s == 1))) {?>
@@ -633,7 +640,7 @@
 								echo implode(' , ', $terms_array);
 							echo '</div>';
 						endif;
-
+						
 						if (($post_share == 1 && $post_share_s == "") || ($post_share == 1 && isset($custom_page_setting) && $custom_page_setting == 0) || ($post_share == 1 && isset($custom_page_setting) && $custom_page_setting == 1 && isset($post_share_s) && $post_share_s != 0) || (isset($custom_page_setting) && $custom_page_setting == 1 && isset($post_share_s) && $post_share_s == 1)) {?>
 							<div class="share-inside-warp">
 								<ul>
@@ -709,9 +716,9 @@
 				<?php }
 			}
 		endwhile; endif;
-
+		
 		if (!is_super_admin($user_get_current_user_id) && $yes_private != 1) {
-
+		
 		}else {
 			$vbegy_custom_sections = get_post_meta($post->ID,"vbegy_custom_sections",true);
 			if (isset($vbegy_custom_sections) && $vbegy_custom_sections == 1) {
@@ -731,7 +738,7 @@
 						$vbegy_share_adv_code = rwmb_meta('vbegy_share_adv_code','textarea',$post->ID);
 						$vbegy_share_adv_href = rwmb_meta('vbegy_share_adv_href','text',$post->ID);
 						$vbegy_share_adv_img = rwmb_meta('vbegy_share_adv_img','upload',$post->ID);
-
+						
 						if ((is_single() || is_page()) && (($vbegy_share_adv_type == "display_code" && $vbegy_share_adv_code != "") || ($vbegy_share_adv_type == "custom_image" && $vbegy_share_adv_img != ""))) {
 							$share_adv_type = $vbegy_share_adv_type;
 							$share_adv_code = $vbegy_share_adv_code;
@@ -765,7 +772,7 @@
 						$vbegy_related_adv_code = rwmb_meta('vbegy_related_adv_code','textarea',$post->ID);
 						$vbegy_related_adv_href = rwmb_meta('vbegy_related_adv_href','text',$post->ID);
 						$vbegy_related_adv_img = rwmb_meta('vbegy_related_adv_img','upload',$post->ID);
-
+						
 						if ((is_single() || is_page()) && (($vbegy_related_adv_type == "display_code" && $vbegy_related_adv_code != "") || ($vbegy_related_adv_type == "custom_image" && $vbegy_related_adv_img != ""))) {
 							$related_adv_type = $vbegy_related_adv_type;
 							$related_adv_code = $vbegy_related_adv_code;
@@ -905,7 +912,7 @@
 							$orig_post = $post;
 							$related_query_ = array();
 							$related_cat_tag = vpanel_options("related_query_question");
-
+							
 							if ($related_cat_tag == "tags") {
 								$term_list = wp_get_post_terms($post->ID, 'question_tags', array("fields" => "ids"));
 								$related_query_ = array('tax_query' => array(array('taxonomy' => 'question_tags','field' => 'id','terms' => $term_list,'operator' => 'IN')));
@@ -913,7 +920,7 @@
 								$categories = wp_get_post_terms($post->ID,ask_question_category,array("fields" => "ids"));
 								$related_query_ = array('tax_query' => array(array('taxonomy' => ask_question_category,'field' => 'id','terms' => $categories,'operator' => 'IN')));
 							}
-
+							
 							$args = array_merge($related_query_,array('post_type' => 'question','post__not_in' => array($post->ID),'posts_per_page'=> $related_no));
 							$related_query = new wp_query( $args );
 							if ($related_query->have_posts()) : ;?>

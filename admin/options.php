@@ -115,7 +115,7 @@ function optionsframework_options() {
 	$options = array();
 	
 	$options[] = array(
-		'name' => 'General settings',
+		'name' => esc_html__('General settings','vbegy'),
 		'icon' => 'admin-site',
 		'type' => 'heading');
 	
@@ -124,89 +124,89 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Active the lightbox at the site',
-		'desc' => 'Select ON if you want to active the lightbox at the site.',
+		'name' => esc_html__('Active the lightbox at the site','vbegy'),
+		'desc' => esc_html__('Select ON if you want to active the lightbox at the site.','vbegy'),
 		'id' => 'active_lightbox',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Hide the top bar for WordPress',
-		'desc' => 'Select ON if you want to hide the top bar for WordPress.',
+		'name' => esc_html__('Hide the top bar for WordPress','vbegy'),
+		'desc' => esc_html__('Select ON if you want to hide the top bar for WordPress.','vbegy'),
 		'id' => 'top_bar_wordpress',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Enable loader',
-		'desc' => 'Select ON to enable loader.',
+		'name' => esc_html__('Enable loader','vbegy'),
+		'desc' => esc_html__('Select ON to enable loader.','vbegy'),
 		'id' => 'loader',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Enable nicescroll',
-		'desc' => 'Select ON to enable nicescroll.',
+		'name' => esc_html__('Enable nicescroll','vbegy'),
+		'desc' => esc_html__('Select ON to enable nicescroll.','vbegy'),
 		'id' => 'nicescroll',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Type the date format see this link also : https://codex.wordpress.org/Formatting_Date_and_Time',
-		'desc' => 'Type here your date format.',
+		'name' => esc_html__('Type the date format see this link also : https://codex.wordpress.org/Formatting_Date_and_Time','vbegy'),
+		'desc' => esc_html__('Type here your date format.','vbegy'),
 		'id' => 'date_format',
 		'std' => 'F j, Y',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => "Header code",
-		'desc' => "Past your Google analytics code in the box",
+		'name' => esc_html__("Header code",'vbegy'),
+		'desc' => esc_html__("Past your Google analytics code in the box",'vbegy'),
 		'id' => 'head_code',
 		'std' => '',
 		'type' => 'textarea');
 
 	$options[] = array(
-		'name' => "Footer code",
-		'desc' => "Paste footer code in the box",
+		'name' => esc_html__("Footer code",'vbegy'),
+		'desc' => esc_html__("Paste footer code in the box",'vbegy'),
 		'id' => 'footer_code',
 		'std' => '',
 		'type' => 'textarea');
 
 	$options[] = array(
-		'name' => "Custom CSS code",
-		'desc' => "Advanced CSS options, Paste your CSS code in the box",
+		'name' => esc_html__("Custom CSS code",'vbegy'),
+		'desc' => esc_html__("Advanced CSS options, Paste your CSS code in the box",'vbegy'),
 		'id' => 'custom_css',
 		'std' => '',
 		'type' => 'textarea');
 	
 	$options[] = array(
-		'name' => 'Enable SEO options',
-		'desc' => 'Select ON to enable SEO options.',
+		'name' => esc_html__('Enable SEO options','vbegy'),
+		'desc' => esc_html__('Select ON to enable SEO options.','vbegy'),
 		'id' => 'seo_active',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => "SEO keywords",
-		'desc' => "Paste your keywords in the box",
+		'name' => esc_html__("SEO keywords",'vbegy'),
+		'desc' => esc_html__("Paste your keywords in the box",'vbegy'),
 		'id' => 'the_keywords',
 		'std' => '',
 		'type' => 'textarea');
 	
 	$options[] = array(
-		'name' => "FaceBook share image",
-		'desc' => "This is the FaceBook share image",
+		'name' => esc_html__("FaceBook share image",'vbegy'),
+		'desc' => esc_html__("This is the FaceBook share image",'vbegy'),
 		'id' => 'fb_share_image',
 		'type' => 'upload');
 	
 	$options[] = array(
-		'name' => "WordPress login logo",
-		'desc' => "This is the logo that appears on the default WordPress login page",
+		'name' => esc_html__("WordPress login logo",'vbegy'),
+		'desc' => esc_html__("This is the logo that appears on the default WordPress login page",'vbegy'),
 		'id' => 'login_logo',
 		'type' => 'upload');
 	
 	$options[] = array(
-		"name" => "WordPress login logo height",
+		"name" => esc_html__("WordPress login logo height",'vbegy'),
 		"id" => "login_logo_height",
 		"type" => "sliderui",
 		"step" => "1",
@@ -214,7 +214,7 @@ function optionsframework_options() {
 		"max" => "300");
 	
 	$options[] = array(
-		"name" => "WordPress login logo width",
+		"name" => esc_html__("WordPress login logo width",'vbegy'),
 		"id" => "login_logo_width",
 		"type" => "sliderui",
 		"step" => "1",
@@ -222,32 +222,32 @@ function optionsframework_options() {
 		"max" => "300");
 	
 	$options[] = array(
-		'name' => "Custom favicon",
-		'desc' => "Upload the site’s favicon here, You can create new favicon here favicon.cc",
+		'name' => esc_html__("Custom favicon",'vbegy'),
+		'desc' => esc_html__("Upload the site’s favicon here, You can create new favicon here favicon.cc",'vbegy'),
 		'id' => 'favicon',
 		'type' => 'upload');
 	
 	$options[] = array(
-		'name' => "Custom favicon for iPhone",
-		'desc' => "Upload your custom iPhone favicon",
+		'name' => esc_html__("Custom favicon for iPhone",'vbegy'),
+		'desc' => esc_html__("Upload your custom iPhone favicon",'vbegy'),
 		'id' => 'iphone_icon',
 		'type' => 'upload');
 	
 	$options[] = array(
-		'name' => "Custom iPhone retina favicon",
-		'desc' => "Upload your custom iPhone retina favicon",
+		'name' => esc_html__("Custom iPhone retina favicon",'vbegy'),
+		'desc' => esc_html__("Upload your custom iPhone retina favicon",'vbegy'),
 		'id' => 'iphone_icon_retina',
 		'type' => 'upload');
 	
 	$options[] = array(
-		'name' => "Custom favicon for iPad",
-		'desc' => "Upload your custom iPad favicon",
+		'name' => esc_html__("Custom favicon for iPad",'vbegy'),
+		'desc' => esc_html__("Upload your custom iPad favicon",'vbegy'),
 		'id' => 'ipad_icon',
 		'type' => 'upload');
 	
 	$options[] = array(
-		'name' => "Custom iPad retina favicon",
-		'desc' => "Upload your custom iPad retina favicon",
+		'name' => esc_html__("Custom iPad retina favicon",'vbegy'),
+		'desc' => esc_html__("Upload your custom iPad retina favicon",'vbegy'),
 		'id' => 'ipad_icon_retina',
 		'type' => 'upload');
 	
@@ -256,25 +256,25 @@ function optionsframework_options() {
 		'end'  => 'end');
 	
 	$options[] = array(
-		'name' => 'Header settings',
+		'name' => esc_html__('Header settings','vbegy'),
 		'icon' => 'menu',
 		'type' => 'heading');
 	
 	$options[] = array(
-		'name' => 'Top panel',
+		'name' => esc_html__('Top panel','vbegy'),
 		'type' => 'heading-2',
 	);
 	
 	$options[] = array(
-		'name' => 'Top panel settings',
-		'desc' => 'Select ON to enable the top panel.',
+		'name' => esc_html__('Top panel settings','vbegy'),
+		'desc' => esc_html__('Select ON to enable the top panel.','vbegy'),
 		'id' => 'login_panel',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => "Select top panel skin",
-		'desc' => "Select your preferred skin for the top panel.",
+		'name' => esc_html__("Select top panel skin",'vbegy'),
+		'desc' => esc_html__("Select your preferred skin for the top panel.",'vbegy'),
 		'id' => "top_panel_skin",
 		'std' => "panel_dark",
 		'type' => "images",
@@ -285,8 +285,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Select side panel skin",
-		'desc' => "Select your preferred skin for the side panel.",
+		'name' => esc_html__("Select side panel skin",'vbegy'),
+		'desc' => esc_html__("Select your preferred skin for the side panel.",'vbegy'),
 		'id' => "side_panel_skin",
 		'std' => "dark",
 		'type' => "images",
@@ -302,20 +302,20 @@ function optionsframework_options() {
 		'end'  => 'end');
 	
 	$options[] = array(
-		'name' => 'Header setting',
+		'name' => esc_html__('Header setting','vbegy'),
 		'type' => 'heading-2',
 	);
 	
 	$options[] = array(
-		'name' => 'Header top menu settings',
-		'desc' => 'Select ON to enable the top menu in the header.',
+		'name' => esc_html__('Header top menu settings','vbegy'),
+		'desc' => esc_html__('Select ON to enable the top menu in the header.','vbegy'),
 		'id' => 'top_menu',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => "Top header Layout",
-		'desc' => "Top header columns Layout.",
+		'name' => esc_html__("Top header Layout",'vbegy'),
+		'desc' => esc_html__("Top header columns Layout.",'vbegy'),
 		'id' => "top_header_layout",
 		'std' => "2c",
 		'type' => "images",
@@ -330,8 +330,8 @@ function optionsframework_options() {
 	
 	if (is_rtl()) {
 		$options[] = array(
-			'name' => "Logo position",
-			'desc' => "Select where you would like your logo to appear.",
+			'name' => esc_html__("Logo position",'vbegy'),
+			'desc' => esc_html__("Select where you would like your logo to appear.",'vbegy'),
 			'id' => "logo_position",
 			'std' => "left_logo",
 			'type' => "images",
@@ -343,8 +343,8 @@ function optionsframework_options() {
 		);
 	}else {
 		$options[] = array(
-			'name' => "Logo position",
-			'desc' => "Select where you would like your logo to appear.",
+			'name' => esc_html__("Logo position",'vbegy'),
+			'desc' => esc_html__("Select where you would like your logo to appear.",'vbegy'),
 			'id' => "logo_position",
 			'std' => "left_logo",
 			'type' => "images",
@@ -357,8 +357,8 @@ function optionsframework_options() {
 	}
 	
 	$options[] = array(
-		'name' => "Header skin",
-		'desc' => "Select your preferred header skin.",
+		'name' => esc_html__("Header skin",'vbegy'),
+		'desc' => esc_html__("Select your preferred header skin.",'vbegy'),
 		'id' => "header_skin",
 		'std' => "header_dark",
 		'type' => "images",
@@ -369,66 +369,66 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Fixed header option',
-		'desc' => 'Select ON to enable fixed header.',
+		'name' => esc_html__('Fixed header option','vbegy'),
+		'desc' => esc_html__('Select ON to enable fixed header.','vbegy'),
 		'id' => 'header_fixed',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Header search settings',
-		'desc' => 'Select ON to enable the search in the header.',
+		'name' => esc_html__('Header search settings','vbegy'),
+		'desc' => esc_html__('Select ON to enable the search in the header.','vbegy'),
 		'id' => 'header_search',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	if (class_exists('woocommerce')) {
 		$options[] = array(
-			'name' => 'Header cart settings',
-			'desc' => 'Select ON to enable the cart in the header.',
+			'name' => esc_html__('Header cart settings','vbegy'),
+			'desc' => esc_html__('Select ON to enable the cart in the header.','vbegy'),
 			'id' => 'header_cart',
 			'std' => 1,
 			'type' => 'checkbox');
 	}
 	
 	$options[] = array(
-		'name' => 'Header notifications settings',
-		'desc' => 'Select ON to enable the notifications in the header.',
+		'name' => esc_html__('Header notifications settings','vbegy'),
+		'desc' => esc_html__('Select ON to enable the notifications in the header.','vbegy'),
 		'id' => 'header_notifications',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Header notifications number',
-		'desc' => 'Put the header notifications number.',
+		'name' => esc_html__('Header notifications number','vbegy'),
+		'desc' => esc_html__('Put the header notifications number.','vbegy'),
 		'id' => 'notifications_number',
 		'std' => 10,
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Logo display',
-		'desc' => 'choose Logo display.',
+		'name' => esc_html__('Logo display','vbegy'),
+		'desc' => esc_html__('choose Logo display.','vbegy'),
 		'id' => 'logo_display',
 		'std' => 'display_title',
 		'type' => 'radio',
 		'options' => array("display_title" => "Display site title","custom_image" => "Custom Image"));
 	
 	$options[] = array(
-		'name' => 'Logo upload',
-		'desc' => 'Upload your custom logo.',
+		'name' => esc_html__('Logo upload','vbegy'),
+		'desc' => esc_html__('Upload your custom logo.','vbegy'),
 		'id'   => 'logo_img',
 		'std'  => $imagepath_theme."logo.png",
 		'type' => 'upload');
 	
 	$options[] = array(
-		'name' => 'Logo retina upload',
-		'desc' => 'Upload your custom logo retina.',
+		'name' => esc_html__('Logo retina upload','vbegy'),
+		'desc' => esc_html__('Upload your custom logo retina.','vbegy'),
 		'id'   => 'retina_logo',
 		'std'  => $imagepath_theme."logo-2x.png",
 		'type' => 'upload');
 	
 	$options[] = array(
-		"name" => "Logo height",
+		"name" => esc_html__("Logo height",'vbegy'),
 		"id" => "logo_height",
 		"type" => "sliderui",
 		"step" => "1",
@@ -437,7 +437,7 @@ function optionsframework_options() {
 		'std' => '57');
 	
 	$options[] = array(
-		"name" => "Logo width",
+		"name" => esc_html__("Logo width",'vbegy'),
 		"id" => "logo_width",
 		"type" => "sliderui",
 		"step" => "1",
@@ -446,8 +446,8 @@ function optionsframework_options() {
 		'std' => '146');
 	
 	$options[] = array(
-		'name' => 'Breadcrumbs settings',
-		'desc' => 'Select ON to enable breadcrumbs.',
+		'name' => esc_html__('Breadcrumbs settings','vbegy'),
+		'desc' => esc_html__('Select ON to enable breadcrumbs.','vbegy'),
 		'id' => 'breadcrumbs',
 		'std' => 1,
 		'type' => 'checkbox');
@@ -457,20 +457,20 @@ function optionsframework_options() {
 		'end'  => 'end');
 	
 	$options[] = array(
-		'name' => 'Big search setting',
+		'name' => esc_html__('Big search setting','vbegy'),
 		'type' => 'heading-2',
 	);
 	
 	$options[] = array(
-		'name' => 'Big search after header',
-		'desc' => 'Select ON to enable big search.',
+		'name' => esc_html__('Big search after header','vbegy'),
+		'desc' => esc_html__('Select ON to enable big search.','vbegy'),
 		'id' => 'big_search',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name'    => 'Big search in all pages or home page only?',
-		'desc'    => 'Big search work in all pages or home page only?',
+		'name'    => esc_html__('Big search in all pages or home page only?','vbegy'),
+		'desc'    => esc_html__('Big search work in all pages or home page only?','vbegy'),
 		'id'      => 'big_search_work',
 		'std'     => "all_pages",
 		'options' => array(
@@ -486,13 +486,13 @@ function optionsframework_options() {
 		'end'  => 'end');
 	
 	$options[] = array(
-		'name' => 'Video setting',
+		'name' => esc_html__('Video setting','vbegy'),
 		'type' => 'heading-2',
 	);
 	
 	$options[] = array(
-		'name' => 'Big video after header',
-		'desc' => 'Select ON to enable big video.',
+		'name' => esc_html__('Big video after header','vbegy'),
+		'desc' => esc_html__('Select ON to enable big video.','vbegy'),
 		'id'   => 'big_video',
 		'type' => 'checkbox');
 	
@@ -502,8 +502,8 @@ function optionsframework_options() {
 		'type' => 'heading-2');
 		
 	$options[] = array(
-		'name'    => 'Big video in all pages or home page only?',
-		'desc'    => 'Big video work in all pages or home page only?',
+		'name'    => esc_html__('Big video in all pages or home page only?','vbegy'),
+		'desc'    => esc_html__('Big video work in all pages or home page only?','vbegy'),
 		'id'      => 'big_video_work',
 		'std'     => "all_pages",
 		'options' => array(
@@ -558,51 +558,51 @@ function optionsframework_options() {
 		'type' => 'heading-2');
 	
 	$options[] = array(
-		'name' => 'Video Image',
-		'desc' => 'Upload a image, or enter URL to an image if it is already uploaded. ',
+		'name' => esc_html__('Video Image','vbegy'),
+		'desc' => esc_html__('Upload a image, or enter URL to an image if it is already uploaded. ','vbegy'),
 		'id'   => 'video_image',
 		'type' => 'upload'
 	);
 	
 	$options[] = array(
-		'name' => 'Mp4 video',
+		'name' => esc_html__('Mp4 video','vbegy'),
 		'id'   => 'video_mp4',
-		'desc' => 'Put here the mp4 video',
+		'desc' => esc_html__('Put here the mp4 video','vbegy'),
 		'type' => 'text',
 	);
 	
 	$options[] = array(
-		'name' => 'M4v video',
+		'name' => esc_html__('M4v video','vbegy'),
 		'id'   => 'video_m4v',
-		'desc' => 'Put here the m4v video',
+		'desc' => esc_html__('Put here the m4v video','vbegy'),
 		'type' => 'text',
 	);
 	
 	$options[] = array(
-		'name' => 'Webm video',
+		'name' => esc_html__('Webm video','vbegy'),
 		'id'   => 'video_webm',
-		'desc' => 'Put here the webm video',
+		'desc' => esc_html__('Put here the webm video','vbegy'),
 		'type' => 'text',
 	);
 	
 	$options[] = array(
-		'name' => 'Ogv video',
+		'name' => esc_html__('Ogv video','vbegy'),
 		'id'   => 'video_ogv',
-		'desc' => 'Put here the ogv video',
+		'desc' => esc_html__('Put here the ogv video','vbegy'),
 		'type' => 'text',
 	);
 	
 	$options[] = array(
-		'name' => 'Wmv video',
+		'name' => esc_html__('Wmv video','vbegy'),
 		'id'   => 'video_wmv',
-		'desc' => 'Put here the wmv video',
+		'desc' => esc_html__('Put here the wmv video','vbegy'),
 		'type' => 'text',
 	);
 	
 	$options[] = array(
-		'name' => 'Flv video',
+		'name' => esc_html__('Flv video','vbegy'),
 		'id'   => 'video_flv',
-		'desc' => 'Put here the flv video',
+		'desc' => esc_html__('Put here the flv video','vbegy'),
 		'type' => 'text',
 	);
 	
@@ -622,7 +622,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Responsive settings',
+		'name' => esc_html__('Responsive settings','vbegy'),
 		'icon' => 'smartphone',
 		'type' => 'heading');
 	
@@ -631,8 +631,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Choose the mobile menu skin",
-		'desc' => "Choose the mobile menu skin.",
+		'name' => esc_html__("Choose the mobile menu skin",'vbegy'),
+		'desc' => esc_html__("Choose the mobile menu skin.",'vbegy'),
 		'id'   => "mobile_menu",
 		'std'  => "dark",
 		'type' => "images",
@@ -644,52 +644,52 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Header top menu settings',
-		'desc' => 'Select ON to enable the top menu in the mobile menu.',
+		'name' => esc_html__('Header top menu settings','vbegy'),
+		'desc' => esc_html__('Select ON to enable the top menu in the mobile menu.','vbegy'),
 		'id' => 'top_menu_mobile',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Ask question settings',
-		'desc' => 'Select ON to enable the ask question in the mobile menu.',
+		'name' => esc_html__('Ask question settings','vbegy'),
+		'desc' => esc_html__('Select ON to enable the ask question in the mobile menu.','vbegy'),
 		'id' => 'ask_question_mobile',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	if (class_exists('woocommerce')) {
 		$options[] = array(
-			'name' => 'Cart settings',
-			'desc' => 'Select ON to enable the cart in the mobile menu.',
+			'name' => esc_html__('Cart settings','vbegy'),
+			'desc' => esc_html__('Select ON to enable the cart in the mobile menu.','vbegy'),
 			'id' => 'mobile_cart',
 			'std' => 1,
 			'type' => 'checkbox');
 	}
 	
 	$options[] = array(
-		'name' => 'Notifications settings',
-		'desc' => 'Select ON to enable the notifications in the mobile menu.',
+		'name' => esc_html__('Notifications settings','vbegy'),
+		'desc' => esc_html__('Select ON to enable the notifications in the mobile menu.','vbegy'),
 		'id' => 'mobile_notifications',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Header menu settings',
-		'desc' => 'Select ON to enable the menu in the mobile menu.',
+		'name' => esc_html__('Header menu settings','vbegy'),
+		'desc' => esc_html__('Select ON to enable the menu in the mobile menu.','vbegy'),
 		'id' => 'main_menu_mobile',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Social enable or disable',
-		'desc' => 'Social or disable.',
+		'name' => esc_html__('Social enable or disable','vbegy'),
+		'desc' => esc_html__('Social or disable.','vbegy'),
 		'id' => 'social_mobile',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Search settings',
-		'desc' => 'Select ON to enable the search in the mobile menu.',
+		'name' => esc_html__('Search settings','vbegy'),
+		'desc' => esc_html__('Select ON to enable the search in the mobile menu.','vbegy'),
 		'id' => 'search_mobile',
 		'std' => 1,
 		'type' => 'checkbox');
@@ -700,7 +700,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Home page',
+		'name' => esc_html__('Home page','vbegy'),
 		'icon' => 'admin-home',
 		'type' => 'heading');
 	
@@ -709,134 +709,134 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Note: this options work in the home page only and if you don\'t choose the Front page.',
+		'name' => esc_html__('Note: this options work in the home page only and if you don\'t choose the Front page.','vbegy'),
 		'class' => 'home_page_display',
 		'type' => 'info');
 	
 	$options[] = array(
-		'name' => 'Home top box settings',
-		'desc' => 'Select ON if you want to enable the home top box.',
+		'name' => esc_html__('Home top box settings','vbegy'),
+		'desc' => esc_html__('Select ON if you want to enable the home top box.','vbegy'),
 		'id' => 'index_top_box',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Home top box layout',
-		'desc' => 'Home top box layout.',
+		'name' => esc_html__('Home top box layout','vbegy'),
+		'desc' => esc_html__('Home top box layout.','vbegy'),
 		'id' => 'index_top_box_layout',
 		'std' => '1',
 		'type' => 'radio',
 		'options' => array("1" => "Style 1","2" => "Style 2"));
 	
 	$options[] = array(
-		'name' => 'Question title or comment',
-		'desc' => 'Question title or comment.',
+		'name' => esc_html__('Question title or comment','vbegy'),
+		'desc' => esc_html__('Question title or comment.','vbegy'),
 		'id' => 'index_title_comment',
 		'std' => 'title',
 		'type' => 'radio',
 		'options' => array("title" => "Title","comment" => "Comment"));
 	
 	$options[] = array(
-		'name' => 'Remove the content?',
-		'desc' => 'Remove the content (Title, Content, Buttons and Ask question)?',
+		'name' => esc_html__('Remove the content?','vbegy'),
+		'desc' => esc_html__('Remove the content (Title, Content, Buttons and Ask question)?','vbegy'),
 		'id'   => 'remove_index_content',
 		'type' => 'checkbox'
 	);
 	
 	$options[] = array(
-		'name'    => 'Home top box background',
-		'desc'    => 'Home top box background.',
+		'name'    => esc_html__('Home top box background','vbegy'),
+		'desc'    => esc_html__('Home top box background.','vbegy'),
 		'id'      => 'index_top_box_background',
 		'std'     => 'background',
 		'type'    => 'hidden',
 	);
 	
 	$options[] = array(
-		'name' =>  "Background",
-		'desc' => "Upload a image, Or enter URL to an image if it is already uploaded.",
+		'name' => esc_html__("Background",'vbegy'),
+		'desc' => esc_html__("Upload a image, Or enter URL to an image if it is already uploaded.",'vbegy'),
 		'id' => 'background_home',
 		'std' => $background_defaults,
 		'type' => 'background');
 	
 	$options[] = array(
-		'name' => "Full Screen Background",
+		'name' => esc_html__("Full Screen Background",'vbegy'),
 		'id'   => "background_full_home",
 		'type' => 'checkbox',
 		'std'  => 0,
 	);
 	
 	$options[] = array(
-		'name' => 'Home top box title',
-		'desc' => 'Put the Home top box title.',
+		'name' => esc_html__('Home top box title','vbegy'),
+		'desc' => esc_html__('Put the Home top box title.','vbegy'),
 		'id' => 'index_title',
 		'std' => 'Welcome to Ask me',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Home top box content',
-		'desc' => 'Put the Home top box content.',
+		'name' => esc_html__('Home top box content','vbegy'),
+		'desc' => esc_html__('Put the Home top box content.','vbegy'),
 		'id' => 'index_content',
 		'std' => 'Duis dapibus aliquam mi, Eget euismod sem scelerisque ut.Vivamus at elit quis urna adipiscing iaculis.Curabitur vitae velit in neque dictum blandit.Proin in iaculis neque.',
 		'type' => 'textarea');
 	
 	$options[] = array(
-		'name' => 'About Us title',
-		'desc' => 'Put the About Us title.',
+		'name' => esc_html__('About Us title','vbegy'),
+		'desc' => esc_html__('Put the About Us title.','vbegy'),
 		'id' => 'index_about',
 		'std' => 'About Us',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'About Us link',
-		'desc' => 'Put the About Us link.',
+		'name' => esc_html__('About Us link','vbegy'),
+		'desc' => esc_html__('Put the About Us link.','vbegy'),
 		'id' => 'index_about_h',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Join Now title',
-		'desc' => 'Put the Join Now title.',
+		'name' => esc_html__('Join Now title','vbegy'),
+		'desc' => esc_html__('Put the Join Now title.','vbegy'),
 		'id' => 'index_join',
 		'std' => 'Join Now',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Join Now link',
-		'desc' => 'Put the Join Now link.',
+		'name' => esc_html__('Join Now link','vbegy'),
+		'desc' => esc_html__('Put the Join Now link.','vbegy'),
 		'id' => 'index_join_h',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'About Us title if logged in',
-		'desc' => 'Put the About Us title if logged in.',
+		'name' => esc_html__('About Us title if logged in','vbegy'),
+		'desc' => esc_html__('Put the About Us title if logged in.','vbegy'),
 		'id' => 'index_about_login',
 		'std' => 'About Us',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'About Us link if login',
-		'desc' => 'Put the About Us link if logged in.',
+		'name' => esc_html__('About Us link if login','vbegy'),
+		'desc' => esc_html__('Put the About Us link if logged in.','vbegy'),
 		'id' => 'index_about_h_login',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Ask question title if logged in',
-		'desc' => 'Put the Ask question title if logged in.',
+		'name' => esc_html__('Ask question title if logged in','vbegy'),
+		'desc' => esc_html__('Put the Ask question title if logged in.','vbegy'),
 		'id' => 'index_join_login',
 		'std' => 'Ask question',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Ask question link if logged in',
-		'desc' => 'Put the Ask question link if logged in.',
+		'name' => esc_html__('Ask question link if logged in','vbegy'),
+		'desc' => esc_html__('Put the Ask question link if logged in.','vbegy'),
 		'id' => 'index_join_h_login',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Go to the page and add new page template <a href="post-new.php?post_type=page">from here</a>, Choose the template page (Home) set it a static page <a href="options-reading.php">from here</a>.',
+		'name' => esc_html__('Go to the page and add new page template <a href="post-new.php?post_type=page">from here</a>, Choose the template page (Home) set it a static page <a href="options-reading.php">from here</a>.','vbegy'),
 		'class' => 'home_page_display',
 		'type' => 'info');
 	
@@ -846,7 +846,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Questions',
+		'name' => esc_html__('Questions','vbegy'),
 		'icon' => 'editor-help',
 		'type' => 'heading',
 		'std'     => 'general_setting',
@@ -862,46 +862,46 @@ function optionsframework_options() {
 	$options[] = array(
 		'type' => 'heading-2',
 		'id'   => 'general_setting',
-		'name' => "General settings"
+		'name' => esc_html__("General settings",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => 'Active the reports in site?',
-		'desc' => 'Active the reports enable or disable.',
+		'name' => esc_html__('Active the reports in site?','vbegy'),
+		'desc' => esc_html__('Active the reports enable or disable.','vbegy'),
 		'id' => 'active_reports',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active the reports in site for the logged users only?',
-		'desc' => 'Active the reports in site for the logged users only enable or disable.',
+		'name' => esc_html__('Active the reports in site for the logged users only?','vbegy'),
+		'desc' => esc_html__('Active the reports in site for the logged users only enable or disable.','vbegy'),
 		'id' => 'active_logged_reports',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active the vote in site?',
-		'desc' => 'Active the vote enable or disable.',
+		'name' => esc_html__('Active the vote in site?','vbegy'),
+		'desc' => esc_html__('Active the vote enable or disable.','vbegy'),
 		'id' => 'active_vote',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active the points system in site?',
-		'desc' => 'Active the points system enable or disable.',
+		'name' => esc_html__('Active the points system in site?','vbegy'),
+		'desc' => esc_html__('Active the points system enable or disable.','vbegy'),
 		'id' => 'active_points',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Select ON to hide the dislike at questions',
-		'desc' => 'If you put it ON the dislike will not show.',
+		'name' => esc_html__('Select ON to hide the dislike at questions','vbegy'),
+		'desc' => esc_html__('If you put it ON the dislike will not show.','vbegy'),
 		'id' => 'show_dislike_questions',
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'When delete the question or answer have a best answer remove it from the stats and user point?',
-		'desc' => 'Select ON if you want to remove the best answer from the user point.',
+		'name' => esc_html__('When delete the question or answer have a best answer remove it from the stats and user point?','vbegy'),
+		'desc' => esc_html__('Select ON if you want to remove the best answer from the user point.','vbegy'),
 		'id' => 'remove_best_answer_stats',
 		'std' => 0,
 		'type' => 'checkbox');
@@ -914,26 +914,26 @@ function optionsframework_options() {
 	$options[] = array(
 		'type' => 'heading-2',
 		'id'   => 'question_slug',
-		'name' => "Question slugs"
+		'name' => esc_html__("Question slugs",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => 'Questions slug',
-		'desc' => 'Add your questions slug.',
+		'name' => esc_html__('Questions slug','vbegy'),
+		'desc' => esc_html__('Add your questions slug.','vbegy'),
 		'id' => 'questions_slug',
 		'std' => 'question',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Questions category slug',
-		'desc' => 'Add your questions category slug.',
+		'name' => esc_html__('Questions category slug','vbegy'),
+		'desc' => esc_html__('Add your questions category slug.','vbegy'),
 		'id' => 'category_questions_slug',
 		'std' => ask_question_category,
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Questions tag slug',
-		'desc' => 'Add your questions tag slug.',
+		'name' => esc_html__('Questions tag slug','vbegy'),
+		'desc' => esc_html__('Add your questions tag slug.','vbegy'),
 		'id' => 'tag_questions_slug',
 		'std' => 'question-tag',
 		'type' => 'text');
@@ -946,24 +946,24 @@ function optionsframework_options() {
 	$options[] = array(
 		'type' => 'heading-2',
 		'id'   => 'add_edit_delete',
-		'name' => "Add - Edit - Delete"
+		'name' => esc_html__("Add - Edit - Delete",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => 'Add question setting.',
+		'name' => esc_html__('Add question setting.','vbegy'),
 		'class' => 'home_page_display',
 		'type' => 'info');
 	
 	$options[] = array(
-		'name' => "Add question page",
-		'desc' => "Create a page using the Add question template and select it here",
+		'name' => esc_html__("Add question page",'vbegy'),
+		'desc' => esc_html__("Create a page using the Add question template and select it here",'vbegy'),
 		'id' => 'add_question',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => 'Any one can ask question without register',
-		'desc' => 'Any one can ask question without register enable or disable.',
+		'name' => esc_html__('Any one can ask question without register','vbegy'),
+		'desc' => esc_html__('Any one can ask question without register enable or disable.','vbegy'),
 		'id' => 'ask_question_no_register',
 		'std' => 0,
 		'type' => 'checkbox');
@@ -974,8 +974,8 @@ function optionsframework_options() {
 		'type' => 'heading-2');
 	
 	$options[] = array(
-		'name' => 'Active username and email for not register users.',
-		'desc' => 'The username and email for not register users is enable or disable.',
+		'name' => esc_html__('Active username and email for not register users.','vbegy'),
+		'desc' => esc_html__('The username and email for not register users is enable or disable.','vbegy'),
 		'id' => 'username_email_no_register',
 		'std' => 1,
 		'type' => 'checkbox');
@@ -986,29 +986,29 @@ function optionsframework_options() {
 		'div'  => 'div');
 	
 	$options[] = array(
-		'name' => 'Active ask question form with popup also?',
-		'desc' => 'Active ask question form with popup is enable or disable.',
+		'name' => esc_html__('Active ask question form with popup also?','vbegy'),
+		'desc' => esc_html__('Active ask question form with popup is enable or disable.','vbegy'),
 		'id' => 'ask_question_popup',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Charge points for questions',
-		'desc' => 'How many points should be taken from the user’s account for asking questions.',
+		'name' => esc_html__('Charge points for questions','vbegy'),
+		'desc' => esc_html__('How many points should be taken from the user’s account for asking questions.','vbegy'),
 		'id' => 'question_points',
 		'std' => '5',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Charge points for questions settings',
-		'desc' => 'Select ON if you want to charge points from users for asking questions.',
+		'name' => esc_html__('Charge points for questions settings','vbegy'),
+		'desc' => esc_html__('Select ON if you want to charge points from users for asking questions.','vbegy'),
 		'id' => 'question_points_active',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Point back to the user when he select the best answer',
-		'desc' => 'Point back to the user when he select the best answer.',
+		'name' => esc_html__('Point back to the user when he select the best answer','vbegy'),
+		'desc' => esc_html__('Point back to the user when he select the best answer.','vbegy'),
 		'id' => 'point_back',
 		'std' => 0,
 		'type' => 'checkbox');
@@ -1019,8 +1019,8 @@ function optionsframework_options() {
 		'type' => 'heading-2');
 	
 	$options[] = array(
-		'name' => 'Or type here the point want back',
-		'desc' => 'Or type here the point want back, Type 0 to back all the point.',
+		'name' => esc_html__('Or type here the point want back','vbegy'),
+		'desc' => esc_html__('Or type here the point want back, Type 0 to back all the point.','vbegy'),
 		'id' => 'point_back_number',
 		'std' => '0',
 		'type' => 'text');
@@ -1031,31 +1031,31 @@ function optionsframework_options() {
 		'div'  => 'div');
 	
 	$options[] = array(
-		'name' => 'Choose question status for users only',
-		'desc' => 'Choose question status after user publish the question.',
+		'name' => esc_html__('Choose question status for users only','vbegy'),
+		'desc' => esc_html__('Choose question status after user publish the question.','vbegy'),
 		'id' => 'question_publish',
 		'options' => array("publish" => "Publish","draft" => "Draft"),
 		'std' => 'draft',
 		'type' => 'select');
 	
 	$options[] = array(
-		'name' => 'Choose question status for unlogged user only',
-		'desc' => 'Choose question status after unlogged user publish the question.',
+		'name' => esc_html__('Choose question status for unlogged user only','vbegy'),
+		'desc' => esc_html__('Choose question status after unlogged user publish the question.','vbegy'),
 		'id' => 'question_publish_unlogged',
 		'options' => array("publish" => "Publish","draft" => "Draft"),
 		'std' => 'draft',
 		'type' => 'select');
 	
 	$options[] = array(
-		'name' => 'Send email when the question need a review',
-		'desc' => 'Email for questions review enable or disable.',
+		'name' => esc_html__('Send email when the question need a review','vbegy'),
+		'desc' => esc_html__('Email for questions review enable or disable.','vbegy'),
 		'id' => 'send_email_draft_questions',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Title in ask question form',
-		'desc' => 'Title in ask question form enable or disable.',
+		'name' => esc_html__('Title in ask question form','vbegy'),
+		'desc' => esc_html__('Title in ask question form enable or disable.','vbegy'),
 		'id' => 'title_question',
 		'std' => 1,
 		'type' => 'checkbox');
@@ -1066,8 +1066,8 @@ function optionsframework_options() {
 		'type' => 'heading-2');
 	
 	$options[] = array(
-		'name' => 'Excerpt type for title from the content',
-		'desc' => 'Choose form here the excerpt type.',
+		'name' => esc_html__('Excerpt type for title from the content','vbegy'),
+		'desc' => esc_html__('Choose form here the excerpt type.','vbegy'),
 		'id' => 'title_excerpt_type',
 		'type' => "select",
 		'options' => array(
@@ -1076,8 +1076,8 @@ function optionsframework_options() {
 		);
 	
 	$options[] = array(
-		'name' => 'Excerpt title from the content',
-		'desc' => 'Put here the excerpt title from the content.',
+		'name' => esc_html__('Excerpt title from the content','vbegy'),
+		'desc' => esc_html__('Put here the excerpt title from the content.','vbegy'),
 		'id' => 'title_excerpt',
 		'std' => 10,
 		'type' => 'text');
@@ -1088,8 +1088,8 @@ function optionsframework_options() {
 		'div'  => 'div');
 	
 	$options[] = array(
-		'name' => 'Category in ask question form',
-		'desc' => 'Category in ask question form enable or disable.',
+		'name' => esc_html__('Category in ask question form','vbegy'),
+		'desc' => esc_html__('Category in ask question form enable or disable.','vbegy'),
 		'id' => 'category_question',
 		'std' => 1,
 		'type' => 'checkbox');
@@ -1100,15 +1100,15 @@ function optionsframework_options() {
 		'type' => 'heading-2');
 	
 	$options[] = array(
-		'name' => 'Category in ask question form is required',
-		'desc' => 'Category in ask question form is required.',
+		'name' => esc_html__('Category in ask question form is required','vbegy'),
+		'desc' => esc_html__('Category in ask question form is required.','vbegy'),
 		'id' => 'category_question_required',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => "Category at ask question form single, multi or ajax",
-		'desc' => "Choose category is show at ask question form single, multi or ajax",
+		'name' => esc_html__("Category at ask question form single, multi or ajax",'vbegy'),
+		'desc' => esc_html__("Choose category is show at ask question form single, multi or ajax",'vbegy'),
 		'id' => 'category_single_multi',
 		'std' => 'single',
 		'type' => 'radio',
@@ -1126,64 +1126,64 @@ function optionsframework_options() {
 		'div'  => 'div');
 	
 	$options[] = array(
-		'name' => 'Tags enable or disable in add question form',
-		'desc' => 'Select ON to enable the tags in add question form.',
+		'name' => esc_html__('Tags enable or disable in add question form','vbegy'),
+		'desc' => esc_html__('Select ON to enable the tags in add question form.','vbegy'),
 		'id' => 'tags_question',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Poll enable or disable in add question form',
-		'desc' => 'Select ON to enable the poll in add question form.',
+		'name' => esc_html__('Poll enable or disable in add question form','vbegy'),
+		'desc' => esc_html__('Select ON to enable the poll in add question form.','vbegy'),
 		'id' => 'poll_question',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Attachment in add question form',
-		'desc' => 'Select ON to enable the attachment in add question form.',
+		'name' => esc_html__('Attachment in add question form','vbegy'),
+		'desc' => esc_html__('Select ON to enable the attachment in add question form.','vbegy'),
 		'id' => 'attachment_question',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Featured image in add question form',
-		'desc' => 'Select ON to enable the Featured image in add question form.',
+		'name' => esc_html__('Featured image in add question form','vbegy'),
+		'desc' => esc_html__('Select ON to enable the Featured image in add question form.','vbegy'),
 		'id' => 'featured_image_question',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Details in ask question form is required',
-		'desc' => 'Details in ask question form is required.',
+		'name' => esc_html__('Details in ask question form is required','vbegy'),
+		'desc' => esc_html__('Details in ask question form is required.','vbegy'),
 		'id' => 'comment_question',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Editor enable or disable for details in add question form',
-		'desc' => 'Editor enable or disable for details in add question form.',
+		'name' => esc_html__('Editor enable or disable for details in add question form','vbegy'),
+		'desc' => esc_html__('Editor enable or disable for details in add question form.','vbegy'),
 		'id' => 'editor_question_details',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Video description settings',
-		'desc' => 'Select ON if you want to let users to add video with their question.',
+		'name' => esc_html__('Video description settings','vbegy'),
+		'desc' => esc_html__('Select ON if you want to let users to add video with their question.','vbegy'),
 		'id' => 'video_desc_active',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active notified at ask question form or not',
-		'desc' => 'Select ON if you want active the notified.',
+		'name' => esc_html__('Active notified at ask question form or not','vbegy'),
+		'desc' => esc_html__('Select ON if you want active the notified.','vbegy'),
 		'id' => 'active_notified',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Send email for the user to notified a new question',
-		'desc' => 'Send email enable or disable.',
+		'name' => esc_html__('Send email for the user to notified a new question','vbegy'),
+		'desc' => esc_html__('Send email enable or disable.','vbegy'),
 		'id' => 'send_email_new_question',
 		'std' => 0,
 		'type' => 'checkbox');
@@ -1194,8 +1194,8 @@ function optionsframework_options() {
 		'type' => 'heading-2');
 	
 	$options[] = array(
-		'name' => 'Send email for custom groups to notified a new question',
-		'desc' => 'Send email for custom groups to notified a new question.',
+		'name' => esc_html__('Send email for custom groups to notified a new question','vbegy'),
+		'desc' => esc_html__('Send email for custom groups to notified a new question.','vbegy'),
 		'id' => 'send_email_question_groups',
 		'type' => 'multicheck',
 		'std' => array("editor" => 1,"administrator" => 1,"author" => 1,"contributor" => 1,"subscriber" => 1),
@@ -1207,22 +1207,22 @@ function optionsframework_options() {
 		'div'  => 'div');
 	
 	$options[] = array(
-		'name' => 'Active the private question or not?',
-		'desc' => 'Select ON if you want active the private question.',
+		'name' => esc_html__('Active the private question or not?','vbegy'),
+		'desc' => esc_html__('Select ON if you want active the private question.','vbegy'),
 		'id' => 'private_question',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active ask anonymously or not?',
-		'desc' => 'Select ON if you want active ask anonymously.',
+		'name' => esc_html__('Active ask anonymously or not?','vbegy'),
+		'desc' => esc_html__('Select ON if you want active ask anonymously.','vbegy'),
 		'id' => 'anonymously_question',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active the page terms?',
-		'desc' => 'Select ON if you want active the page terms.',
+		'name' => esc_html__('Active the page terms?','vbegy'),
+		'desc' => esc_html__('Select ON if you want active the page terms.','vbegy'),
 		'id' => 'terms_active',
 		'std' => 0,
 		'type' => 'checkbox');
@@ -1233,23 +1233,23 @@ function optionsframework_options() {
 		'type' => 'heading-2');
 	
 	$options[] = array(
-		'name' => 'Open the page in same page or a new page?',
-		'desc' => 'Open the page in same page or a new page.',
+		'name' => esc_html__('Open the page in same page or a new page?','vbegy'),
+		'desc' => esc_html__('Open the page in same page or a new page.','vbegy'),
 		'id' => 'terms_active_target',
 		'std' => "new_page",
 		'type' => 'select',
 		'options' => array("same_page" => "Same page","new_page" => "New page"));
 	
 	$options[] = array(
-		'name' => "Terms page",
-		'desc' => "Select the terms page",
+		'name' => esc_html__("Terms page",'vbegy'),
+		'desc' => esc_html__("Select the terms page",'vbegy'),
 		'id' => 'terms_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "Type the terms link if you don't like a page",
-		'desc' => "Type the terms link if you don't like a page",
+		'name' => esc_html__("Type the terms link if you don't like a page",'vbegy'),
+		'desc' => esc_html__("Type the terms link if you don't like a page",'vbegy'),
 		'id' => 'terms_link',
 		'type' => 'text');
 	
@@ -1259,46 +1259,46 @@ function optionsframework_options() {
 		'div'  => 'div');
 	
 	$options[] = array(
-		'name' => 'Edit question setting.',
+		'name' => esc_html__('Edit question setting.','vbegy'),
 		'class' => 'home_page_display',
 		'type' => 'info');
 	
 	$options[] = array(
-		'name' => "Edit question page",
-		'desc' => "Create a page using the Edit question template and select it here",
+		'name' => esc_html__("Edit question page",'vbegy'),
+		'desc' => esc_html__("Create a page using the Edit question template and select it here",'vbegy'),
 		'id' => 'edit_question',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => 'After edit question approved auto or need to approved again?',
-		'desc' => 'Press ON to approved auto',
+		'name' => esc_html__('After edit question approved auto or need to approved again?','vbegy'),
+		'desc' => esc_html__('Press ON to approved auto','vbegy'),
 		'id' => 'question_approved',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active user can edit the questions',
-		'desc' => 'Select ON if you want the user can edit the questions.',
+		'name' => esc_html__('Active user can edit the questions','vbegy'),
+		'desc' => esc_html__('Select ON if you want the user can edit the questions.','vbegy'),
 		'id' => 'question_edit',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'After edit question change the URL like the title?',
-		'desc' => 'Press ON to edit the URL',
+		'name' => esc_html__('After edit question change the URL like the title?','vbegy'),
+		'desc' => esc_html__('Press ON to edit the URL','vbegy'),
 		'id' => 'change_question_url',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Delete question setting.',
+		'name' => esc_html__('Delete question setting.','vbegy'),
 		'class' => 'home_page_display',
 		'type' => 'info');
 	
 	$options[] = array(
-		'name' => 'Active user can delete the questions',
-		'desc' => 'Select ON if you want the user can delete the questions.',
+		'name' => esc_html__('Active user can delete the questions','vbegy'),
+		'desc' => esc_html__('Select ON if you want the user can delete the questions.','vbegy'),
 		'id' => 'question_delete',
 		'std' => 1,
 		'type' => 'checkbox');
@@ -1311,12 +1311,12 @@ function optionsframework_options() {
 	$options[] = array(
 		'type' => 'heading-2',
 		'id'   => 'questions_loop',
-		'name' => "Questions & Loop settings"
+		'name' => esc_html__("Questions & Loop settings",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => 'Select the meta for the questions loop',
-		'desc' => 'Select the meta for the questions loop.',
+		'name' => esc_html__('Select the meta for the questions loop','vbegy'),
+		'desc' => esc_html__('Select the meta for the questions loop.','vbegy'),
 		'id' => 'questions_meta',
 		'type' => 'multicheck',
 		'std' => array(
@@ -1339,36 +1339,36 @@ function optionsframework_options() {
 		));
 	
 	$options[] = array(
-		'name' => 'Display Like/disLike in the loop',
-		'desc' => 'Display Like/disLike in the loop enable or disable.',
+		'name' => esc_html__('Display Like/disLike in the loop','vbegy'),
+		'desc' => esc_html__('Display Like/disLike in the loop enable or disable.','vbegy'),
 		'id' => 'question_vote_show',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active the author image in the questions loop',
-		'desc' => 'If you put it OFF the author name will add in the meta.',
+		'name' => esc_html__('Active the author image in the questions loop','vbegy'),
+		'desc' => esc_html__('If you put it OFF the author name will add in the meta.','vbegy'),
 		'id' => 'question_author',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Click on to show featured image in the questions',
-		'desc' => 'Click on to show featured image in the questions.',
+		'name' => esc_html__('Click on to show featured image in the questions','vbegy'),
+		'desc' => esc_html__('Click on to show featured image in the questions.','vbegy'),
 		'id' => 'featured_image_loop',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Click on to enable the lightbox for featured image',
-		'desc' => 'Select ON to enable the lightbox for featured image.',
+		'name' => esc_html__('Click on to enable the lightbox for featured image','vbegy'),
+		'desc' => esc_html__('Select ON to enable the lightbox for featured image.','vbegy'),
 		'id' => 'featured_image_question_lightbox',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		"name" => "Set the width for the featured image for the questions",
-		"desc" => "Set the width for the featured image for the questions",
+		"name" => esc_html__("Set the width for the featured image for the questions",'vbegy'),
+		"desc" => esc_html__("Set the width for the featured image for the questions",'vbegy'),
 		"id" => "featured_image_question_width",
 		"type" => "sliderui",
 		'std' => 260,
@@ -1377,8 +1377,8 @@ function optionsframework_options() {
 		"max" => "600");
 	
 	$options[] = array(
-		"name" => "Set the height for the featured image for the questions",
-		"desc" => "Set the height for the featured image for the questions",
+		"name" => esc_html__("Set the height for the featured image for the questions",'vbegy'),
+		"desc" => esc_html__("Set the height for the featured image for the questions",'vbegy'),
 		"id" => "featured_image_question_height",
 		"type" => "sliderui",
 		'std' => 185,
@@ -1387,16 +1387,16 @@ function optionsframework_options() {
 		"max" => "600");
 	
 	$options[] = array(
-		'name'    => 'Featured image position',
-		'desc'    => 'Choose the featured image position.',
+		'name'    => esc_html__('Featured image position','vbegy'),
+		'desc'    => esc_html__('Choose the featured image position.','vbegy'),
 		'id'      => 'featured_position',
 		'options' => array("before" => "Before content","after" => "After content"),
 		'std'     => 'before',
 		'type'    => 'select');
 	
 	$options[] = array(
-		'name' => 'Video description settings at the question loop',
-		'desc' => 'Select ON if you want to let users to add video with their question.',
+		'name' => esc_html__('Video description settings at the question loop','vbegy'),
+		'desc' => esc_html__('Select ON if you want to let users to add video with their question.','vbegy'),
 		'id' => 'video_desc_active_loop',
 		'type' => 'checkbox');
 	
@@ -1406,16 +1406,16 @@ function optionsframework_options() {
 		'type' => 'heading-2');
 	
 	$options[] = array(
-		'name' => 'Video description position at the question loop',
-		'desc' => 'Choose the video description position.',
+		'name' => esc_html__('Video description position at the question loop','vbegy'),
+		'desc' => esc_html__('Choose the video description position.','vbegy'),
 		'id' => 'video_desc_loop',
 		'options' => array("before" => "Before content","after" => "After content"),
 		'std' => 'after',
 		'type' => 'select');
 	
 	$options[] = array(
-		"name" => "Set the width for the video description for the questions",
-		"desc" => "Set the width for the video description for the questions",
+		"name" => esc_html__("Set the width for the video description for the questions",'vbegy'),
+		"desc" => esc_html__("Set the width for the video description for the questions",'vbegy'),
 		"id" => "video_description_width",
 		"type" => "sliderui",
 		'std' => 260,
@@ -1424,15 +1424,15 @@ function optionsframework_options() {
 		"max" => "600");
 	
 	$options[] = array(
-		'name' => 'Or set the video description with 100%?',
-		'desc' => 'Select ON if you want to set the video description 100%.',
+		'name' => esc_html__('Or set the video description with 100%?','vbegy'),
+		'desc' => esc_html__('Select ON if you want to set the video description 100%.','vbegy'),
 		'id' => 'video_desc_100_loop',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		"name" => "Set the height for the video description for the questions",
-		"desc" => "Set the height for the video description for the questions",
+		"name" => esc_html__("Set the height for the video description for the questions",'vbegy'),
+		"desc" => esc_html__("Set the height for the video description for the questions",'vbegy'),
 		"id" => "video_description_height",
 		"type" => "sliderui",
 		'std' => 500,
@@ -1446,22 +1446,22 @@ function optionsframework_options() {
 		'div'  => 'div');
 	
 	$options[] = array(
-		'name' => 'Click on to hide the excerpt in questions',
-		'desc' => 'Click on to hide the excerpt in questions.',
+		'name' => esc_html__('Click on to hide the excerpt in questions','vbegy'),
+		'desc' => esc_html__('Click on to hide the excerpt in questions.','vbegy'),
 		'id' => 'excerpt_questions',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Click on to show continue reading button in the questions',
-		'desc' => 'Click on to show continue reading button in the questions.',
+		'name' => esc_html__('Click on to show continue reading button in the questions','vbegy'),
+		'desc' => esc_html__('Click on to show continue reading button in the questions.','vbegy'),
 		'id' => 'continue_reading_questions',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Excerpt type for question',
-		'desc' => 'Choose form here the excerpt type.',
+		'name' => esc_html__('Excerpt type for question','vbegy'),
+		'desc' => esc_html__('Choose form here the excerpt type.','vbegy'),
 		'id' => 'question_excerpt_type',
 		'type' => "select",
 		'options' => array(
@@ -1470,8 +1470,8 @@ function optionsframework_options() {
 		);
 	
 	$options[] = array(
-		'name' => 'Excerpt question',
-		'desc' => 'Put here the excerpt question.',
+		'name' => esc_html__('Excerpt question','vbegy'),
+		'desc' => esc_html__('Put here the excerpt question.','vbegy'),
 		'id' => 'question_excerpt',
 		'std' => 40,
 		'type' => 'text');
@@ -1483,19 +1483,19 @@ function optionsframework_options() {
 	$options[] = array(
 		'type' => 'heading-2',
 		'id'   => 'inner_question',
-		'name' => "Inner question"
+		'name' => esc_html__("Inner question",'vbegy'),
 	);
 	
 	$options[] = array(
-		'desc' => "Sort your sections.",
-		'name' => "Sort your sections.",
+		'desc' => esc_html__("Sort your sections.",'vbegy'),
+		'name' => esc_html__("Sort your sections.",'vbegy'),
 		'id' => "order_sections_question",
 		'std' => '',
 		'type' => 'sections');
 	
 	$options[] = array(
-		'name' => 'Select the meta for the single question page',
-		'desc' => 'Select the meta for the single question page.',
+		'name' => esc_html__('Select the meta for the single question page','vbegy'),
+		'desc' => esc_html__('Select the meta for the single question page.','vbegy'),
 		'id' => 'questions_meta_single',
 		'type' => 'multicheck',
 		'std' => array(
@@ -1516,101 +1516,101 @@ function optionsframework_options() {
 		));
 	
 	$options[] = array(
-		'name' => 'Video description position',
-		'desc' => 'Choose the video description position.',
+		'name' => esc_html__('Video description position','vbegy'),
+		'desc' => esc_html__('Choose the video description position.','vbegy'),
 		'id' => 'video_desc',
 		'options' => array("before" => "Before content","after" => "After content"),
 		'std' => 'after',
 		'type' => 'select');
 	
 	$options[] = array(
-		'name' => 'Click on to show featured image in the single question',
-		'desc' => 'Click on to show featured image in the single question.',
+		'name' => esc_html__('Click on to show featured image in the single question','vbegy'),
+		'desc' => esc_html__('Click on to show featured image in the single question.','vbegy'),
 		'id' => 'featured_image_single',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active poll for user only?',
-		'desc' => 'Select ON if you want the poll allow to users only.',
+		'name' => esc_html__('Active poll for user only?','vbegy'),
+		'desc' => esc_html__('Select ON if you want the poll allow to users only.','vbegy'),
 		'id' => 'poll_user_only',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Select the question control style',
-		'desc' => 'Select the question control style.',
+		'name' => esc_html__('Select the question control style','vbegy'),
+		'desc' => esc_html__('Select the question control style.','vbegy'),
 		'id' => 'question_control_style',
 		'std' => "style_1",
 		'type' => 'select',
 		'options' => array("style_1" => "Style 1","style_2" => "Style 2"));
 	
 	$options[] = array(
-		'name' => 'Active user can follow the questions',
-		'desc' => 'Select ON if you want the user can follow the questions.',
+		'name' => esc_html__('Active user can follow the questions','vbegy'),
+		'desc' => esc_html__('Select ON if you want the user can follow the questions.','vbegy'),
 		'id' => 'question_follow',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active close and open questions',
-		'desc' => 'Select ON if you want active close and open questions.',
+		'name' => esc_html__('Active close and open questions','vbegy'),
+		'desc' => esc_html__('Select ON if you want active close and open questions.','vbegy'),
 		'id' => 'question_close',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active the question bump',
-		'desc' => 'Select ON if you want the question bump.',
+		'name' => esc_html__('Active the question bump','vbegy'),
+		'desc' => esc_html__('Select ON if you want the question bump.','vbegy'),
 		'id' => 'question_bump',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Share enable or disable',
-		'desc' => 'Share enable or disable.',
+		'name' => esc_html__('Share enable or disable','vbegy'),
+		'desc' => esc_html__('Share enable or disable.','vbegy'),
 		'id' => 'question_share',
 		'std' => 1,
 		'type' => 'checkbox');
 		
 	$options[] = array(
-		'name' => 'Author info box enable or disable',
-		'desc' => 'Author info box enable or disable.',
+		'name' => esc_html__('Author info box enable or disable','vbegy'),
+		'desc' => esc_html__('Author info box enable or disable.','vbegy'),
 		'id' => 'question_author_box',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Answers enable or disable',
-		'desc' => 'Answers enable or disable.',
+		'name' => esc_html__('Answers enable or disable','vbegy'),
+		'desc' => esc_html__('Answers enable or disable.','vbegy'),
 		'id' => 'question_answers',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Click on to show featured image in the question answers',
-		'desc' => 'Select ON to enable the featured image in the question answers.',
+		'name' => esc_html__('Click on to show featured image in the question answers','vbegy'),
+		'desc' => esc_html__('Select ON to enable the featured image in the question answers.','vbegy'),
 		'id' => 'featured_image_question_answers',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Related question enable or disable',
-		'desc' => 'Related question enable or disable.',
+		'name' => esc_html__('Related question enable or disable','vbegy'),
+		'desc' => esc_html__('Related question enable or disable.','vbegy'),
 		'id' => 'related_question',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Related question number',
-		'desc' => 'Type related question number from here.',
+		'name' => esc_html__('Related question number','vbegy'),
+		'desc' => esc_html__('Type related question number from here.','vbegy'),
 		'id' => 'related_number_question',
 		'std' => '5',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => "Related question query",
-		'desc' => "Select your related question query.",
+		'name' => esc_html__("Related question query",'vbegy'),
+		'desc' => esc_html__("Select your related question query.",'vbegy'),
 		'id' => "related_query_question",
 		'std' => "categories",
 		'type' => "select",
@@ -1621,15 +1621,15 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Navigation question enable or disable',
-		'desc' => 'Navigation question (next and previous questions) enable or disable.',
+		'name' => esc_html__('Navigation question enable or disable','vbegy'),
+		'desc' => esc_html__('Navigation question (next and previous questions) enable or disable.','vbegy'),
 		'id' => 'question_navigation',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Navigation question for the same category only?',
-		'desc' => 'Navigation question (next and previous questions) for the same category only?',
+		'name' => esc_html__('Navigation question for the same category only?','vbegy'),
+		'desc' => esc_html__('Navigation question (next and previous questions) for the same category only?','vbegy'),
 		'id' => 'question_nav_category',
 		'std' => 1,
 		'type' => 'checkbox');
@@ -1640,7 +1640,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Answers & comments',
+		'name' => esc_html__('Answers & comments','vbegy'),
 		'icon' => 'format-chat',
 		'type' => 'heading');
 	
@@ -1649,49 +1649,49 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Enable or disable the editor in the comment or answer',
-		'desc' => 'Enable or disable the editor in the comment or answer.',
+		'name' => esc_html__('Enable or disable the editor in the comment or answer','vbegy'),
+		'desc' => esc_html__('Enable or disable the editor in the comment or answer.','vbegy'),
 		'id' => 'comment_editor',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Comments & answers enable or disable for user only',
-		'desc' => 'Comments & answers enable or disable for user only.',
+		'name' => esc_html__('Comments & answers enable or disable for user only','vbegy'),
+		'desc' => esc_html__('Comments & answers enable or disable for user only.','vbegy'),
 		'id' => 'post_comments_user',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Note: if you need all the answers/comments manually approved, From here Settings >> Discussion >> Comment must be manually approved.',
+		'name' => esc_html__('Note: if you need all the answers/comments manually approved, From here Settings >> Discussion >> Comment must be manually approved.','vbegy'),
 		'class' => 'home_page_display',
 		'type' => 'info');
 	
 	$options[] = array(
-		'name' => 'Choose answers/comments status for unlogged user only',
-		'desc' => 'Choose answers/comments status after unlogged user publish the answers/comments.',
+		'name' => esc_html__('Choose answers/comments status for unlogged user only','vbegy'),
+		'desc' => esc_html__('Choose answers/comments status after unlogged user publish the answers/comments.','vbegy'),
 		'id' => 'comment_unlogged',
 		'options' => array("publish" => "Publish","draft" => "Draft"),
 		'std' => 'draft',
 		'type' => 'select');
 	
 	$options[] = array(
-		'name' => 'Active the private answer or not?',
-		'desc' => 'Select ON if you want active the private answer.',
+		'name' => esc_html__('Active the private answer or not?','vbegy'),
+		'desc' => esc_html__('Select ON if you want active the private answer.','vbegy'),
 		'id' => 'private_answer',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'User can edit the comment or answer?',
-		'desc' => 'User can edit the comment or answer?',
+		'name' => esc_html__('User can edit the comment or answer?','vbegy'),
+		'desc' => esc_html__('User can edit the comment or answer?','vbegy'),
 		'id' => 'can_edit_comment',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		"name" => "User can edit the comment or answer after x hours",
-		"desc" => "If you want the user edit it all the time leave it 0",
+		"name" => esc_html__("User can edit the comment or answer after x hours",'vbegy'),
+		"desc" => esc_html__("If you want the user edit it all the time leave it 0",'vbegy'),
 		"id" => "can_edit_comment_after",
 		"type" => "sliderui",
 		'std' => 1,
@@ -1700,56 +1700,56 @@ function optionsframework_options() {
 		"max" => "24");
 	
 	$options[] = array(
-		'name' => "Edit comment page",
-		'desc' => "Create a page using the Edit post template and select it here",
+		'name' => esc_html__("Edit comment page",'vbegy'),
+		'desc' => esc_html__("Create a page using the Edit post template and select it here",'vbegy'),
 		'id' => 'edit_comment',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => 'After edit comment or answer approved auto or need to approved again?',
-		'desc' => 'Press ON to approved auto',
+		'name' => esc_html__('After edit comment or answer approved auto or need to approved again?','vbegy'),
+		'desc' => esc_html__('Press ON to approved auto','vbegy'),
 		'id' => 'comment_approved',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Select ON to hide the dislike at answers',
-		'desc' => 'If you put it ON the dislike will not show.',
+		'name' => esc_html__('Select ON to hide the dislike at answers','vbegy'),
+		'desc' => esc_html__('If you put it ON the dislike will not show.','vbegy'),
 		'id' => 'show_dislike_answers',
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Attachment in a new answer form',
-		'desc' => 'Select ON to enable the attachment in a new answer form.',
+		'name' => esc_html__('Attachment in a new answer form','vbegy'),
+		'desc' => esc_html__('Select ON to enable the attachment in a new answer form.','vbegy'),
 		'id' => 'attachment_answer',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Featured image in a new answer form',
-		'desc' => 'Select ON to enable the featured image in a new answer form.',
+		'name' => esc_html__('Featured image in a new answer form','vbegy'),
+		'desc' => esc_html__('Select ON to enable the featured image in a new answer form.','vbegy'),
 		'id' => 'featured_image_answer',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Click on to show featured image in the answers',
-		'desc' => 'Select ON to enable the featured image in the answers.',
+		'name' => esc_html__('Click on to show featured image in the answers','vbegy'),
+		'desc' => esc_html__('Select ON to enable the featured image in the answers.','vbegy'),
 		'id' => 'featured_image_in_answers',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Click on to enable the lightbox for featured image',
-		'desc' => 'Select ON to enable the lightbox for featured image.',
+		'name' => esc_html__('Click on to enable the lightbox for featured image','vbegy'),
+		'desc' => esc_html__('Select ON to enable the lightbox for featured image.','vbegy'),
 		'id' => 'featured_image_answers_lightbox',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		"name" => "Set the width for the featured image for the answers",
-		"desc" => "Set the width for the featured image for the answers",
+		"name" => esc_html__("Set the width for the featured image for the answers",'vbegy'),
+		"desc" => esc_html__("Set the width for the featured image for the answers",'vbegy'),
 		"id" => "featured_image_answer_width",
 		"type" => "sliderui",
 		'std' => 260,
@@ -1758,8 +1758,8 @@ function optionsframework_options() {
 		"max" => "600");
 	
 	$options[] = array(
-		"name" => "Set the height for the featured image for the answers",
-		"desc" => "Set the height for the featured image for the answers",
+		"name" => esc_html__("Set the height for the featured image for the answers",'vbegy'),
+		"desc" => esc_html__("Set the height for the featured image for the answers",'vbegy'),
 		"id" => "featured_image_answer_height",
 		"type" => "sliderui",
 		'std' => 185,
@@ -1768,16 +1768,16 @@ function optionsframework_options() {
 		"max" => "600");
 	
 	$options[] = array(
-		'name'    => 'Featured image position',
-		'desc'    => 'Choose the featured image position.',
+		'name'    => esc_html__('Featured image position','vbegy'),
+		'desc'    => esc_html__('Choose the featured image position.','vbegy'),
 		'id'      => 'featured_answer_position',
 		'options' => array("before" => "Before content","after" => "After content"),
 		'std'     => 'before',
 		'type'    => 'select');
 	
 	$options[] = array(
-		'name' => "Answers sort by",
-		'desc' => "Choose the answers sort by (it's show at the question page only)",
+		'name' => esc_html__("Answers sort by",'vbegy'),
+		'desc' => esc_html__("Choose the answers sort by (it's show at the question page only)",'vbegy'),
 		'id' => 'answers_sort',
 		'std' => 'date',
 		'type' => 'radio',
@@ -1794,7 +1794,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Payment setting',
+		'name' => esc_html__('Payment setting','vbegy'),
 		'icon' => 'tickets-alt',
 		'type' => 'heading',
 		'std'     => 'general_setting',
@@ -1809,19 +1809,19 @@ function optionsframework_options() {
 	$options[] = array(
 		'type' => 'heading-2',
 		'id'   => 'payment_setting',
-		'name' => "Payment setting"
+		'name' => esc_html__("Payment setting",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => 'Enable PayPal sandbox',
-		'desc' => 'PayPal sandbox can be used to test payments.',
+		'name' => esc_html__('Enable PayPal sandbox','vbegy'),
+		'desc' => esc_html__('PayPal sandbox can be used to test payments.','vbegy'),
 		'id' => 'paypal_sandbox',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Currency code',
-		'desc' => 'Choose form here the currency code.',
+		'name' => esc_html__('Currency code','vbegy'),
+		'desc' => esc_html__('Choose form here the currency code.','vbegy'),
 		'id' => 'currency_code',
 		'std' => 'USD',
 		'type' => "select",
@@ -1834,14 +1834,14 @@ function optionsframework_options() {
 		);
 	
 	$options[] = array(
-		'name' => "PayPal email",
-		'desc' => "put your PayPal email",
+		'name' => esc_html__("PayPal email",'vbegy'),
+		'desc' => esc_html__("put your PayPal email",'vbegy'),
 		'id' => 'paypal_email',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => "PayPal Identity Token",
-		'desc' => "From here Profile >> Profile and settings >> My selling tools >> Website preferences >> Update >> Identity Token",
+		'name' => esc_html__("PayPal Identity Token",'vbegy'),
+		'desc' => esc_html__("From here Profile >> Profile and settings >> My selling tools >> Website preferences >> Update >> Identity Token",'vbegy'),
 		'id' => 'identity_token',
 		'type' => 'text');
 	
@@ -1853,26 +1853,26 @@ function optionsframework_options() {
 	$options[] = array(
 		'type' => 'heading-2',
 		'id'   => 'pay_to_ask',
-		'name' => "Pay to ask"
+		'name' => esc_html__("Pay to ask",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => 'Pay to ask question',
-		'desc' => 'Select ON to active the pay to ask question.',
+		'name' => esc_html__('Pay to ask question','vbegy'),
+		'desc' => esc_html__('Select ON to active the pay to ask question.','vbegy'),
 		'id' => 'pay_ask',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => "Choose the groups add a question without pay",
-		'desc' => "Choose the groups add a question without pay",
+		'name' => esc_html__("Choose the groups add a question without pay",'vbegy'),
+		'desc' => esc_html__("Choose the groups add a question without pay",'vbegy'),
 		'id' => 'payment_group',
 		'type' => 'multicheck',
 		'options' => $new_roles);
 	
 	$options[] = array(
-		"name" => "What's the price to ask a new question?",
-		"desc" => "Type here the price of the payment to ask a new question",
+		"name" => esc_html__("What's the price to ask a new question?",'vbegy'),
+		"desc" => esc_html__("Type here the price of the payment to ask a new question",'vbegy'),
 		"id" => "pay_ask_payment",
 		"type" => "text",
 		'std' => 10,);
@@ -1885,26 +1885,26 @@ function optionsframework_options() {
 	$options[] = array(
 		'type' => 'heading-2',
 		'id'   => 'pay_to_sticky',
-		'name' => "Pay to sticky question"
+		'name' => esc_html__("Pay to sticky question",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => 'Pay to sticky question at the top',
-		'desc' => 'Select ON to active the pay to sticky question.',
+		'name' => esc_html__('Pay to sticky question at the top','vbegy'),
+		'desc' => esc_html__('Select ON to active the pay to sticky question.','vbegy'),
 		'id' => 'pay_to_sticky',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		"name" => "What's the price to sticky the question?",
-		"desc" => "Type here the price of the payment to sticky the question",
+		"name" => esc_html__("What's the price to sticky the question?",'vbegy'),
+		"desc" => esc_html__("Type here the price of the payment to sticky the question",'vbegy'),
 		"id" => "pay_sticky_payment",
 		"type" => "text",
 		'std' => 5,);
 	
 	$options[] = array(
-		"name" => "What's the days to sticky the question?",
-		"desc" => "Type here the days of the payment to sticky the question",
+		"name" => esc_html__("What's the days to sticky the question?",'vbegy'),
+		"desc" => esc_html__("Type here the days of the payment to sticky the question",'vbegy'),
 		"id" => "days_sticky",
 		"type" => "sliderui",
 		'std' => 7,
@@ -1920,24 +1920,24 @@ function optionsframework_options() {
 	$options[] = array(
 		'type' => 'heading-2',
 		'id'   => 'coupons_setting',
-		'name' => "Coupons setting"
+		'name' => esc_html__("Coupons setting",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => 'Active the Coupons',
-		'desc' => 'Select ON to active the coupons.',
+		'name' => esc_html__('Active the Coupons','vbegy'),
+		'desc' => esc_html__('Select ON to active the coupons.','vbegy'),
 		'id' => 'active_coupons',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Show the free coupons when add a new question or sticky questions?',
-		'desc' => 'Select ON to show the free coupons.',
+		'name' => esc_html__('Show the free coupons when add a new question or sticky questions?','vbegy'),
+		'desc' => esc_html__('Select ON to show the free coupons.','vbegy'),
 		'id' => 'free_coupons',
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'desc' => "Add your Coupons.",
+		'desc' => esc_html__("Add your Coupons.",'vbegy'),
 		'id' => "coupons",
 		'std' => '',
 		'type' => 'coupons');
@@ -1948,7 +1948,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Captcha setting',
+		'name' => esc_html__('Captcha setting','vbegy'),
 		'icon' => 'admin-network',
 		'type' => 'heading');
 	
@@ -1957,57 +1957,57 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Captcha enable or disable (in ask question form)',
-		'desc' => 'Captcha enable or disable (in ask question form).',
+		'name' => esc_html__('Captcha enable or disable (in ask question form)','vbegy'),
+		'desc' => esc_html__('Captcha enable or disable (in ask question form).','vbegy'),
 		'id' => 'the_captcha',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Captcha enable or disable (in add post form)',
-		'desc' => 'Captcha enable or disable (in add post form).',
+		'name' => esc_html__('Captcha enable or disable (in add post form)','vbegy'),
+		'desc' => esc_html__('Captcha enable or disable (in add post form).','vbegy'),
 		'id' => 'the_captcha_post',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Captcha enable or disable (in register form)',
-		'desc' => 'Captcha enable or disable (in register form).',
+		'name' => esc_html__('Captcha enable or disable (in register form)','vbegy'),
+		'desc' => esc_html__('Captcha enable or disable (in register form).','vbegy'),
 		'id' => 'the_captcha_register',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Captcha enable or disable (in login form)',
-		'desc' => 'Captcha enable or disable (in login form).',
+		'name' => esc_html__('Captcha enable or disable (in login form)','vbegy'),
+		'desc' => esc_html__('Captcha enable or disable (in login form).','vbegy'),
 		'id' => 'the_captcha_login',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Captcha enable or disable (in answer form)',
-		'desc' => 'Captcha enable or disable (in answer form).',
+		'name' => esc_html__('Captcha enable or disable (in answer form)','vbegy'),
+		'desc' => esc_html__('Captcha enable or disable (in answer form).','vbegy'),
 		'id' => 'the_captcha_answer',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Captcha enable or disable (in comment form)',
-		'desc' => 'Captcha enable or disable (in comment form).',
+		'name' => esc_html__('Captcha enable or disable (in comment form)','vbegy'),
+		'desc' => esc_html__('Captcha enable or disable (in comment form).','vbegy'),
 		'id' => 'the_captcha_comment',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Captcha enable or disable (in send message form)',
-		'desc' => 'Captcha enable or disable (in send message form).',
+		'name' => esc_html__('Captcha enable or disable (in send message form)','vbegy'),
+		'desc' => esc_html__('Captcha enable or disable (in send message form).','vbegy'),
 		'id' => 'the_captcha_message',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => "Captcha style",
-		'desc' => "Choose the captcha style",
+		'name' => esc_html__("Captcha style",'vbegy'),
+		'desc' => esc_html__("Choose the captcha style",'vbegy'),
 		'id' => 'captcha_style',
 		'std' => 'question_answer',
 		'type' => 'radio',
@@ -2019,22 +2019,22 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Captcha answer enable or disable in forms',
-		'desc' => 'Captcha answer enable or disable.',
+		'name' => esc_html__('Captcha answer enable or disable in forms','vbegy'),
+		'desc' => esc_html__('Captcha answer enable or disable.','vbegy'),
 		'id' => 'show_captcha_answer',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => "Captcha question",
-		'desc' => "put the Captcha question",
+		'name' => esc_html__("Captcha question",'vbegy'),
+		'desc' => esc_html__("put the Captcha question",'vbegy'),
 		'id' => 'captcha_question',
 		'type' => 'text',
 		'std' => "What is the capital of Egypt?");
 	
 	$options[] = array(
-		'name' => "Captcha answer",
-		'desc' => "put the Captcha answer",
+		'name' => esc_html__("Captcha answer",'vbegy'),
+		'desc' => esc_html__("put the Captcha answer",'vbegy'),
 		'id' => 'captcha_answer',
 		'type' => 'text',
 		'std' => "Cairo");
@@ -2045,7 +2045,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'User setting',
+		'name' => esc_html__('User setting','vbegy'),
 		'icon' => 'admin-users',
 		'type' => 'heading');
 	
@@ -2054,36 +2054,36 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Ask question to the users',
-		'desc' => 'Any one can ask question to the users enable or disable.',
+		'name' => esc_html__('Ask question to the users','vbegy'),
+		'desc' => esc_html__('Any one can ask question to the users enable or disable.','vbegy'),
 		'id'   => 'ask_question_to_users',
 		'std'  => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'All the site for the register users only?',
-		'desc' => 'Click ON to active the site for the register users only.',
+		'name' => esc_html__('All the site for the register users only?','vbegy'),
+		'desc' => esc_html__('Click ON to active the site for the register users only.','vbegy'),
 		'id' => 'site_users_only',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active the notifications system in site?',
-		'desc' => 'Active the notifications system enable or disable.',
+		'name' => esc_html__('Active the notifications system in site?','vbegy'),
+		'desc' => esc_html__('Active the notifications system enable or disable.','vbegy'),
 		'id' => 'active_notifications',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active the activity log in site?',
-		'desc' => 'Active the activity log enable or disable.',
+		'name' => esc_html__('Active the activity log in site?','vbegy'),
+		'desc' => esc_html__('Active the activity log enable or disable.','vbegy'),
 		'id' => 'active_activity_log',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Select the user links',
-		'desc' => 'Select the user links.',
+		'name' => esc_html__('Select the user links','vbegy'),
+		'desc' => esc_html__('Select the user links.','vbegy'),
 		'id' => 'user_links',
 		'type' => 'multicheck',
 		'std' => array(
@@ -2136,8 +2136,8 @@ function optionsframework_options() {
 		));
 	
 	$options[] = array(
-		'name' => 'Select the columns in the user admin',
-		'desc' => 'Select the columns in the user admin.',
+		'name' => esc_html__('Select the columns in the user admin','vbegy'),
+		'desc' => esc_html__('Select the columns in the user admin.','vbegy'),
 		'id' => 'user_meta_admin',
 		'type' => 'multicheck',
 		'std' => array(
@@ -2152,260 +2152,260 @@ function optionsframework_options() {
 		));
 	
 	$options[] = array(
-		'name' => "Login and register page",
-		'desc' => "Select the Login and register page",
+		'name' => esc_html__("Login and register page",'vbegy'),
+		'desc' => esc_html__("Select the Login and register page",'vbegy'),
 		'id' => 'login_register_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User edit profile page",
-		'desc' => "Select the User edit profile page",
+		'name' => esc_html__("User edit profile page",'vbegy'),
+		'desc' => esc_html__("Select the User edit profile page",'vbegy'),
 		'id' => 'user_edit_profile_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "Activity log page",
-		'desc' => "Select the Activity log page",
+		'name' => esc_html__("Activity log page",'vbegy'),
+		'desc' => esc_html__("Select the Activity log page",'vbegy'),
 		'id' => 'activity_log_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "Notifications page",
-		'desc' => "Select the Notifications page",
+		'name' => esc_html__("Notifications page",'vbegy'),
+		'desc' => esc_html__("Select the Notifications page",'vbegy'),
 		'id' => 'notifications_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User post page",
-		'desc' => "Select User post page",
+		'name' => esc_html__("User post page",'vbegy'),
+		'desc' => esc_html__("Select User post page",'vbegy'),
 		'id' => 'post_user_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User comment page",
-		'desc' => "Select User comment page",
+		'name' => esc_html__("User comment page",'vbegy'),
+		'desc' => esc_html__("Select User comment page",'vbegy'),
 		'id' => 'comment_user_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User question page",
-		'desc' => "Select User question page",
+		'name' => esc_html__("User question page",'vbegy'),
+		'desc' => esc_html__("Select User question page",'vbegy'),
 		'id' => 'question_user_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User polls page",
-		'desc' => "Select User polls page",
+		'name' => esc_html__("User polls page",'vbegy'),
+		'desc' => esc_html__("Select User polls page",'vbegy'),
 		'id' => 'polls_user_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User asked question page",
-		'desc' => "Select User asked question page",
+		'name' => esc_html__("User asked question page",'vbegy'),
+		'desc' => esc_html__("Select User asked question page",'vbegy'),
 		'id' => 'asked_question_user_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "Paid questions page",
-		'desc' => "Select the paid questions page",
+		'name' => esc_html__("Paid questions page",'vbegy'),
+		'desc' => esc_html__("Select the paid questions page",'vbegy'),
 		'id' => 'paid_question',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User answer page",
-		'desc' => "Select User answer page",
+		'name' => esc_html__("User answer page",'vbegy'),
+		'desc' => esc_html__("Select User answer page",'vbegy'),
 		'id' => 'answer_user_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User best answer page",
-		'desc' => "Select User best answer page",
+		'name' => esc_html__("User best answer page",'vbegy'),
+		'desc' => esc_html__("Select User best answer page",'vbegy'),
 		'id' => 'best_answer_user_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User favorite question page",
-		'desc' => "Select User favorite question page",
+		'name' => esc_html__("User favorite question page",'vbegy'),
+		'desc' => esc_html__("Select User favorite question page",'vbegy'),
 		'id' => 'favorite_user_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User followed question page",
-		'desc' => "Select User followed question page",
+		'name' => esc_html__("User followed question page",'vbegy'),
+		'desc' => esc_html__("Select User followed question page",'vbegy'),
 		'id' => 'followed_user_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User point page",
-		'desc' => "Select User point page",
+		'name' => esc_html__("User point page",'vbegy'),
+		'desc' => esc_html__("Select User point page",'vbegy'),
 		'id' => 'point_user_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "Authors I Follow page",
-		'desc' => "Select Authors I Follow page",
+		'name' => esc_html__("Authors I Follow page",'vbegy'),
+		'desc' => esc_html__("Select Authors I Follow page",'vbegy'),
 		'id' => 'i_follow_user_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User Followers page",
-		'desc' => "Select User Followers page",
+		'name' => esc_html__("User Followers page",'vbegy'),
+		'desc' => esc_html__("Select User Followers page",'vbegy'),
 		'id' => 'followers_user_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User follow question page",
-		'desc' => "Select User follow question page",
+		'name' => esc_html__("User follow question page",'vbegy'),
+		'desc' => esc_html__("Select User follow question page",'vbegy'),
 		'id' => 'follow_question_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User follow answer page",
-		'desc' => "Select User follow answer page",
+		'name' => esc_html__("User follow answer page",'vbegy'),
+		'desc' => esc_html__("Select User follow answer page",'vbegy'),
 		'id' => 'follow_answer_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User follow posts page",
-		'desc' => "Select User follow posts page",
+		'name' => esc_html__("User follow posts page",'vbegy'),
+		'desc' => esc_html__("Select User follow posts page",'vbegy'),
 		'id' => 'follow_post_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "User follow comment page",
-		'desc' => "Select User follow comment page",
+		'name' => esc_html__("User follow comment page",'vbegy'),
+		'desc' => esc_html__("Select User follow comment page",'vbegy'),
 		'id' => 'follow_comment_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => 'Add profile picture in edit profile form',
-		'desc' => 'Add profile picture in edit profile form.',
+		'name' => esc_html__('Add profile picture in edit profile form','vbegy'),
+		'desc' => esc_html__('Add profile picture in edit profile form.','vbegy'),
 		'id' => 'profile_picture_profile',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Profile picture in edit profile form is required',
-		'desc' => 'Profile picture in edit profile form is required.',
+		'name' => esc_html__('Profile picture in edit profile form is required','vbegy'),
+		'desc' => esc_html__('Profile picture in edit profile form is required.','vbegy'),
 		'id' => 'profile_picture_required_profile',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Add country in edit profile form',
-		'desc' => 'Add country in edit profile form.',
+		'name' => esc_html__('Add country in edit profile form','vbegy'),
+		'desc' => esc_html__('Add country in edit profile form.','vbegy'),
 		'id' => 'country_profile',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Country in edit profile form is required',
-		'desc' => 'Country in edit profile form is required.',
+		'name' => esc_html__('Country in edit profile form is required','vbegy'),
+		'desc' => esc_html__('Country in edit profile form is required.','vbegy'),
 		'id' => 'country_required_profile',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Add city in edit profile form',
-		'desc' => 'Add city in edit profile form.',
+		'name' => esc_html__('Add city in edit profile form','vbegy'),
+		'desc' => esc_html__('Add city in edit profile form.','vbegy'),
 		'id' => 'city_profile',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'City in edit profile form is required',
-		'desc' => 'City in edit profile form is required.',
+		'name' => esc_html__('City in edit profile form is required','vbegy'),
+		'desc' => esc_html__('City in edit profile form is required.','vbegy'),
 		'id' => 'city_required_profile',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Add age in edit profile form',
-		'desc' => 'Add age in edit profile form.',
+		'name' => esc_html__('Add age in edit profile form','vbegy'),
+		'desc' => esc_html__('Add age in edit profile form.','vbegy'),
 		'id' => 'age_profile',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Age in edit profile form is required',
-		'desc' => 'Age in edit profile form is required.',
+		'name' => esc_html__('Age in edit profile form is required','vbegy'),
+		'desc' => esc_html__('Age in edit profile form is required.','vbegy'),
 		'id' => 'age_required_profile',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Add phone in edit profile form',
-		'desc' => 'Add phone in edit profile form.',
+		'name' => esc_html__('Add phone in edit profile form','vbegy'),
+		'desc' => esc_html__('Add phone in edit profile form.','vbegy'),
 		'id' => 'phone_profile',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Phone in edit profile form is required',
-		'desc' => 'Phone in edit profile form is required.',
+		'name' => esc_html__('Phone in edit profile form is required','vbegy'),
+		'desc' => esc_html__('Phone in edit profile form is required.','vbegy'),
 		'id' => 'phone_required_profile',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Add sex in edit profile form',
-		'desc' => 'Add sex in edit profile form.',
+		'name' => esc_html__('Add sex in edit profile form','vbegy'),
+		'desc' => esc_html__('Add sex in edit profile form.','vbegy'),
 		'id' => 'sex_profile',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Sex in edit profile form is required',
-		'desc' => 'Sex in edit profile form is required.',
+		'name' => esc_html__('Sex in edit profile form is required','vbegy'),
+		'desc' => esc_html__('Sex in edit profile form is required.','vbegy'),
 		'id' => 'sex_required_profile',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Add names in edit profile form',
-		'desc' => 'Add names in edit profile form.',
+		'name' => esc_html__('Add names in edit profile form','vbegy'),
+		'desc' => esc_html__('Add names in edit profile form.','vbegy'),
 		'id' => 'names_profile',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Names in edit profile form is required',
-		'desc' => 'Names in edit profile form is required.',
+		'name' => esc_html__('Names in edit profile form is required','vbegy'),
+		'desc' => esc_html__('Names in edit profile form is required.','vbegy'),
 		'id' => 'names_required_profile',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Add url in edit profile form',
-		'desc' => 'Add url in edit profile form.',
+		'name' => esc_html__('Add url in edit profile form','vbegy'),
+		'desc' => esc_html__('Add url in edit profile form.','vbegy'),
 		'id' => 'url_profile',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Url in edit profile form is required',
-		'desc' => 'Url in edit profile form is required.',
+		'name' => esc_html__('Url in edit profile form is required','vbegy'),
+		'desc' => esc_html__('Url in edit profile form is required.','vbegy'),
 		'id' => 'url_required_profile',
 		'std' => 0,
 		'type' => 'checkbox');
@@ -2418,7 +2418,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Message setting',
+		'name' => esc_html__('Message setting','vbegy'),
 		'icon' => 'email-alt',
 		'type' => 'heading');
 	
@@ -2427,65 +2427,65 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Active messages to the users',
-		'desc' => 'Any one can send message to the users enable or disable.',
+		'name' => esc_html__('Active messages to the users','vbegy'),
+		'desc' => esc_html__('Any one can send message to the users enable or disable.','vbegy'),
 		'id'   => 'active_message',
 		'std'  => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => "Messages page",
-		'desc' => "Select the messages page",
+		'name' => esc_html__("Messages page",'vbegy'),
+		'desc' => esc_html__("Select the messages page",'vbegy'),
 		'id' => 'messages_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => 'Choose message status',
-		'desc' => 'Choose message status after user publish the question.',
+		'name' => esc_html__('Choose message status','vbegy'),
+		'desc' => esc_html__('Choose message status after user publish the question.','vbegy'),
 		'id' => 'message_publish',
 		'options' => array("publish" => "Publish","draft" => "Draft"),
 		'std' => 'draft',
 		'type' => 'select');
 	
 	$options[] = array(
-		'name' => 'Any one can send message without register',
-		'desc' => 'Any one can send message without register enable or disable.',
+		'name' => esc_html__('Any one can send message without register','vbegy'),
+		'desc' => esc_html__('Any one can send message without register enable or disable.','vbegy'),
 		'id' => 'send_message_no_register',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Details in send message form is required',
-		'desc' => 'Details in send message form is required.',
+		'name' => esc_html__('Details in send message form is required','vbegy'),
+		'desc' => esc_html__('Details in send message form is required.','vbegy'),
 		'id' => 'comment_message',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Editor enable or disable for details in send message form',
-		'desc' => 'Editor enable or disable for details in send message form.',
+		'name' => esc_html__('Editor enable or disable for details in send message form','vbegy'),
+		'desc' => esc_html__('Editor enable or disable for details in send message form.','vbegy'),
 		'id' => 'editor_message_details',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Send email after send a message?',
-		'desc' => 'Send email after send a message?.',
+		'name' => esc_html__('Send email after send a message?','vbegy'),
+		'desc' => esc_html__('Send email after send a message?.','vbegy'),
 		'id' => 'send_email_message',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active user can delete the messages',
-		'desc' => 'Select ON if you want the user can delete the messages.',
+		'name' => esc_html__('Active user can delete the messages','vbegy'),
+		'desc' => esc_html__('Select ON if you want the user can delete the messages.','vbegy'),
 		'id' => 'message_delete',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active user can seen the message by send notification',
-		'desc' => 'Select ON if you want the user know if any one seen the message by send notification.',
+		'name' => esc_html__('Active user can seen the message by send notification','vbegy'),
+		'desc' => esc_html__('Select ON if you want the user know if any one seen the message by send notification.','vbegy'),
 		'id' => 'seen_message',
 		'std' => 1,
 		'type' => 'checkbox');
@@ -2496,7 +2496,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Badges & Points setting',
+		'name' => esc_html__('Badges & Points setting','vbegy'),
 		'icon' => 'star-filled',
 		'type' => 'heading',
 		'std'     => 'general_setting',
@@ -2509,11 +2509,11 @@ function optionsframework_options() {
 	$options[] = array(
 		'type' => 'heading-2',
 		'id'   => 'badges_setting',
-		'name' => "Badges setting"
+		'name' => esc_html__("Badges setting",'vbegy'),
 	);
 	
 	$options[] = array(
-		'desc' => "Add your badges.",
+		'desc' => esc_html__("Add your badges.",'vbegy'),
 		'id' => "badges",
 		'std' => '',
 		'type' => 'badges');
@@ -2526,61 +2526,61 @@ function optionsframework_options() {
 	$options[] = array(
 		'type' => 'heading-2',
 		'id'   => 'points_setting',
-		'name' => "Points setting"
+		'name' => esc_html__("Points setting",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => "Points for add a new question (put it 0 for off the option)",
-		'desc' => "put the Points choose for add a new question",
+		'name' => esc_html__("Points for add a new question (put it 0 for off the option)",'vbegy'),
+		'desc' => esc_html__("put the Points choose for add a new question",'vbegy'),
 		'id' => 'point_add_question',
 		'type' => 'text',
 		'std' => 0);
 	
 	$options[] = array(
-		'name' => "Points for add a new post (put it 0 for off the option)",
-		'desc' => "put the Points choose for add a new post",
+		'name' => esc_html__("Points for add a new post (put it 0 for off the option)",'vbegy'),
+		'desc' => esc_html__("put the Points choose for add a new post",'vbegy'),
 		'id' => 'point_add_post',
 		'type' => 'text',
 		'std' => 0);
 	
 	$options[] = array(
-		'name' => "Points choose best answer",
-		'desc' => "put the Points choose best answer",
+		'name' => esc_html__("Points choose best answer",'vbegy'),
+		'desc' => esc_html__("put the Points choose best answer",'vbegy'),
 		'id' => 'point_best_answer',
 		'type' => 'text',
 		'std' => 5);
 	
 	$options[] = array(
-		'name' => "Points Rating question",
-		'desc' => "put the Points Rating question",
+		'name' => esc_html__("Points Rating question",'vbegy'),
+		'desc' => esc_html__("put the Points Rating question",'vbegy'),
 		'id' => 'point_rating_question',
 		'type' => 'text',
 		'std' => 0);
 	
 	$options[] = array(
-		'name' => "Points add answer",
-		'desc' => "put the Points add answer",
+		'name' => esc_html__("Points add answer",'vbegy'),
+		'desc' => esc_html__("put the Points add answer",'vbegy'),
 		'id' => 'point_add_comment',
 		'type' => 'text',
 		'std' => 2);
 	
 	$options[] = array(
-		'name' => "Points Rating answer",
-		'desc' => "put the Points Rating answer",
+		'name' => esc_html__("Points Rating answer",'vbegy'),
+		'desc' => esc_html__("put the Points Rating answer",'vbegy'),
 		'id' => 'point_rating_answer',
 		'type' => 'text',
 		'std' => 1);
 	
 	$options[] = array(
-		'name' => "Points following user",
-		'desc' => "put the Points following user",
+		'name' => esc_html__("Points following user",'vbegy'),
+		'desc' => esc_html__("put the Points following user",'vbegy'),
 		'id' => 'point_following_me',
 		'type' => 'text',
 		'std' => 1);
 	
 	$options[] = array(
-		'name' => "Points for a new user",
-		'desc' => "put the Points for a new user",
+		'name' => esc_html__("Points for a new user",'vbegy'),
+		'desc' => esc_html__("put the Points for a new user",'vbegy'),
 		'id' => 'point_new_user',
 		'type' => 'text',
 		'std' => 20);
@@ -2591,7 +2591,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'User group setting',
+		'name' => esc_html__('User group setting','vbegy'),
 		'icon' => 'groups',
 		'type' => 'heading');
 	
@@ -2600,55 +2600,55 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Select ON to can add a custom permission.',
-		'desc' => 'Select ON to can add a custom permission.',
+		'name' => esc_html__('Select ON to can add a custom permission.','vbegy'),
+		'desc' => esc_html__('Select ON to can add a custom permission.','vbegy'),
 		'id' => 'custom_permission',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => "Without login user",
+		'name' => esc_html__("Without login user",'vbegy'),
 		'class' => 'home_page_display custom_permission_note',
 		'type' => 'info');
 	
 	$options[] = array(
-		'name' => 'Select ON to can add a question.',
-		'desc' => 'Select ON to can add a question.',
+		'name' => esc_html__('Select ON to can add a question.','vbegy'),
+		'desc' => esc_html__('Select ON to can add a question.','vbegy'),
 		'id' => 'ask_question',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Select ON to can show other questions.',
-		'desc' => 'Select ON to can show other questions.',
+		'name' => esc_html__('Select ON to can show other questions.','vbegy'),
+		'desc' => esc_html__('Select ON to can show other questions.','vbegy'),
 		'id' => 'show_question',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Select ON to can add a answer.',
-		'desc' => 'Select ON to can add a answer.',
+		'name' => esc_html__('Select ON to can add a answer.','vbegy'),
+		'desc' => esc_html__('Select ON to can add a answer.','vbegy'),
 		'id' => 'add_answer',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Select ON to can show other answers.',
-		'desc' => 'Select ON to can show other answers.',
+		'name' => esc_html__('Select ON to can show other answers.','vbegy'),
+		'desc' => esc_html__('Select ON to can show other answers.','vbegy'),
 		'id' => 'show_answer',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Select ON to can add a post.',
-		'desc' => 'Select ON to can add a post.',
+		'name' => esc_html__('Select ON to can add a post.','vbegy'),
+		'desc' => esc_html__('Select ON to can add a post.','vbegy'),
 		'id' => 'add_post',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Select ON to can send a message.',
-		'desc' => 'Select ON to can send a message.',
+		'name' => esc_html__('Select ON to can send a message.','vbegy'),
+		'desc' => esc_html__('Select ON to can send a message.','vbegy'),
 		'id' => 'send_message',
 		'std' => 1,
 		'type' => 'checkbox');
@@ -2664,7 +2664,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Register setting',
+		'name' => esc_html__('Register setting','vbegy'),
 		'icon' => 'lock',
 		'type' => 'heading');
 	
@@ -2673,59 +2673,59 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Register in default group",
-		'desc' => "Select the default group",
+		'name' => esc_html__("Register in default group",'vbegy'),
+		'desc' => esc_html__("Select the default group",'vbegy'),
 		'id' => 'default_group',
 		'std' => 'subscriber',
 		'type' => 'select',
 		'options' => $new_roles);
 	
 	$options[] = array(
-		'name' => 'After register go to?',
-		'desc' => 'After register go to?',
+		'name' => esc_html__('After register go to?','vbegy'),
+		'desc' => esc_html__('After register go to?','vbegy'),
 		'id' => 'after_register',
 		'std' => "same_page",
 		'type' => 'select',
 		'options' => array("same_page" => "Same page","home" => "Home","profile" => "Profile","custom_link" => "Custom link"));
 	
 	$options[] = array(
-		'name' => "Type the link if you don't like above",
-		'desc' => "Type the link if you don't like above",
+		'name' => esc_html__("Type the link if you don't like above",'vbegy'),
+		'desc' => esc_html__("Type the link if you don't like above",'vbegy'),
 		'id' => 'after_register_link',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'After login go to?',
-		'desc' => 'After login go to?',
+		'name' => esc_html__('After login go to?','vbegy'),
+		'desc' => esc_html__('After login go to?','vbegy'),
 		'id' => 'after_login',
 		'std' => "same_page",
 		'type' => 'select',
 		'options' => array("same_page" => "Same page","home" => "Home","profile" => "Profile","custom_link" => "Custom link"));
 	
 	$options[] = array(
-		'name' => "Type the link if you don't like above",
-		'desc' => "Type the link if you don't like above",
+		'name' => esc_html__("Type the link if you don't like above",'vbegy'),
+		'desc' => esc_html__("Type the link if you don't like above",'vbegy'),
 		'id' => 'after_login_link',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Confirm with email enable or disable (in register form)',
-		'desc' => 'Confirm with email enable or disable.',
+		'name' => esc_html__('Confirm with email enable or disable (in register form)','vbegy'),
+		'desc' => esc_html__('Confirm with email enable or disable.','vbegy'),
 		'id' => 'confirm_email',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'The membership under review?',
-		'desc' => 'Check ON to review the users before complete the register.',
+		'name' => esc_html__('The membership under review?','vbegy'),
+		'desc' => esc_html__('Check ON to review the users before complete the register.','vbegy'),
 		'id' => 'user_review',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	/*
 	$options[] = array(
-		'name'    => 'Select the search options',
-		'desc'    => 'Select the search options on the search page.',
+		'name'    => esc_html__('Select the search options','vbegy'),
+		'desc'    => esc_html__('Select the search options on the search page.','vbegy'),
 		'id'      => 'search_attrs',
 		'type'    => 'multicheck_sort',
 		'sort'    => 'yes',
@@ -2754,134 +2754,134 @@ function optionsframework_options() {
 	*/
 	
 	$options[] = array(
-		'name' => 'Add profile picture in register form',
-		'desc' => 'Add profile picture in register form.',
+		'name' => esc_html__('Add profile picture in register form','vbegy'),
+		'desc' => esc_html__('Add profile picture in register form.','vbegy'),
 		'id' => 'profile_picture',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Profile picture in register form is required',
-		'desc' => 'Profile picture in register form is required.',
+		'name' => esc_html__('Profile picture in register form is required','vbegy'),
+		'desc' => esc_html__('Profile picture in register form is required.','vbegy'),
 		'id' => 'profile_picture_required',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Add country in register form',
-		'desc' => 'Add country in register form.',
+		'name' => esc_html__('Add country in register form','vbegy'),
+		'desc' => esc_html__('Add country in register form.','vbegy'),
 		'id' => 'country_register',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Country in register form is required',
-		'desc' => 'Country in register form is required.',
+		'name' => esc_html__('Country in register form is required','vbegy'),
+		'desc' => esc_html__('Country in register form is required.','vbegy'),
 		'id' => 'country_required',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Add city in register form',
-		'desc' => 'Add city in register form.',
+		'name' => esc_html__('Add city in register form','vbegy'),
+		'desc' => esc_html__('Add city in register form.','vbegy'),
 		'id' => 'city_register',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'City in register form is required',
-		'desc' => 'City in register form is required.',
+		'name' => esc_html__('City in register form is required','vbegy'),
+		'desc' => esc_html__('City in register form is required.','vbegy'),
 		'id' => 'city_required',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Add age in register form',
-		'desc' => 'Add age in register form.',
+		'name' => esc_html__('Add age in register form','vbegy'),
+		'desc' => esc_html__('Add age in register form.','vbegy'),
 		'id' => 'age_register',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Age in register form is required',
-		'desc' => 'Age in register form is required.',
+		'name' => esc_html__('Age in register form is required','vbegy'),
+		'desc' => esc_html__('Age in register form is required.','vbegy'),
 		'id' => 'age_required',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Add phone in register form',
-		'desc' => 'Add phone in register form.',
+		'name' => esc_html__('Add phone in register form','vbegy'),
+		'desc' => esc_html__('Add phone in register form.','vbegy'),
 		'id' => 'phone_register',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Phone in register form is required',
-		'desc' => 'Phone in register form is required.',
+		'name' => esc_html__('Phone in register form is required','vbegy'),
+		'desc' => esc_html__('Phone in register form is required.','vbegy'),
 		'id' => 'phone_required',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Add sex in register form',
-		'desc' => 'Add sex in register form.',
+		'name' => esc_html__('Add sex in register form','vbegy'),
+		'desc' => esc_html__('Add sex in register form.','vbegy'),
 		'id' => 'sex_register',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Sex in register form is required',
-		'desc' => 'Sex in register form is required.',
+		'name' => esc_html__('Sex in register form is required','vbegy'),
+		'desc' => esc_html__('Sex in register form is required.','vbegy'),
 		'id' => 'sex_required',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Add names in register form',
-		'desc' => 'Add names in register form.',
+		'name' => esc_html__('Add names in register form','vbegy'),
+		'desc' => esc_html__('Add names in register form.','vbegy'),
 		'id' => 'names_register',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Names in register form is required',
-		'desc' => 'Names in register form is required.',
+		'name' => esc_html__('Names in register form is required','vbegy'),
+		'desc' => esc_html__('Names in register form is required.','vbegy'),
 		'id' => 'names_required',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Active the page terms?',
-		'desc' => 'Select ON if you want active the page terms.',
+		'name' => esc_html__('Active the page terms?','vbegy'),
+		'desc' => esc_html__('Select ON if you want active the page terms.','vbegy'),
 		'id' => 'terms_active_register',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Open the page in same page or a new page?',
-		'desc' => 'Open the page in same page or a new page.',
+		'name' => esc_html__('Open the page in same page or a new page?','vbegy'),
+		'desc' => esc_html__('Open the page in same page or a new page.','vbegy'),
 		'id' => 'terms_active_target_register',
 		'std' => "new_page",
 		'type' => 'select',
 		'options' => array("same_page" => "Same page","new_page" => "New page"));
 	
 	$options[] = array(
-		'name' => "Terms page",
-		'desc' => "Select the terms page",
+		'name' => esc_html__("Terms page",'vbegy'),
+		'desc' => esc_html__("Select the terms page",'vbegy'),
 		'id' => 'terms_page_register',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "Type the terms link if you don't like a page",
-		'desc' => "Type the terms link if you don't like a page",
+		'name' => esc_html__("Type the terms link if you don't like a page",'vbegy'),
+		'desc' => esc_html__("Type the terms link if you don't like a page",'vbegy'),
 		'id' => 'terms_link_register',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Register content',
-		'desc' => 'Put the register content in top panel and register page.',
+		'name' => esc_html__('Register content','vbegy'),
+		'desc' => esc_html__('Put the register content in top panel and register page.','vbegy'),
 		'id' => 'register_content',
 		'std' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Morbi adipiscing gravdio, sit amet suscipit risus ultrices eu.Fusce viverra neque at purus laoreet consequa.Vivamus vulputate posuere nisl quis consequat.',
 		'type' => 'textarea');
@@ -2892,7 +2892,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Author Page',
+		'name' => esc_html__('Author Page','vbegy'),
 		'icon' => 'businessman',
 		'type' => 'heading');
 	
@@ -2901,50 +2901,50 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Hide the user registered in profile page',
-		'desc' => 'Select ON if you want to hide the user registered in profile page.',
+		'name' => esc_html__('Hide the user registered in profile page','vbegy'),
+		'desc' => esc_html__('Select ON if you want to hide the user registered in profile page.','vbegy'),
 		'id' => 'user_registered',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Hide the user country in profile page',
-		'desc' => 'Select ON if you want to hide the user country in profile page.',
+		'name' => esc_html__('Hide the user country in profile page','vbegy'),
+		'desc' => esc_html__('Select ON if you want to hide the user country in profile page.','vbegy'),
 		'id' => 'user_country',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Hide the user city in profile page',
-		'desc' => 'Select ON if you want to hide the user city in profile page.',
+		'name' => esc_html__('Hide the user city in profile page','vbegy'),
+		'desc' => esc_html__('Select ON if you want to hide the user city in profile page.','vbegy'),
 		'id' => 'user_city',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Hide the user phone in profile page',
-		'desc' => 'Select ON if you want to hide the user phone in profile page.',
+		'name' => esc_html__('Hide the user phone in profile page','vbegy'),
+		'desc' => esc_html__('Select ON if you want to hide the user phone in profile page.','vbegy'),
 		'id' => 'user_phone',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Hide the user age in profile page',
-		'desc' => 'Select ON if you want to hide the user age in profile page.',
+		'name' => esc_html__('Hide the user age in profile page','vbegy'),
+		'desc' => esc_html__('Select ON if you want to hide the user age in profile page.','vbegy'),
 		'id' => 'user_age',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Hide the user sex in profile page',
-		'desc' => 'Select ON if you want to hide the user sex in profile page.',
+		'name' => esc_html__('Hide the user sex in profile page','vbegy'),
+		'desc' => esc_html__('Select ON if you want to hide the user sex in profile page.','vbegy'),
 		'id' => 'user_sex',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Hide the user url in profile page',
-		'desc' => 'Select ON if you want to hide the user url in profile page.',
+		'name' => esc_html__('Hide the user url in profile page','vbegy'),
+		'desc' => esc_html__('Select ON if you want to hide the user url in profile page.','vbegy'),
 		'id' => 'user_url',
 		'std' => 0,
 		'type' => 'checkbox');
@@ -2952,15 +2952,15 @@ function optionsframework_options() {
 	$options = apply_filters('askme_author_page_options',$options);
 	
 	$options[] = array(
-		'name' => 'Hide the author stats',
-		'desc' => 'Select ON if you want to hide the author stats in profile page.',
+		'name' => esc_html__('Hide the author stats','vbegy'),
+		'desc' => esc_html__('Select ON if you want to hide the author stats in profile page.','vbegy'),
 		'id' => 'author_stats',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => "Author sidebar layout",
-		'desc' => "Author sidebar layout.",
+		'name' => esc_html__("Author sidebar layout",'vbegy'),
+		'desc' => esc_html__("Author sidebar layout.",'vbegy'),
 		'id' => "author_sidebar_layout",
 		'std' => "default",
 		'type' => "images",
@@ -2973,16 +2973,16 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Author Page Sidebar",
-		'desc' => "Author Page Sidebar.",
+		'name' => esc_html__("Author Page Sidebar",'vbegy'),
+		'desc' => esc_html__("Author Page Sidebar.",'vbegy'),
 		'id' => "author_sidebar",
 		'std' => '',
 		'options' => $new_sidebars,
 		'type' => 'select');
 	
 	$options[] = array(
-		'name' => "Author page layout",
-		'desc' => "Author page layout.",
+		'name' => esc_html__("Author page layout",'vbegy'),
+		'desc' => esc_html__("Author page layout.",'vbegy'),
 		'id' => "author_layout",
 		'std' => "full",
 		'type' => "images",
@@ -2995,8 +2995,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Choose template",
-		'desc' => "Choose template layout.",
+		'name' => esc_html__("Choose template",'vbegy'),
+		'desc' => esc_html__("Choose template layout.",'vbegy'),
 		'id' => "author_template",
 		'std' => "grid_1200",
 		'type' => "images",
@@ -3009,8 +3009,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Site skin",
-		'desc' => "Choose Site skin.",
+		'name' => esc_html__("Site skin",'vbegy'),
+		'desc' => esc_html__("Choose Site skin.",'vbegy'),
 		'id' => "author_skin_l",
 		'std' => "site_light",
 		'type' => "images",
@@ -3022,8 +3022,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Choose Your Skin",
-		'desc' => "Choose Your Skin",
+		'name' => esc_html__("Choose Your Skin",'vbegy'),
+		'desc' => esc_html__("Choose Your Skin",'vbegy'),
 		'class' => "site_skin",
 		'id' => "author_skin",
 		'std' => "default",
@@ -3044,14 +3044,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Primary Color",
-		'desc' => "Primary Color",
+		'name' => esc_html__("Primary Color",'vbegy'),
+		'desc' => esc_html__("Primary Color",'vbegy'),
 		'id' => 'author_primary_color',
 		'type' => 'color');
 	
 	$options[] = array(
-		'name' => "Background Type",
-		'desc' => "Background Type",
+		'name' => esc_html__("Background Type",'vbegy'),
+		'desc' => esc_html__("Background Type",'vbegy'),
 		'id' => 'author_background_type',
 		'std' => 'patterns',
 		'type' => 'radio',
@@ -3063,15 +3063,15 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' => "Background Color",
-		'desc' => "Background Color",
+		'name' => esc_html__("Background Color",'vbegy'),
+		'desc' => esc_html__("Background Color",'vbegy'),
 		'id' => 'author_background_color',
 		'std' => "#FFF",
 		'type' => 'color');
 		
 	$options[] = array(
-		'name' => "Choose Pattern",
-		'desc' => "Choose Pattern",
+		'name' => esc_html__("Choose Pattern",'vbegy'),
+		'desc' => esc_html__("Choose Pattern",'vbegy'),
 		'id' => "author_background_pattern",
 		'std' => "bg13",
 		'type' => "images",
@@ -3103,15 +3103,15 @@ function optionsframework_options() {
 	));
 
 	$options[] = array(
-		'name' =>  "Custom Background",
-		'desc' => "Custom Background",
+		'name' => esc_html__("Custom Background",'vbegy'),
+		'desc' => esc_html__("Custom Background",'vbegy'),
 		'id' => 'author_custom_background',
 		'std' => $background_defaults,
 		'type' => 'background');
 		
 	$options[] = array(
-		'name' => "Full Screen Background",
-		'desc' => "Click on to Full Screen Background",
+		'name' => esc_html__("Full Screen Background",'vbegy'),
+		'desc' => esc_html__("Click on to Full Screen Background",'vbegy'),
 		'id' => 'author_full_screen_background',
 		'std' => '0',
 		'type' => 'checkbox');
@@ -3122,7 +3122,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Blog & Article settings',
+		'name' => esc_html__('Blog & Article settings','vbegy'),
 		'icon' => 'admin-post',
 		'type' => 'heading',
 		'std'     => 'general_setting_blog',
@@ -3135,12 +3135,12 @@ function optionsframework_options() {
 	$options[] = array(
 		'type' => 'heading-2',
 		'id'   => 'general_setting_blog',
-		'name' => "General settings"
+		'name' => esc_html__("General settings",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => "Blog display",
-		'desc' => "Choose the Blog display",
+		'name' => esc_html__("Blog display",'vbegy'),
+		'desc' => esc_html__("Choose the Blog display",'vbegy'),
 		'id' => 'home_display',
 		'std' => 'blog_1',
 		'type' => 'radio',
@@ -3152,21 +3152,21 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'desc' => "Sort your sections.",
-		'name' => "Sort your sections.",
+		'desc' => esc_html__("Sort your sections.",'vbegy'),
+		'name' => esc_html__("Sort your sections.",'vbegy'),
 		'id' => "order_sections_li",
 		'std' => '',
 		'type' => 'sections');
 	
 	$options[] = array(
-		'name' => 'Hide the featured image in the single post',
-		'desc' => 'Click on to hide the featured image in the single post.',
+		'name' => esc_html__('Hide the featured image in the single post','vbegy'),
+		'desc' => esc_html__('Click on to hide the featured image in the single post.','vbegy'),
 		'id' => 'featured_image',
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Excerpt type',
-		'desc' => 'Choose form here the excerpt type.',
+		'name' => esc_html__('Excerpt type','vbegy'),
+		'desc' => esc_html__('Choose form here the excerpt type.','vbegy'),
 		'id' => 'excerpt_type',
 		'type' => "select",
 		'options' => array(
@@ -3175,57 +3175,57 @@ function optionsframework_options() {
 		);
 	
 	$options[] = array(
-		'name' => 'Excerpt post',
-		'desc' => 'Put here the excerpt post.',
+		'name' => esc_html__('Excerpt post','vbegy'),
+		'desc' => esc_html__('Put here the excerpt post.','vbegy'),
 		'id' => 'post_excerpt',
 		'std' => 40,
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Post meta enable or disable',
-		'desc' => 'Post meta enable or disable.',
+		'name' => esc_html__('Post meta enable or disable','vbegy'),
+		'desc' => esc_html__('Post meta enable or disable.','vbegy'),
 		'id' => 'post_meta',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Share enable or disable',
-		'desc' => 'Share enable or disable.',
+		'name' => esc_html__('Share enable or disable','vbegy'),
+		'desc' => esc_html__('Share enable or disable.','vbegy'),
 		'id' => 'post_share',
 		'std' => 1,
 		'type' => 'checkbox');
 		
 	$options[] = array(
-		'name' => 'Author info box enable or disable',
-		'desc' => 'Author info box enable or disable.',
+		'name' => esc_html__('Author info box enable or disable','vbegy'),
+		'desc' => esc_html__('Author info box enable or disable.','vbegy'),
 		'id' => 'post_author_box',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Comments enable or disable',
-		'desc' => 'Comments enable or disable.',
+		'name' => esc_html__('Comments enable or disable','vbegy'),
+		'desc' => esc_html__('Comments enable or disable.','vbegy'),
 		'id' => 'post_comments',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Related post enable or disable',
-		'desc' => 'Related post enable or disable.',
+		'name' => esc_html__('Related post enable or disable','vbegy'),
+		'desc' => esc_html__('Related post enable or disable.','vbegy'),
 		'id' => 'related_post',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Related post number',
-		'desc' => 'Type related post number from here.',
+		'name' => esc_html__('Related post number','vbegy'),
+		'desc' => esc_html__('Type related post number from here.','vbegy'),
 		'id' => 'related_number',
 		'std' => '5',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => "Related post query",
-		'desc' => "Select your related post query.",
+		'name' => esc_html__("Related post query",'vbegy'),
+		'desc' => esc_html__("Select your related post query.",'vbegy'),
 		'id' => "related_query",
 		'std' => "categories",
 		'type' => "select",
@@ -3236,15 +3236,15 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Navigation post enable or disable',
-		'desc' => 'Navigation post (next and previous posts) enable or disable.',
+		'name' => esc_html__('Navigation post enable or disable','vbegy'),
+		'desc' => esc_html__('Navigation post (next and previous posts) enable or disable.','vbegy'),
 		'id' => 'post_navigation',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Navigation post for the same category only?',
-		'desc' => 'Navigation post (next and previous posts) for the same category only?',
+		'name' => esc_html__('Navigation post for the same category only?','vbegy'),
+		'desc' => esc_html__('Navigation post (next and previous posts) for the same category only?','vbegy'),
 		'id' => 'post_nav_category',
 		'std' => 1,
 		'type' => 'checkbox');
@@ -3257,127 +3257,127 @@ function optionsframework_options() {
 	$options[] = array(
 		'type' => 'heading-2',
 		'id'   => 'add_edit_delete_blog',
-		'name' => "Add - Edit - Delete"
+		'name' => esc_html__("Add - Edit - Delete",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => 'Add post setting.',
+		'name' => esc_html__('Add post setting.','vbegy'),
 		'class' => 'home_page_display',
 		'type' => 'info');
 	
 	$options[] = array(
-		'name' => 'Any one can add post without register',
-		'desc' => 'Any one can add post without register enable or disable.',
+		'name' => esc_html__('Any one can add post without register','vbegy'),
+		'desc' => esc_html__('Any one can add post without register enable or disable.','vbegy'),
 		'id' => 'add_post_no_register',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Choose post status',
-		'desc' => 'Choose post status after user publish the post.',
+		'name' => esc_html__('Choose post status','vbegy'),
+		'desc' => esc_html__('Choose post status after user publish the post.','vbegy'),
 		'id' => 'post_publish',
 		'options' => array("publish" => "Publish","draft" => "Draft"),
 		'std' => 'draft',
 		'type' => 'select');
 	
 	$options[] = array(
-		'name' => 'Choose post status for unlogged user only',
-		'desc' => 'Choose post status after unlogged user publish the post.',
+		'name' => esc_html__('Choose post status for unlogged user only','vbegy'),
+		'desc' => esc_html__('Choose post status after unlogged user publish the post.','vbegy'),
 		'id' => 'post_publish_unlogged',
 		'options' => array("publish" => "Publish","draft" => "Draft"),
 		'std' => 'draft',
 		'type' => 'select');
 	
 	$options[] = array(
-		'name' => 'Send email when the post need a review',
-		'desc' => 'Email for posts review enable or disable.',
+		'name' => esc_html__('Send email when the post need a review','vbegy'),
+		'desc' => esc_html__('Email for posts review enable or disable.','vbegy'),
 		'id' => 'send_email_draft_posts',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Tags enable or disable in add post form',
-		'desc' => 'Select ON to enable the tags in add post form.',
+		'name' => esc_html__('Tags enable or disable in add post form','vbegy'),
+		'desc' => esc_html__('Select ON to enable the tags in add post form.','vbegy'),
 		'id' => 'tags_post',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Attachment in add post form',
-		'desc' => 'Select ON to enable the attachment in add post form.',
+		'name' => esc_html__('Attachment in add post form','vbegy'),
+		'desc' => esc_html__('Select ON to enable the attachment in add post form.','vbegy'),
 		'id' => 'attachment_post',
 		'std' => 1,
 		'type' => 'checkbox');
 	/*
 	$options[] = array(
-		'name' => 'Category in add post form',
-		'desc' => 'Category in add post form enable or disable.',
+		'name' => esc_html__('Category in add post form','vbegy'),
+		'desc' => esc_html__('Category in add post form enable or disable.','vbegy'),
 		'id' => 'category_post',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Category in add post form is required',
-		'desc' => 'Category in add post form is required.',
+		'name' => esc_html__('Category in add post form is required','vbegy'),
+		'desc' => esc_html__('Category in add post form is required.','vbegy'),
 		'id' => 'category_post_required',
 		'std' => 1,
 		'type' => 'checkbox');
 	*/
 	$options[] = array(
-		'name' => 'Details in add post form is required',
-		'desc' => 'Details in add post form is required.',
+		'name' => esc_html__('Details in add post form is required','vbegy'),
+		'desc' => esc_html__('Details in add post form is required.','vbegy'),
 		'id' => 'content_post',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Editor enable or disable for details in add post form',
-		'desc' => 'Editor enable or disable for details in add post form.',
+		'name' => esc_html__('Editor enable or disable for details in add post form','vbegy'),
+		'desc' => esc_html__('Editor enable or disable for details in add post form.','vbegy'),
 		'id' => 'editor_post_details',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Edit post setting.',
+		'name' => esc_html__('Edit post setting.','vbegy'),
 		'class' => 'home_page_display',
 		'type' => 'info');
 	
 	$options[] = array(
-		'name' => 'The users can edit the posts?',
-		'desc' => 'The users can edit the posts?',
+		'name' => esc_html__('The users can edit the posts?','vbegy'),
+		'desc' => esc_html__('The users can edit the posts?','vbegy'),
 		'id' => 'can_edit_post',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => "Edit post page",
-		'desc' => "Create a page using the Edit post template and select it here",
+		'name' => esc_html__("Edit post page",'vbegy'),
+		'desc' => esc_html__("Create a page using the Edit post template and select it here",'vbegy'),
 		'id' => 'edit_post',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => 'After edit post approved auto or need to approved again?',
-		'desc' => 'Press ON to approved auto',
+		'name' => esc_html__('After edit post approved auto or need to approved again?','vbegy'),
+		'desc' => esc_html__('Press ON to approved auto','vbegy'),
 		'id' => 'post_approved',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'After edit post change the URL like the title?',
-		'desc' => 'Press ON to edit the URL',
+		'name' => esc_html__('After edit post change the URL like the title?','vbegy'),
+		'desc' => esc_html__('Press ON to edit the URL','vbegy'),
 		'id' => 'change_post_url',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Delete post setting.',
+		'name' => esc_html__('Delete post setting.','vbegy'),
 		'class' => 'home_page_display',
 		'type' => 'info');
 	
 	$options[] = array(
-		'name' => 'Active user can delete the posts',
-		'desc' => 'Select ON if you want the user can delete the posts.',
+		'name' => esc_html__('Active user can delete the posts','vbegy'),
+		'desc' => esc_html__('Select ON if you want the user can delete the posts.','vbegy'),
 		'id' => 'post_delete',
 		'std' => 0,
 		'type' => 'checkbox');
@@ -3388,7 +3388,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Search setting',
+		'name' => esc_html__('Search setting','vbegy'),
 		'icon' => 'search',
 		'type' => 'heading');
 	
@@ -3397,15 +3397,15 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Search page",
-		'desc' => "Create a page using the Search template and select it here",
+		'name' => esc_html__("Search page",'vbegy'),
+		'desc' => esc_html__("Create a page using the Search template and select it here",'vbegy'),
 		'id' => 'search_page',
 		'type' => 'select',
 		'options' => $options_pages);
 	
 	$options[] = array(
-		'name' => "Default search",
-		'desc' => "Choose what's the default search",
+		'name' => esc_html__("Default search",'vbegy'),
+		'desc' => esc_html__("Choose what's the default search",'vbegy'),
 		'id' => 'default_search',
 		'type' => 'select',
 		'stc' => 'questions',
@@ -3425,8 +3425,8 @@ function optionsframework_options() {
 		));
 	
 	$options[] = array(
-		'name'    => 'Select the search options',
-		'desc'    => 'Select the search options on the search page.',
+		'name'    => esc_html__('Select the search options','vbegy'),
+		'desc'    => esc_html__('Select the search options on the search page.','vbegy'),
 		'id'      => 'search_attrs',
 		'type'    => 'multicheck_sort',
 		'sort'    => 'yes',
@@ -3460,94 +3460,94 @@ function optionsframework_options() {
 		));
 	
 	$options[] = array(
-		'name'  => "Choose the live search enable or disable",
-		'desc'  => "Choose the live search enable or disable",
+		'name'  => esc_html__("Choose the live search enable or disable",'vbegy'),
+		'desc'  => esc_html__("Choose the live search enable or disable",'vbegy'),
 		'id'    => "live_search",
 		'type'  => 'checkbox',
 		'std'   => 1,
 	);
 	
 	$options[] = array(
-		'name' => 'Search result number',
-		'desc' => 'Type the search result number from here.',
+		'name' => esc_html__('Search result number','vbegy'),
+		'desc' => esc_html__('Type the search result number from here.','vbegy'),
 		'id' => 'search_result_number',
 		'std' => '5',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name'  => "Show search at users template",
-		'desc'  => "Show search at users template from the breadcrumb",
+		'name'  => esc_html__("Show search at users template",'vbegy'),
+		'desc'  => esc_html__("Show search at users template from the breadcrumb",'vbegy'),
 		'id'    => "user_search",
 		'type'  => 'checkbox',
 		'std'   => 1,
 	);
 	
 	$options[] = array(
-		'name'  => "Show filter at users template",
-		'desc'  => "Show filter at users template from the breadcrumb",
+		'name'  => esc_html__("Show filter at users template",'vbegy'),
+		'desc'  => esc_html__("Show filter at users template from the breadcrumb",'vbegy'),
 		'id'    => "user_filter",
 		'type'  => 'checkbox',
 		'std'   => 1,
 	);
 	
 	$options[] = array(
-		'name' => 'Show filter at categories and archive pages',
-		'desc' => 'Click on to enable the filter at categories and archive pages.',
+		'name' => esc_html__('Show filter at categories and archive pages','vbegy'),
+		'desc' => esc_html__('Click on to enable the filter at categories and archive pages.','vbegy'),
 		'id'   => 'category_filter',
 		'std'  => 1,
 		'type' => 'checkbox'
 	);
 	
 	$options[] = array(
-		'name' => 'Show at the filter categories parent categories',
-		'desc' => 'Click on to enable the filter categories parent categories and will show the child categires.',
+		'name' => esc_html__('Show at the filter categories parent categories','vbegy'),
+		'desc' => esc_html__('Click on to enable the filter categories parent categories and will show the child categires.','vbegy'),
 		'id'   => 'child_category',
 		'type' => 'checkbox'
 	);
 	
 	$options[] = array(
-		'name'  => "Show search at category archives",
-		'desc'  => "Show search at category archives from the breadcrumb",
+		'name'  => esc_html__("Show search at category archives",'vbegy'),
+		'desc'  => esc_html__("Show search at category archives from the breadcrumb",'vbegy'),
 		'id'    => "cat_archives_search",
 		'type'  => 'checkbox',
 		'std'   => 1,
 	);
 	
 	$options[] = array(
-		'name'  => "Show search at categories template",
-		'desc'  => "Show search at categories template from the breadcrumb",
+		'name'  => esc_html__("Show search at categories template",'vbegy'),
+		'desc'  => esc_html__("Show search at categories template from the breadcrumb",'vbegy'),
 		'id'    => "cat_search",
 		'type'  => 'checkbox',
 		'std'   => 1,
 	);
 	
 	$options[] = array(
-		'name'  => "Show filter at categories template",
-		'desc'  => "Show filter at categories template from the breadcrumb",
+		'name'  => esc_html__("Show filter at categories template",'vbegy'),
+		'desc'  => esc_html__("Show filter at categories template from the breadcrumb",'vbegy'),
 		'id'    => "cat_filter",
 		'type'  => 'checkbox',
 		'std'   => 1,
 	);
 	
 	$options[] = array(
-		'name'  => "Show search at tag archives",
-		'desc'  => "Show search at tag archives from the breadcrumb",
+		'name'  => esc_html__("Show search at tag archives",'vbegy'),
+		'desc'  => esc_html__("Show search at tag archives from the breadcrumb",'vbegy'),
 		'id'    => "tag_archives_search",
 		'type'  => 'checkbox',
 		'std'   => 1,
 	);
 	
 	$options[] = array(
-		'name'  => "Show search at tags template",
-		'desc'  => "Show search at tags template from the breadcrumb",
+		'name'  => esc_html__("Show search at tags template",'vbegy'),
+		'desc'  => esc_html__("Show search at tags template from the breadcrumb",'vbegy'),
 		'id'    => "tag_search",
 		'type'  => 'checkbox',
 		'std'   => 1,
 	);
 	
 	$options[] = array(
-		'name'  => "Show filter at tags template",
-		'desc'  => "Show filter at tags template from the breadcrumb",
+		'name'  => esc_html__("Show filter at tags template",'vbegy'),
+		'desc'  => esc_html__("Show filter at tags template from the breadcrumb",'vbegy'),
 		'id'    => "tag_filter",
 		'type'  => 'checkbox',
 		'std'   => 1,
@@ -3559,7 +3559,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Sidebar',
+		'name' => esc_html__('Sidebar','vbegy'),
 		'icon' => 'align-none',
 		'type' => 'heading');
 	
@@ -3573,8 +3573,8 @@ function optionsframework_options() {
 		'type' => 'sidebar');
 	
 	$options[] = array(
-		'name' => "Sidebar width",
-		'desc' => "Sidebar width",
+		'name' => esc_html__("Sidebar width",'vbegy'),
+		'desc' => esc_html__("Sidebar width",'vbegy'),
 		'id' => 'sidebar_width',
 		'std' => 'col-md-3',
 		'type' => 'radio',
@@ -3586,15 +3586,15 @@ function optionsframework_options() {
 		);
 	
 	$options[] = array(
-		'name' => "Sticky sidebar",
-		'desc' => "Click on to active the sticky sidebar",
+		'name' => esc_html__("Sticky sidebar",'vbegy'),
+		'desc' => esc_html__("Click on to active the sticky sidebar",'vbegy'),
 		'id' => 'sticky_sidebar',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => "Sidebar layout",
-		'desc' => "Sidebar layout.",
+		'name' => esc_html__("Sidebar layout",'vbegy'),
+		'desc' => esc_html__("Sidebar layout.",'vbegy'),
 		'id' => "sidebar_layout",
 		'std' => "default",
 		'type' => "images",
@@ -3607,16 +3607,16 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Home Page Sidebar",
-		'desc' => "Home Page Sidebar.",
+		'name' => esc_html__("Home Page Sidebar",'vbegy'),
+		'desc' => esc_html__("Home Page Sidebar.",'vbegy'),
 		'id' => "sidebar_home",
 		'std' => '',
 		'options' => $new_sidebars,
 		'type' => 'select');
 	
 	$options[] = array(
-		'name' => "Else home page, single and page",
-		'desc' => "Else home page, single and page.",
+		'name' => esc_html__("Else home page, single and page",'vbegy'),
+		'desc' => esc_html__("Else home page, single and page.",'vbegy'),
 		'id' => "else_sidebar",
 		'std' => '',
 		'options' => $new_sidebars,
@@ -3628,7 +3628,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Styling',
+		'name' => esc_html__('Styling','vbegy'),
 		'icon' => 'art',
 		'type' => 'heading');
 	
@@ -3637,8 +3637,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Home page layout",
-		'desc' => "Home page layout.",
+		'name' => esc_html__("Home page layout",'vbegy'),
+		'desc' => esc_html__("Home page layout.",'vbegy'),
 		'id' => "home_layout",
 		'std' => "full",
 		'type' => "images",
@@ -3650,8 +3650,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Choose template",
-		'desc' => "Choose template layout.",
+		'name' => esc_html__("Choose template",'vbegy'),
+		'desc' => esc_html__("Choose template layout.",'vbegy'),
 		'id' => "home_template",
 		'std' => "grid_1200",
 		'type' => "images",
@@ -3663,8 +3663,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Site skin",
-		'desc' => "Choose Site skin.",
+		'name' => esc_html__("Site skin",'vbegy'),
+		'desc' => esc_html__("Choose Site skin.",'vbegy'),
 		'id' => "site_skin_l",
 		'std' => "site_light",
 		'type' => "images",
@@ -3675,8 +3675,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Choose Your Skin",
-		'desc' => "Choose Your Skin",
+		'name' => esc_html__("Choose Your Skin",'vbegy'),
+		'desc' => esc_html__("Choose Your Skin",'vbegy'),
 		'class' => "site_skin",
 		'id' => "site_skin",
 		'std' => "skins",
@@ -3696,14 +3696,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Primary Color",
-		'desc' => "Primary Color",
+		'name' => esc_html__("Primary Color",'vbegy'),
+		'desc' => esc_html__("Primary Color",'vbegy'),
 		'id' => 'primary_color',
 		'type' => 'color');
 	
 	$options[] = array(
-		'name' => "Background Type",
-		'desc' => "Background Type",
+		'name' => esc_html__("Background Type",'vbegy'),
+		'desc' => esc_html__("Background Type",'vbegy'),
 		'id' => 'background_type',
 		'std' => 'patterns',
 		'type' => 'radio',
@@ -3715,15 +3715,15 @@ function optionsframework_options() {
 		);
 
 	$options[] = array(
-		'name' => "Background Color",
-		'desc' => "Background Color",
+		'name' => esc_html__("Background Color",'vbegy'),
+		'desc' => esc_html__("Background Color",'vbegy'),
 		'id' => 'background_color',
 		'std' => "#FFF",
 		'type' => 'color');
 		
 	$options[] = array(
-		'name' => "Choose Pattern",
-		'desc' => "Choose Pattern",
+		'name' => esc_html__("Choose Pattern",'vbegy'),
+		'desc' => esc_html__("Choose Pattern",'vbegy'),
 		'id' => "background_pattern",
 		'std' => "bg13",
 		'type' => "images",
@@ -3755,15 +3755,15 @@ function optionsframework_options() {
 	));
 
 	$options[] = array(
-		'name' =>  "Custom Background",
-		'desc' => "Custom Background",
+		'name' => esc_html__("Custom Background",'vbegy'),
+		'desc' => esc_html__("Custom Background",'vbegy'),
 		'id' => 'custom_background',
 		'std' => $background_defaults,
 		'type' => 'background');
 		
 	$options[] = array(
-		'name' => "Full Screen Background",
-		'desc' => "Click on to Full Screen Background",
+		'name' => esc_html__("Full Screen Background",'vbegy'),
+		'desc' => esc_html__("Click on to Full Screen Background",'vbegy'),
 		'id' => 'full_screen_background',
 		'std' => '0',
 		'type' => 'checkbox');
@@ -3774,7 +3774,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Questions Styling',
+		'name' => esc_html__('Questions Styling','vbegy'),
 		'icon' => 'editor-help',
 		'type' => 'heading');
 	
@@ -3783,16 +3783,16 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Custom Logo position - Header skin - Logo display?",
-		'desc' => "Click on to make a Custom Logo position - Header skin - Logo display",
+		'name' => esc_html__("Custom Logo position - Header skin - Logo display?",'vbegy'),
+		'desc' => esc_html__("Click on to make a Custom Logo position - Header skin - Logo display",'vbegy'),
 		'id' => 'questions_custom_header',
 		'std' => '0',
 		'type' => 'checkbox');
 	
 	if (is_rtl()) {
 		$options[] = array(
-			'name' => "Logo position for questions",
-			'desc' => "Select where you would like your logo to appear for questions.",
+			'name' => esc_html__("Logo position for questions",'vbegy'),
+			'desc' => esc_html__("Select where you would like your logo to appear for questions.",'vbegy'),
 			'id' => "questions_logo_position",
 			'std' => "left_logo",
 			'type' => "images",
@@ -3804,8 +3804,8 @@ function optionsframework_options() {
 		);
 	}else {
 		$options[] = array(
-			'name' => "Logo position for questions",
-			'desc' => "Select where you would like your logo to appear for questions.",
+			'name' => esc_html__("Logo position for questions",'vbegy'),
+			'desc' => esc_html__("Select where you would like your logo to appear for questions.",'vbegy'),
 			'id' => "questions_logo_position",
 			'std' => "left_logo",
 			'type' => "images",
@@ -3818,8 +3818,8 @@ function optionsframework_options() {
 	}
 	
 	$options[] = array(
-		'name' => "Header skin for questions",
-		'desc' => "Select your preferred header skin for questions.",
+		'name' => esc_html__("Header skin for questions",'vbegy'),
+		'desc' => esc_html__("Select your preferred header skin for questions.",'vbegy'),
 		'id' => "questions_header_skin",
 		'std' => "header_dark",
 		'type' => "images",
@@ -3830,29 +3830,29 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Logo display for questions',
-		'desc' => 'choose Logo display for questions.',
+		'name' => esc_html__('Logo display for questions','vbegy'),
+		'desc' => esc_html__('choose Logo display for questions.','vbegy'),
 		'id' => 'questions_logo_display',
 		'std' => 'display_title',
 		'type' => 'radio',
 		'options' => array("display_title" => "Display site title","custom_image" => "Custom Image"));
 	
 	$options[] = array(
-		'name' => 'Logo upload for questions',
-		'desc' => 'Upload your custom logo for questions.',
+		'name' => esc_html__('Logo upload for questions','vbegy'),
+		'desc' => esc_html__('Upload your custom logo for questions.','vbegy'),
 		'id' => 'questions_logo_img',
 		'std' => '',
 		'type' => 'upload');
 	
 	$options[] = array(
-		'name' => 'Logo retina upload for questions',
-		'desc' => 'Upload your custom logo retina for questions.',
+		'name' => esc_html__('Logo retina upload for questions','vbegy'),
+		'desc' => esc_html__('Upload your custom logo retina for questions.','vbegy'),
 		'id' => 'questions_retina_logo',
 		'std' => '',
 		'type' => 'upload');
 	
 	$options[] = array(
-		"name" => "Logo height",
+		"name" => esc_html__("Logo height",'vbegy'),
 		"id" => "questions_logo_height",
 		"type" => "sliderui",
 		"step" => "1",
@@ -3861,7 +3861,7 @@ function optionsframework_options() {
 		'std' => '57');
 	
 	$options[] = array(
-		"name" => "Logo width",
+		"name" => esc_html__("Logo width",'vbegy'),
 		"id" => "questions_logo_width",
 		"type" => "sliderui",
 		"step" => "1",
@@ -3870,8 +3870,8 @@ function optionsframework_options() {
 		'std' => '146');
 	
 	$options[] = array(
-		'name' => "Questions sidebar layout",
-		'desc' => "Questions sidebar layout.",
+		'name' => esc_html__("Questions sidebar layout",'vbegy'),
+		'desc' => esc_html__("Questions sidebar layout.",'vbegy'),
 		'id' => "questions_sidebar_layout",
 		'std' => "default",
 		'type' => "images",
@@ -3884,16 +3884,16 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Questions Page Sidebar",
-		'desc' => "Questions Page Sidebar.",
+		'name' => esc_html__("Questions Page Sidebar",'vbegy'),
+		'desc' => esc_html__("Questions Page Sidebar.",'vbegy'),
 		'id' => "questions_sidebar",
 		'std' => '',
 		'options' => $new_sidebars,
 		'type' => 'select');
 	
 	$options[] = array(
-		'name' => "Questions page layout",
-		'desc' => "Questions page layout.",
+		'name' => esc_html__("Questions page layout",'vbegy'),
+		'desc' => esc_html__("Questions page layout.",'vbegy'),
 		'id' => "questions_layout",
 		'std' => "default",
 		'type' => "images",
@@ -3906,8 +3906,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Choose template",
-		'desc' => "Choose template layout.",
+		'name' => esc_html__("Choose template",'vbegy'),
+		'desc' => esc_html__("Choose template layout.",'vbegy'),
 		'id' => "questions_template",
 		'std' => "default",
 		'type' => "images",
@@ -3920,8 +3920,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Site skin",
-		'desc' => "Choose Site skin.",
+		'name' => esc_html__("Site skin",'vbegy'),
+		'desc' => esc_html__("Choose Site skin.",'vbegy'),
 		'id' => "questions_skin_l",
 		'std' => "default",
 		'type' => "images",
@@ -3933,8 +3933,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Choose Your Skin",
-		'desc' => "Choose Your Skin",
+		'name' => esc_html__("Choose Your Skin",'vbegy'),
+		'desc' => esc_html__("Choose Your Skin",'vbegy'),
 		'class' => "site_skin",
 		'id' => "questions_skin",
 		'std' => "default",
@@ -3955,14 +3955,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Primary Color",
-		'desc' => "Primary Color",
+		'name' => esc_html__("Primary Color",'vbegy'),
+		'desc' => esc_html__("Primary Color",'vbegy'),
 		'id' => 'questions_primary_color',
 		'type' => 'color');
 	
 	$options[] = array(
-		'name' => "Background Type",
-		'desc' => "Background Type",
+		'name' => esc_html__("Background Type",'vbegy'),
+		'desc' => esc_html__("Background Type",'vbegy'),
 		'id' => 'questions_background_type',
 		'std' => 'patterns',
 		'type' => 'radio',
@@ -3974,15 +3974,15 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' => "Background Color",
-		'desc' => "Background Color",
+		'name' => esc_html__("Background Color",'vbegy'),
+		'desc' => esc_html__("Background Color",'vbegy'),
 		'id' => 'questions_background_color',
 		'std' => "#FFF",
 		'type' => 'color');
 		
 	$options[] = array(
-		'name' => "Choose Pattern",
-		'desc' => "Choose Pattern",
+		'name' => esc_html__("Choose Pattern",'vbegy'),
+		'desc' => esc_html__("Choose Pattern",'vbegy'),
 		'id' => "questions_background_pattern",
 		'std' => "bg13",
 		'type' => "images",
@@ -4014,15 +4014,15 @@ function optionsframework_options() {
 	));
 
 	$options[] = array(
-		'name' =>  "Custom Background",
-		'desc' => "Custom Background",
+		'name' => esc_html__("Custom Background",'vbegy'),
+		'desc' => esc_html__("Custom Background",'vbegy'),
 		'id' => 'questions_custom_background',
 		'std' => $background_defaults,
 		'type' => 'background');
 		
 	$options[] = array(
-		'name' => "Full Screen Background",
-		'desc' => "Click on to Full Screen Background",
+		'name' => esc_html__("Full Screen Background",'vbegy'),
+		'desc' => esc_html__("Click on to Full Screen Background",'vbegy'),
 		'id' => 'questions_full_screen_background',
 		'std' => '0',
 		'type' => 'checkbox');
@@ -4034,7 +4034,7 @@ function optionsframework_options() {
 	
 	if (class_exists('woocommerce')) {
 		$options[] = array(
-			'name' => 'Products Setting',
+			'name' => esc_html__('Products Setting','vbegy'),
 			'icon' => 'admin-home',
 			'type' => 'heading');
 		
@@ -4043,16 +4043,16 @@ function optionsframework_options() {
 		);
 		
 		$options[] = array(
-			'name' => "Custom Logo position - Header skin - Logo display?",
-			'desc' => "Click on to make a Custom Logo position - Header skin - Logo display",
+			'name' => esc_html__("Custom Logo position - Header skin - Logo display?",'vbegy'),
+			'desc' => esc_html__("Click on to make a Custom Logo position - Header skin - Logo display",'vbegy'),
 			'id' => 'products_custom_header',
 			'std' => '0',
 			'type' => 'checkbox');
 		
 		if (is_rtl()) {
 			$options[] = array(
-				'name' => "Logo position for products",
-				'desc' => "Select where you would like your logo to appear for products.",
+				'name' => esc_html__("Logo position for products",'vbegy'),
+				'desc' => esc_html__("Select where you would like your logo to appear for products.",'vbegy'),
 				'id' => "products_logo_position",
 				'std' => "left_logo",
 				'type' => "images",
@@ -4064,8 +4064,8 @@ function optionsframework_options() {
 			);
 		}else {
 			$options[] = array(
-				'name' => "Logo position for products",
-				'desc' => "Select where you would like your logo to appear for products.",
+				'name' => esc_html__("Logo position for products",'vbegy'),
+				'desc' => esc_html__("Select where you would like your logo to appear for products.",'vbegy'),
 				'id' => "products_logo_position",
 				'std' => "left_logo",
 				'type' => "images",
@@ -4078,8 +4078,8 @@ function optionsframework_options() {
 		}
 		
 		$options[] = array(
-			'name' => "Header skin for products",
-			'desc' => "Select your preferred header skin for products.",
+			'name' => esc_html__("Header skin for products",'vbegy'),
+			'desc' => esc_html__("Select your preferred header skin for products.",'vbegy'),
 			'id' => "products_header_skin",
 			'std' => "header_dark",
 			'type' => "images",
@@ -4090,29 +4090,29 @@ function optionsframework_options() {
 		);
 		
 		$options[] = array(
-			'name' => 'Logo display for products',
-			'desc' => 'choose Logo display for products.',
+			'name' => esc_html__('Logo display for products','vbegy'),
+			'desc' => esc_html__('choose Logo display for products.','vbegy'),
 			'id' => 'products_logo_display',
 			'std' => 'display_title',
 			'type' => 'radio',
 			'options' => array("display_title" => "Display site title","custom_image" => "Custom Image"));
 		
 		$options[] = array(
-			'name' => 'Logo upload for products',
-			'desc' => 'Upload your custom logo for products.',
+			'name' => esc_html__('Logo upload for products','vbegy'),
+			'desc' => esc_html__('Upload your custom logo for products.','vbegy'),
 			'id' => 'products_logo_img',
 			'std' => '',
 			'type' => 'upload');
 		
 		$options[] = array(
-			'name' => 'Logo retina upload for products',
-			'desc' => 'Upload your custom logo retina for products.',
+			'name' => esc_html__('Logo retina upload for products','vbegy'),
+			'desc' => esc_html__('Upload your custom logo retina for products.','vbegy'),
 			'id' => 'products_retina_logo',
 			'std' => '',
 			'type' => 'upload');
 		
 		$options[] = array(
-			"name" => "Logo height",
+			"name" => esc_html__("Logo height",'vbegy'),
 			"id" => "products_logo_height",
 			"type" => "sliderui",
 			"step" => "1",
@@ -4121,7 +4121,7 @@ function optionsframework_options() {
 			'std' => '57');
 		
 		$options[] = array(
-			"name" => "Logo width",
+			"name" => esc_html__("Logo width",'vbegy'),
 			"id" => "products_logo_width",
 			"type" => "sliderui",
 			"step" => "1",
@@ -4130,29 +4130,29 @@ function optionsframework_options() {
 			'std' => '146');
 		
 		$options[] = array(
-			'name' => 'Related products number',
-			'desc' => 'Type related products number from here.',
+			'name' => esc_html__('Related products number','vbegy'),
+			'desc' => esc_html__('Type related products number from here.','vbegy'),
 			'id' => 'related_products_number',
 			'std' => '3',
 			'type' => 'text');
 		
 		$options[] = array(
-			'name' => 'Related products number full width',
-			'desc' => 'Type related products number full width from here.',
+			'name' => esc_html__('Related products number full width','vbegy'),
+			'desc' => esc_html__('Type related products number full width from here.','vbegy'),
 			'id' => 'related_products_number_full',
 			'std' => '4',
 			'type' => 'text');
 		
 		$options[] = array(
-			'name' => 'Excerpt title in products pages',
-			'desc' => 'Type excerpt title in products pages from here.',
+			'name' => esc_html__('Excerpt title in products pages','vbegy'),
+			'desc' => esc_html__('Type excerpt title in products pages from here.','vbegy'),
 			'id' => 'products_excerpt_title',
 			'std' => '40',
 			'type' => 'text');
 		
 		$options[] = array(
-			'name' => "Products sidebar layout",
-			'desc' => "Products sidebar layout.",
+			'name' => esc_html__("Products sidebar layout",'vbegy'),
+			'desc' => esc_html__("Products sidebar layout.",'vbegy'),
 			'id' => "products_sidebar_layout",
 			'std' => "default",
 			'type' => "images",
@@ -4165,16 +4165,16 @@ function optionsframework_options() {
 		);
 		
 		$options[] = array(
-			'name' => "Products Page Sidebar",
-			'desc' => "Products Page Sidebar.",
+			'name' => esc_html__("Products Page Sidebar",'vbegy'),
+			'desc' => esc_html__("Products Page Sidebar.",'vbegy'),
 			'id' => "products_sidebar",
 			'std' => '',
 			'options' => $new_sidebars,
 			'type' => 'select');
 		
 		$options[] = array(
-			'name' => "Products page layout",
-			'desc' => "Products page layout.",
+			'name' => esc_html__("Products page layout",'vbegy'),
+			'desc' => esc_html__("Products page layout.",'vbegy'),
 			'id' => "products_layout",
 			'std' => "default",
 			'type' => "images",
@@ -4187,8 +4187,8 @@ function optionsframework_options() {
 		);
 		
 		$options[] = array(
-			'name' => "Choose template",
-			'desc' => "Choose template layout.",
+			'name' => esc_html__("Choose template",'vbegy'),
+			'desc' => esc_html__("Choose template layout.",'vbegy'),
 			'id' => "products_template",
 			'std' => "default",
 			'type' => "images",
@@ -4201,8 +4201,8 @@ function optionsframework_options() {
 		);
 		
 		$options[] = array(
-			'name' => "Site skin",
-			'desc' => "Choose Site skin.",
+			'name' => esc_html__("Site skin",'vbegy'),
+			'desc' => esc_html__("Choose Site skin.",'vbegy'),
 			'id' => "products_skin_l",
 			'std' => "default",
 			'type' => "images",
@@ -4214,8 +4214,8 @@ function optionsframework_options() {
 		);
 		
 		$options[] = array(
-			'name' => "Choose Your Skin",
-			'desc' => "Choose Your Skin",
+			'name' => esc_html__("Choose Your Skin",'vbegy'),
+			'desc' => esc_html__("Choose Your Skin",'vbegy'),
 			'class' => "site_skin",
 			'id' => "products_skin",
 			'std' => "default",
@@ -4236,14 +4236,14 @@ function optionsframework_options() {
 		);
 		
 		$options[] = array(
-			'name' => "Primary Color",
-			'desc' => "Primary Color",
+			'name' => esc_html__("Primary Color",'vbegy'),
+			'desc' => esc_html__("Primary Color",'vbegy'),
 			'id' => 'products_primary_color',
 			'type' => 'color');
 		
 		$options[] = array(
-			'name' => "Background Type",
-			'desc' => "Background Type",
+			'name' => esc_html__("Background Type",'vbegy'),
+			'desc' => esc_html__("Background Type",'vbegy'),
 			'id' => 'products_background_type',
 			'std' => 'patterns',
 			'type' => 'radio',
@@ -4255,15 +4255,15 @@ function optionsframework_options() {
 		);
 	
 		$options[] = array(
-			'name' => "Background Color",
-			'desc' => "Background Color",
+			'name' => esc_html__("Background Color",'vbegy'),
+			'desc' => esc_html__("Background Color",'vbegy'),
 			'id' => 'products_background_color',
 			'std' => "#FFF",
 			'type' => 'color');
 			
 		$options[] = array(
-			'name' => "Choose Pattern",
-			'desc' => "Choose Pattern",
+			'name' => esc_html__("Choose Pattern",'vbegy'),
+			'desc' => esc_html__("Choose Pattern",'vbegy'),
 			'id' => "products_background_pattern",
 			'std' => "bg13",
 			'type' => "images",
@@ -4295,15 +4295,15 @@ function optionsframework_options() {
 		));
 	
 		$options[] = array(
-			'name' =>  "Custom Background",
-			'desc' => "Custom Background",
+			'name' => esc_html__("Custom Background",'vbegy'),
+			'desc' => esc_html__("Custom Background",'vbegy'),
 			'id' => 'products_custom_background',
 			'std' => $background_defaults,
 			'type' => 'background');
 			
 		$options[] = array(
-			'name' => "Full Screen Background",
-			'desc' => "Click on to Full Screen Background",
+			'name' => esc_html__("Full Screen Background",'vbegy'),
+			'desc' => esc_html__("Click on to Full Screen Background",'vbegy'),
 			'id' => 'products_full_screen_background',
 			'std' => '0',
 			'type' => 'checkbox');
@@ -4315,7 +4315,7 @@ function optionsframework_options() {
 	}
 	
 	$options[] = array(
-		'name' => 'Advertising',
+		'name' => esc_html__('Advertising','vbegy'),
 		'icon' => 'megaphone',
 		'type' => 'heading');
 	
@@ -4324,8 +4324,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Advertising at 404 pages enable or disable',
-		'desc' => 'Advertising at 404 pages enable or disable.',
+		'name' => esc_html__('Advertising at 404 pages enable or disable','vbegy'),
+		'desc' => esc_html__('Advertising at 404 pages enable or disable.','vbegy'),
 		'id'   => 'adv_404',
 		'std'  => 1,
 		'type' => 'checkbox');
@@ -4337,34 +4337,34 @@ function optionsframework_options() {
 	
 	$options[] = array(
 		'type' => 'heading-2',
-		'name' => "Advertising after header"
+		'name' => esc_html__("Advertising after header",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => 'Advertising type',
-		'desc' => 'Advertising type.',
+		'name' => esc_html__('Advertising type','vbegy'),
+		'desc' => esc_html__('Advertising type.','vbegy'),
 		'id' => 'header_adv_type',
 		'std' => 'custom_image',
 		'type' => 'radio',
 		'options' => array("display_code" => "Display code","custom_image" => "Custom Image"));
 	
 	$options[] = array(
-		'name' => 'Image URL',
-		'desc' => 'Upload a image, or enter URL to an image if it is already uploaded.',
+		'name' => esc_html__('Image URL','vbegy'),
+		'desc' => esc_html__('Upload a image, or enter URL to an image if it is already uploaded.','vbegy'),
 		'id' => 'header_adv_img',
 		'std' => '',
 		'type' => 'upload');
 	
 	$options[] = array(
-		'name' => 'Advertising url',
-		'desc' => 'Advertising url.',
+		'name' => esc_html__('Advertising url','vbegy'),
+		'desc' => esc_html__('Advertising url.','vbegy'),
 		'id' => 'header_adv_href',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => "Advertising Code html (Ex: Google ads)",
-		'desc' => "Advertising Code html (Ex: Google ads)",
+		'name' => esc_html__("Advertising Code html (Ex: Google ads)",'vbegy'),
+		'desc' => esc_html__("Advertising Code html (Ex: Google ads)",'vbegy'),
 		'id' => 'header_adv_code',
 		'std' => '',
 		'type' => 'textarea');
@@ -4376,34 +4376,34 @@ function optionsframework_options() {
 	
 	$options[] = array(
 		'type' => 'heading-2',
-		'name' => "Advertising 1 in post and question"
+		'name' => esc_html__("Advertising 1 in post and question",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => 'Advertising type',
-		'desc' => 'Advertising type.',
+		'name' => esc_html__('Advertising type','vbegy'),
+		'desc' => esc_html__('Advertising type.','vbegy'),
 		'id' => 'share_adv_type',
 		'std' => 'custom_image',
 		'type' => 'radio',
 		'options' => array("display_code" => "Display code","custom_image" => "Custom Image"));
 	
 	$options[] = array(
-		'name' => 'Image URL',
-		'desc' => 'Upload a image, or enter URL to an image if it is already uploaded.',
+		'name' => esc_html__('Image URL','vbegy'),
+		'desc' => esc_html__('Upload a image, or enter URL to an image if it is already uploaded.','vbegy'),
 		'id' => 'share_adv_img',
 		'std' => '',
 		'type' => 'upload');
 	
 	$options[] = array(
-		'name' => 'Advertising url',
-		'desc' => 'Advertising url.',
+		'name' => esc_html__('Advertising url','vbegy'),
+		'desc' => esc_html__('Advertising url.','vbegy'),
 		'id' => 'share_adv_href',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => "Advertising Code html (Ex: Google ads)",
-		'desc' => "Advertising Code html (Ex: Google ads)",
+		'name' => esc_html__("Advertising Code html (Ex: Google ads)",'vbegy'),
+		'desc' => esc_html__("Advertising Code html (Ex: Google ads)",'vbegy'),
 		'id' => 'share_adv_code',
 		'std' => '',
 		'type' => 'textarea');
@@ -4415,34 +4415,34 @@ function optionsframework_options() {
 	
 	$options[] = array(
 		'type' => 'heading-2',
-		'name' => "Advertising 2 in post and question"
+		'name' => esc_html__("Advertising 2 in post and question",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => 'Advertising type',
-		'desc' => 'Advertising type.',
+		'name' => esc_html__('Advertising type','vbegy'),
+		'desc' => esc_html__('Advertising type.','vbegy'),
 		'id' => 'related_adv_type',
 		'std' => 'custom_image',
 		'type' => 'radio',
 		'options' => array("display_code" => "Display code","custom_image" => "Custom Image"));
 	
 	$options[] = array(
-		'name' => 'Image URL',
-		'desc' => 'Upload a image, or enter URL to an image if it is already uploaded.',
+		'name' => esc_html__('Image URL','vbegy'),
+		'desc' => esc_html__('Upload a image, or enter URL to an image if it is already uploaded.','vbegy'),
 		'id' => 'related_adv_img',
 		'std' => '',
 		'type' => 'upload');
 	
 	$options[] = array(
-		'name' => 'Advertising url',
-		'desc' => 'Advertising url.',
+		'name' => esc_html__('Advertising url','vbegy'),
+		'desc' => esc_html__('Advertising url.','vbegy'),
 		'id' => 'related_adv_href',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => "Advertising Code html (Ex: Google ads)",
-		'desc' => "Advertising Code html (Ex: Google ads)",
+		'name' => esc_html__("Advertising Code html (Ex: Google ads)",'vbegy'),
+		'desc' => esc_html__("Advertising Code html (Ex: Google ads)",'vbegy'),
 		'id' => 'related_adv_code',
 		'std' => '',
 		'type' => 'textarea');
@@ -4454,34 +4454,34 @@ function optionsframework_options() {
 	
 	$options[] = array(
 		'type' => 'heading-2',
-		'name' => "Advertising after content"
+		'name' => esc_html__("Advertising after content",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => 'Advertising type',
-		'desc' => 'Advertising type.',
+		'name' => esc_html__('Advertising type','vbegy'),
+		'desc' => esc_html__('Advertising type.','vbegy'),
 		'id' => 'content_adv_type',
 		'std' => 'custom_image',
 		'type' => 'radio',
 		'options' => array("display_code" => "Display code","custom_image" => "Custom Image"));
 	
 	$options[] = array(
-		'name' => 'Image URL',
-		'desc' => 'Upload a image, or enter URL to an image if it is already uploaded.',
+		'name' => esc_html__('Image URL','vbegy'),
+		'desc' => esc_html__('Upload a image, or enter URL to an image if it is already uploaded.','vbegy'),
 		'id' => 'content_adv_img',
 		'std' => '',
 		'type' => 'upload');
 	
 	$options[] = array(
-		'name' => 'Advertising url',
-		'desc' => 'Advertising url.',
+		'name' => esc_html__('Advertising url','vbegy'),
+		'desc' => esc_html__('Advertising url.','vbegy'),
 		'id' => 'content_adv_href',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => "Advertising Code html (Ex: Google ads)",
-		'desc' => "Advertising Code html (Ex: Google ads)",
+		'name' => esc_html__("Advertising Code html (Ex: Google ads)",'vbegy'),
+		'desc' => esc_html__("Advertising Code html (Ex: Google ads)",'vbegy'),
 		'id' => 'content_adv_code',
 		'std' => '',
 		'type' => 'textarea');
@@ -4493,41 +4493,41 @@ function optionsframework_options() {
 	
 	$options[] = array(
 		'type' => 'heading-2',
-		'name' => "Between questions and posts"
+		'name' => esc_html__("Between questions and posts",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => 'Between questions or posts position',
-		'desc' => 'Between questions or posts position.',
+		'name' => esc_html__('Between questions or posts position','vbegy'),
+		'desc' => esc_html__('Between questions or posts position.','vbegy'),
 		'id' => 'between_questions_position',
 		'std' => '2',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Advertising type',
-		'desc' => 'Advertising type.',
+		'name' => esc_html__('Advertising type','vbegy'),
+		'desc' => esc_html__('Advertising type.','vbegy'),
 		'id' => 'between_adv_type',
 		'std' => 'custom_image',
 		'type' => 'radio',
 		'options' => array("display_code" => "Display code","custom_image" => "Custom Image"));
 	
 	$options[] = array(
-		'name' => 'Image URL',
-		'desc' => 'Upload a image, or enter URL to an image if it is already uploaded.',
+		'name' => esc_html__('Image URL','vbegy'),
+		'desc' => esc_html__('Upload a image, or enter URL to an image if it is already uploaded.','vbegy'),
 		'id' => 'between_adv_img',
 		'std' => '',
 		'type' => 'upload');
 	
 	$options[] = array(
-		'name' => 'Advertising url',
-		'desc' => 'Advertising url.',
+		'name' => esc_html__('Advertising url','vbegy'),
+		'desc' => esc_html__('Advertising url.','vbegy'),
 		'id' => 'between_adv_href',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => "Advertising Code html (Ex: Google ads)",
-		'desc' => "Advertising Code html (Ex: Google ads)",
+		'name' => esc_html__("Advertising Code html (Ex: Google ads)",'vbegy'),
+		'desc' => esc_html__("Advertising Code html (Ex: Google ads)",'vbegy'),
 		'id' => 'between_adv_code',
 		'std' => '',
 		'type' => 'textarea');
@@ -4539,41 +4539,41 @@ function optionsframework_options() {
 	
 	$options[] = array(
 		'type' => 'heading-2',
-		'name' => "Between comments and answers"
+		'name' => esc_html__("Between comments and answers",'vbegy'),
 	);
 	
 	$options[] = array(
-		'name' => 'Between comments and answers position',
-		'desc' => 'Between comments and answers position.',
+		'name' => esc_html__('Between comments and answers position','vbegy'),
+		'desc' => esc_html__('Between comments and answers position.','vbegy'),
 		'id' => 'between_comments_position',
 		'std' => '2',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Advertising type',
-		'desc' => 'Advertising type.',
+		'name' => esc_html__('Advertising type','vbegy'),
+		'desc' => esc_html__('Advertising type.','vbegy'),
 		'id' => 'between_comments_adv_type',
 		'std' => 'custom_image',
 		'type' => 'radio',
 		'options' => array("display_code" => "Display code","custom_image" => "Custom Image"));
 	
 	$options[] = array(
-		'name' => 'Image URL',
-		'desc' => 'Upload a image, or enter URL to an image if it is already uploaded.',
+		'name' => esc_html__('Image URL','vbegy'),
+		'desc' => esc_html__('Upload a image, or enter URL to an image if it is already uploaded.','vbegy'),
 		'id' => 'between_comments_adv_img',
 		'std' => '',
 		'type' => 'upload');
 	
 	$options[] = array(
-		'name' => 'Advertising url',
-		'desc' => 'Advertising url.',
+		'name' => esc_html__('Advertising url','vbegy'),
+		'desc' => esc_html__('Advertising url.','vbegy'),
 		'id' => 'between_comments_adv_href',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => "Advertising Code html (Ex: Google ads)",
-		'desc' => "Advertising Code html (Ex: Google ads)",
+		'name' => esc_html__("Advertising Code html (Ex: Google ads)",'vbegy'),
+		'desc' => esc_html__("Advertising Code html (Ex: Google ads)",'vbegy'),
 		'id' => 'between_comments_adv_code',
 		'std' => '',
 		'type' => 'textarea');
@@ -4584,7 +4584,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Social settings',
+		'name' => esc_html__('Social settings','vbegy'),
 		'icon' => 'share',
 		'type' => 'heading');
 	
@@ -4593,85 +4593,85 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Social header enable or disable',
-		'desc' => 'Social enable or disable.',
+		'name' => esc_html__('Social header enable or disable','vbegy'),
+		'desc' => esc_html__('Social enable or disable.','vbegy'),
 		'id' => 'social_icon_h',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Social footer enable or disable',
-		'desc' => 'Social enable or disable.',
+		'name' => esc_html__('Social footer enable or disable','vbegy'),
+		'desc' => esc_html__('Social enable or disable.','vbegy'),
 		'id' => 'social_icon_f',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'Twitter URL',
-		'desc' => 'Type the twitter URL from here.',
+		'name' => esc_html__('Twitter URL','vbegy'),
+		'desc' => esc_html__('Type the twitter URL from here.','vbegy'),
 		'id' => 'twitter_icon_f',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Facebook URL',
-		'desc' => 'Type the facebook URL from here.',
+		'name' => esc_html__('Facebook URL','vbegy'),
+		'desc' => esc_html__('Type the facebook URL from here.','vbegy'),
 		'id' => 'facebook_icon_f',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Google plus URL',
-		'desc' => 'Type the google plus URL from here.',
+		'name' => esc_html__('Google plus URL','vbegy'),
+		'desc' => esc_html__('Type the google plus URL from here.','vbegy'),
 		'id' => 'gplus_icon_f',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Youtube URL',
-		'desc' => 'Type the youtube URL from here.',
+		'name' => esc_html__('Youtube URL','vbegy'),
+		'desc' => esc_html__('Type the youtube URL from here.','vbegy'),
 		'id' => 'youtube_icon_f',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Skype',
-		'desc' => 'Type the skype from here.',
+		'name' => esc_html__('Skype','vbegy'),
+		'desc' => esc_html__('Type the skype from here.','vbegy'),
 		'id' => 'skype_icon_f',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Linkedin URL',
-		'desc' => 'Type the linkedin URL from here.',
+		'name' => esc_html__('Linkedin URL','vbegy'),
+		'desc' => esc_html__('Type the linkedin URL from here.','vbegy'),
 		'id' => 'linkedin_icon_f',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Flickr URL',
-		'desc' => 'Type the flickr URL from here.',
+		'name' => esc_html__('Flickr URL','vbegy'),
+		'desc' => esc_html__('Type the flickr URL from here.','vbegy'),
 		'id' => 'flickr_icon_f',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Instagram URL',
-		'desc' => 'Type the instagram URL from here.',
+		'name' => esc_html__('Instagram URL','vbegy'),
+		'desc' => esc_html__('Type the instagram URL from here.','vbegy'),
 		'id' => 'instagram_icon_f',
 		'std' => '#',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'RSS enable or disable',
-		'desc' => 'RSS enable or disable.',
+		'name' => esc_html__('RSS enable or disable','vbegy'),
+		'desc' => esc_html__('RSS enable or disable.','vbegy'),
 		'id' => 'rss_icon_f',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => 'RSS URL if you want change the default URL',
-		'desc' => 'Type the RSS URL if you want change the default URL or leave it empty for enable the default URL.',
+		'name' => esc_html__('RSS URL if you want change the default URL','vbegy'),
+		'desc' => esc_html__('Type the RSS URL if you want change the default URL or leave it empty for enable the default URL.','vbegy'),
 		'id' => 'rss_icon_f_other',
 		'std' => '',
 		'type' => 'text');
@@ -4682,7 +4682,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Emails settings',
+		'name' => esc_html__('Emails settings','vbegy'),
 		'icon' => 'email',
 		'type' => 'heading');
 		
@@ -4691,21 +4691,21 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Custom logo for email template",
-		'desc' => "Upload your custom logo for email template",
+		'name' => esc_html__("Custom logo for email template",'vbegy'),
+		'desc' => esc_html__("Upload your custom logo for email template",'vbegy'),
 		'id' => 'logo_email_template',
 		'type' => 'upload');
 		
 	$options[] = array(
-		'name' => 'Enable description',
-		'desc' => 'Select ON to enable description.',
+		'name' => esc_html__('Enable description','vbegy'),
+		'desc' => esc_html__('Select ON to enable description.','vbegy'),
 		'id' => 'description_email_template',
 		'std' => 1,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => "Add your email for email template",
-		'desc' => "Add your email for email template",
+		'name' => esc_html__("Add your email for email template",'vbegy'),
+		'desc' => esc_html__("Add your email for email template",'vbegy'),
 		'id' => 'email_template',
 		'std' => get_bloginfo("admin_email"),
 		'type' => 'text'
@@ -4754,14 +4754,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name'     => 'Reset password title',
+		'name'     => esc_html__('Reset password title','vbegy'),
 		'id'       => 'title_new_password',
 		'std'      => "Reset your password",
 		'type'     => 'text'
 	);
 	
 	$options[] = array(
-		'name'     => 'Reset password template',
+		'name'     => esc_html__('Reset password template','vbegy'),
 		'id'       => 'email_new_password',
 		'std'      => "<p>Someone requested that the password be reset for the following account:</p><p>Username: [%display_name%].' ([%user_login%])</p><p>If this was a mistake, just ignore this email and nothing will happen.</p><p>To reset your password, visit the following address:</p><p><a href='[%confirm_link_email%]'>Click here to reset your password</a></p><p>If the link above does not work, Please use your browser to go to:</p>[%confirm_link_email%]",
 		'type'     => 'editor',
@@ -4775,14 +4775,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name'     => 'Reset password 2 title',
+		'name'     => esc_html__('Reset password 2 title','vbegy'),
 		'id'       => 'title_new_password_2',
 		'std'      => "Reset your password",
 		'type'     => 'text'
 	);
 	
 	$options[] = array(
-		'name'     => 'Reset password 2 template',
+		'name'     => esc_html__('Reset password 2 template','vbegy'),
 		'id'       => 'email_new_password_2',
 		'std'      => "<p>You are : [%display_name%] ([%user_login%])</p><p>The New Password : [%reset_password%]</p>",
 		'type'     => 'editor',
@@ -4790,14 +4790,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name'     => 'Confirm email title',
+		'name'     => esc_html__('Confirm email title','vbegy'),
 		'id'       => 'title_confirm_link',
 		'std'      => "Confirm account",
 		'type'     => 'text'
 	);
 	
 	$options[] = array(
-		'name'     => 'Confirm email template',
+		'name'     => esc_html__('Confirm email template','vbegy'),
 		'id'       => 'email_confirm_link',
 		'std'      => "<p>Hi there</p><p>Your registration has been successful! To confirm your account, kindly click on 'Activate' below.</p><p><a href='[%confirm_link_email%]'>Activate</a></p><p>If the link above does not work, Please use your browser to go to:</p>[%confirm_link_email%]",
 		'type'     => 'editor',
@@ -4805,14 +4805,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name'     => 'Confirm email 2 title',
+		'name'     => esc_html__('Confirm email 2 title','vbegy'),
 		'id'       => 'title_confirm_link_2',
 		'std'      => "Confirm account",
 		'type'     => 'text'
 	);
 	
 	$options[] = array(
-		'name'     => 'Confirm email 2 template',
+		'name'     => esc_html__('Confirm email 2 template','vbegy'),
 		'id'       => 'email_confirm_link_2',
 		'std'      => "<p>Hi there</p><p>This is the link to activate your membership</p><p><a href='[%confirm_link_email%]'>Activate</a></p>",
 		'type'     => 'editor',
@@ -4820,14 +4820,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name'     => 'Approve user title',
+		'name'     => esc_html__('Approve user title','vbegy'),
 		'id'       => 'title_approve_user',
 		'std'      => "Confirm account",
 		'type'     => 'text'
 	);
 	
 	$options[] = array(
-		'name'     => 'Approve user template',
+		'name'     => esc_html__('Approve user template','vbegy'),
 		'id'       => 'email_approve_user',
 		'std'      => "<p>Hi there</p><p>We just approved your member.</p><p><a href='[%site_url%]'>[%blogname%]</a></p><p>[%site_url%]</p>",
 		'type'     => 'editor',
@@ -4841,14 +4841,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name'     => 'Send message title',
+		'name'     => esc_html__('Send message title','vbegy'),
 		'id'       => 'title_new_message',
 		'std'      => "New message",
 		'type'     => 'text'
 	);
 	
 	$options[] = array(
-		'name'     => 'Send message template',
+		'name'     => esc_html__('Send message template','vbegy'),
 		'id'       => 'email_new_message',
 		'std'      => "<p>Hi there</p><p>There are a new message</p><p><a href='[%messages_url%]'>[%messages_title%]</a></p>",
 		'type'     => 'editor',
@@ -4869,14 +4869,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name'     => 'New payment title',
+		'name'     => esc_html__('New payment title','vbegy'),
 		'id'       => 'title_new_payment',
 		'std'      => "Instant Payment Notification - Received Payment",
 		'type'     => 'text'
 	);
 	
 	$options[] = array(
-		'name'     => 'New payment template',
+		'name'     => esc_html__('New payment template','vbegy'),
 		'id'       => 'email_new_payment',
 		'std'      => "<p>An instant payment notification was successfully recieved</p><p>With [%item_price%] [%item_currency%]</p><p>From [%payer_email%] [%first_name%] - [%last_name%] on [%date%] at [%time%]</p><p>The item transaction id [%item_transaction%]</p>",
 		'type'     => 'editor',
@@ -4899,14 +4899,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name'     => 'Report question title',
+		'name'     => esc_html__('Report question title','vbegy'),
 		'id'       => 'title_report_question',
 		'std'      => "Question report",
 		'type'     => 'text'
 	);
 	
 	$options[] = array(
-		'name'     => 'Report question template',
+		'name'     => esc_html__('Report question template','vbegy'),
 		'id'       => 'email_report_question',
 		'std'      => "<p>Hi there</p><p>Abuse have been reported on the use of the following question</p><p><a href='[%post_link%]'>[%post_title%]</a></p>",
 		'type'     => 'editor',
@@ -4914,14 +4914,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name'     => 'Report answer title',
+		'name'     => esc_html__('Report answer title','vbegy'),
 		'id'       => 'title_report_answer',
 		'std'      => "Answer report",
 		'type'     => 'text'
 	);
 	
 	$options[] = array(
-		'name'     => 'Report answer template',
+		'name'     => esc_html__('Report answer template','vbegy'),
 		'id'       => 'email_report_answer',
 		'std'      => "<p>Hi there</p><p>Abuse have been reported on the use of the following comment</p><p><a href='[%answer_link%]'>[%post_title%]</a></p>",
 		'type'     => 'editor',
@@ -4929,14 +4929,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name'     => 'Notified answer title',
+		'name'     => esc_html__('Notified answer title','vbegy'),
 		'id'       => 'title_notified_answer',
 		'std'      => "Answer to your question",
 		'type'     => 'text'
 	);
 	
 	$options[] = array(
-		'name'     => 'Notified answer template',
+		'name'     => esc_html__('Notified answer template','vbegy'),
 		'id'       => 'email_notified_answer',
 		'std'      => "<p>Hi there</p><p>We would tell you [%the_author_post%] That the new post was added on a common theme by [%the_name%] Entitled [%the_name%] [%post_title%]</p><p>Click on the link below to go to the topic</p><p><a href='[%answer_link%]'>[%post_title%]</a></p><p>There may be more of Posts and we hope the answer to encourage members and get them to help.</p><p>Accept from us Sincerely</p>",
 		'type'     => 'editor',
@@ -4944,14 +4944,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name'     => 'Follow question title',
+		'name'     => esc_html__('Follow question title','vbegy'),
 		'id'       => 'title_follow_question',
 		'std'      => "Hi there",
 		'type'     => 'text'
 	);
 	
 	$options[] = array(
-		'name'     => 'Follow question template',
+		'name'     => esc_html__('Follow question template','vbegy'),
 		'id'       => 'email_follow_question',
 		'std'      => "<p>Hi there</p><p>There are a new answers on your follow question</p><p><a href='[%answer_link%]'>[%post_title%]</a></p>",
 		'type'     => 'editor',
@@ -4959,14 +4959,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name'     => 'New questions title',
+		'name'     => esc_html__('New questions title','vbegy'),
 		'id'       => 'title_new_questions',
 		'std'      => "New question",
 		'type'     => 'text'
 	);
 	
 	$options[] = array(
-		'name'     => 'New questions template',
+		'name'     => esc_html__('New questions template','vbegy'),
 		'id'       => 'email_new_questions',
 		'std'      => "<p>Hi there</p><p>There are a new question</p><p><a href='[%post_link%]'>[%post_title%]</a></p>",
 		'type'     => 'editor',
@@ -4974,14 +4974,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name'     => 'New questions for review title',
+		'name'     => esc_html__('New questions for review title','vbegy'),
 		'id'       => 'title_new_draft_questions',
 		'std'      => "New question for review",
 		'type'     => 'text'
 	);
 	
 	$options[] = array(
-		'name'     => 'New questions for review template',
+		'name'     => esc_html__('New questions for review template','vbegy'),
 		'id'       => 'email_draft_questions',
 		'std'      => "<p>Hi there</p><p>There are a new question for the review</p><p><a href='[%post_link%]'>[%post_title%]</a></p>",
 		'type'     => 'editor',
@@ -4989,14 +4989,14 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name'     => 'New posts for review title',
+		'name'     => esc_html__('New posts for review title','vbegy'),
 		'id'       => 'title_new_draft_posts',
 		'std'      => "New post for review",
 		'type'     => 'text'
 	);
 	
 	$options[] = array(
-		'name'     => 'New posts for review template',
+		'name'     => esc_html__('New posts for review template','vbegy'),
 		'id'       => 'email_draft_posts',
 		'std'      => "<p>Hi there</p><p>There are a new post for the review</p><p><a href='[%post_link%]'>[%post_title%]</a></p>",
 		'type'     => 'editor',
@@ -5009,7 +5009,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Footer settings',
+		'name' => esc_html__('Footer settings','vbegy'),
 		'icon' => 'tagcloud',
 		'type' => 'heading');
 		
@@ -5018,8 +5018,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Footer skin",
-		'desc' => "Choose the footer skin.",
+		'name' => esc_html__("Footer skin",'vbegy'),
+		'desc' => esc_html__("Choose the footer skin.",'vbegy'),
 		'id' => "footer_skin",
 		'std' => "footer_dark",
 		'type' => "images",
@@ -5030,8 +5030,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Footer Layout",
-		'desc' => "Footer columns Layout.",
+		'name' => esc_html__("Footer Layout",'vbegy'),
+		'desc' => esc_html__("Footer columns Layout.",'vbegy'),
 		'id' => "footer_layout",
 		'std' => "footer_4c",
 		'type' => "images",
@@ -5046,8 +5046,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Copyrights',
-		'desc' => 'Put the copyrights of footer.',
+		'name' => esc_html__('Copyrights','vbegy'),
+		'desc' => esc_html__('Put the copyrights of footer.','vbegy'),
 		'id' => 'footer_copyrights',
 		'std' => 'Copyright 2018 Ask me | <a href=https://2code.info/>By 2code</a>',
 		'type' => 'textarea');
@@ -5058,7 +5058,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => "Advanced",
+		'name' => esc_html__("Advanced",'vbegy'),
 		'id'   => "advanced",
 		'icon' => 'upload',
 		'type' => 'heading');
@@ -5068,62 +5068,62 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => 'Ajax file load from admin or theme',
-		'desc' => 'choose ajax file load from admin or theme.',
+		'name' => esc_html__('Ajax file load from admin or theme','vbegy'),
+		'desc' => esc_html__('choose ajax file load from admin or theme.','vbegy'),
 		'id' => 'ajax_file',
 		'std' => 'admin',
 		'type' => 'select',
 		'options' => array("admin" => "Admin","theme" => "Theme"));
 	
 	$options[] = array(
-		'name' => 'Google API (Get it from here : https://developers.google.com/+/api/oauth)',
-		'desc' => 'Type here the Google API.',
+		'name' => esc_html__('Google API (Get it from here : https://developers.google.com/+/api/oauth)','vbegy'),
+		'desc' => esc_html__('Type here the Google API.','vbegy'),
 		'id' => 'google_api',
 		'std' => '',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Facebook access token  (Creat https://developers.facebook.com/apps & Get it from here : https://developers.facebook.com/tools/access_token)',
-		'desc' => 'Facebook access token.',
+		'name' => esc_html__('Facebook access token  (Creat https://developers.facebook.com/apps & Get it from here : https://developers.facebook.com/tools/access_token)','vbegy'),
+		'desc' => esc_html__('Facebook access token.','vbegy'),
 		'id' => 'facebook_access_token',
 		'std' => '',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Twitter consumer key',
-		'desc' => 'Twitter consumer key.',
+		'name' => esc_html__('Twitter consumer key','vbegy'),
+		'desc' => esc_html__('Twitter consumer key.','vbegy'),
 		'id' => 'twitter_consumer_key',
 		'std' => '',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Twitter consumer secret',
-		'desc' => 'Twitter consumer secret.',
+		'name' => esc_html__('Twitter consumer secret','vbegy'),
+		'desc' => esc_html__('Twitter consumer secret.','vbegy'),
 		'id' => 'twitter_consumer_secret',
 		'std' => '',
 		'type' => 'text');
 	
 	$options[] = array(
-		'name' => 'Click ON to create all theme pages (26 pages)',
-		'desc' => 'Click ON to create all theme pages (26 pages)',
+		'name' => esc_html__('Click ON to create all theme pages (26 pages)','vbegy'),
+		'desc' => esc_html__('Click ON to create all theme pages (26 pages)','vbegy'),
 		'id' => 'theme_pages',
 		'std' => 0,
 		'type' => 'checkbox');
 	
 	$options[] = array(
-		'name' => "If you wont to export setting please refresh the page before that",
+		'name' => esc_html__("If you wont to export setting please refresh the page before that",'vbegy'),
 		'type' => 'info');
 
 	$options[] = array(
-		'name' => "Export Setting",
-		'desc' => "Copy this to saved file",
+		'name' => esc_html__("Export Setting",'vbegy'),
+		'desc' => esc_html__("Copy this to saved file",'vbegy'),
 		'id' => 'export_setting',
 		'export' => $current_options_e,
 		'type' => 'export');
 
 	$options[] = array(
-		'name' => "Import Setting",
-		'desc' => "Put here the import setting",
+		'name' => esc_html__("Import Setting",'vbegy'),
+		'desc' => esc_html__("Put here the import setting",'vbegy'),
 		'id' => 'import_setting',
 		'type' => 'import');
 	

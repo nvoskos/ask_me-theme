@@ -124,7 +124,7 @@ if (isset($following_me_array) && is_array($following_me_array) && !empty($follo
 		<div class="col-md-12">
 			<div class="page-content">
 				<h2>
-					<?php _e("About","vbegy")?> <span><?php echo $user_login->display_name?></span>
+					<?php _e("About","vbegy")?> <a href="<?php echo vpanel_get_user_url($get_query_var);?>"><?php echo $user_login->display_name?></a>
 					<?php if ($verified_user == 1) {
 						echo '<img class="verified_user tooltip-n" alt="'.__("Verified","vbegy").'" original-title="'.__("Verified","vbegy").'" src="'.get_template_directory_uri().'/images/verified.png">';
 					}
@@ -196,7 +196,7 @@ if (isset($following_me_array) && is_array($following_me_array) && !empty($follo
 							<input type="hidden" name="user_id" value="<?php echo $get_query_var?>">
 						</form>
 					<?php }
-
+					
 					$active_message = vpanel_options("active_message");
 					$send_message_no_register = vpanel_options("send_message_no_register");
 					$received_message = esc_attr( get_the_author_meta( 'received_message', $get_query_var ) );
@@ -218,7 +218,7 @@ if (isset($following_me_array) && is_array($following_me_array) && !empty($follo
 							<?php }
 						}
 					}
-
+					
 					if (is_user_logged_in) {
 						$following_me2 = get_user_meta(get_current_user_id(),"following_me");
 						$following_me2 = (isset($following_me2[0])?$following_me2[0]:array());
@@ -227,7 +227,7 @@ if (isset($following_me_array) && is_array($following_me_array) && !empty($follo
 						<?php }else {?>
 							<a href="#" class="link_follow following_you button color small margin_0" rel="<?php echo $get_query_var?>"><?php _e("Follow","vbegy")?></a>
 						<?php }
-
+						
 					}
 				}?>
 				<div class="clearfix"></div>

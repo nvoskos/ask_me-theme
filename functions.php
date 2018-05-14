@@ -70,7 +70,7 @@ function vbegy_scripts_styles() {
 			return $classes;
 		}
 	}
-
+	
 	add_filter('body_class', 'login_body_classes');
 	function login_body_classes($classes) {
 		if (is_user_logged_in) {
@@ -202,7 +202,7 @@ function vbegy_scripts_styles() {
 			}
 		}
 	}
-
+	
 	if ((is_author() && ($author_skin_l == "" || $author_skin_l == "default")) || ((is_single() || is_page()) && ($vbegy_site_skin_l == "" || $vbegy_site_skin_l == "default")) || (is_category() && ($cat_skin_l == "" || $cat_skin_l == "default")) || (is_tax("product_cat") && ($cat_skin_l == "" || $cat_skin_l == "default")) || (is_tax("product_tag") && ($products_skin_l == "" || $products_skin_l == "default")) || ((is_post_type_archive("product")) && ($products_skin_l == "" || $products_skin_l == "default")) || (is_tax(ask_question_category) && ($cat_skin_l == "" || $cat_skin_l == "default")) || (is_tax("question_tags") && ($questions_skin_l == "" || $questions_skin_l == "default")) || ((is_post_type_archive("question")) && ($questions_skin_l == "" || $questions_skin_l == "default"))) {
 		if ($site_skin_all == "site_dark") {
 			wp_enqueue_style('v_dark', get_template_directory_uri( __FILE__ )."/css/dark.css");
@@ -213,16 +213,16 @@ function vbegy_scripts_styles() {
 			}
 		}
 	}
-
+	
 	$site_skin = vpanel_options('site_skin');
 	if ($site_skin != "default" && $site_skin != "default_color") {
 		wp_enqueue_style('skin-'.$site_skin, get_template_directory_uri( __FILE__ )."/css/skins/".$site_skin.".css");
 	}else {
 		wp_enqueue_style('v-skins', get_template_directory_uri( __FILE__ )."/css/skins/skins.css");
 	}
-
+	
 	wp_enqueue_style('vpanel_custom', get_template_directory_uri( __FILE__ )."/css/custom.css");
-
+	
 	$custom_css = '';
 	$vbegy_layout = "";
 	$cat_layout = "";
@@ -379,7 +379,7 @@ function vbegy_scripts_styles() {
 			endif;
 		}
 	}
-
+	
 	if (is_category() && $cat_layout != "default") {
 		if ($cat_layout != "full") {
 			if ($cat_full_screen_background == "on") {
@@ -652,7 +652,7 @@ function vbegy_scripts_styles() {
 			}
 		}
 	endif;
-
+	
 	if (is_category() && $primary_color_c == "") {
 		if ($cat_skin != "default" && $cat_skin != "default_color") {
 			if ($cat_skin == "skins") {
@@ -764,10 +764,10 @@ function vbegy_scripts_styles() {
 			$custom_css .= all_css_color($primary_color);
 		endif;
 	}
-
+	
 	$logo_display = vpanel_options("logo_display");
 	$logo_width = vpanel_options("logo_width");
-
+	
 	if (is_tax("product_cat") || is_tax("product_tag") || is_post_type_archive("product") || is_singular("product")) {
 		$products_custom_header = vpanel_options("products_custom_header");
 		if ($products_custom_header == 1) {
@@ -781,13 +781,13 @@ function vbegy_scripts_styles() {
 			$logo_width = vpanel_options("questions_logo_width");
 		}
 	}
-
+	
 	if ($logo_display == "custom_image") {
 		$custom_css .= '.logo img {
 			max-width: '.$logo_width.'px;
 		}';
 	}
-
+	
 	/* custom_css */
 	if(vpanel_options("custom_css")) {
 		$custom_css .= vpanel_options("custom_css");
@@ -795,9 +795,9 @@ function vbegy_scripts_styles() {
 	if (is_single() || is_page()) {
 		$custom_css .= rwmb_meta('vbegy_footer_css','textarea',$post->ID);
 	}
-
+	
 	wp_add_inline_style('vpanel_custom',$custom_css);
-
+	
 	wp_enqueue_script("v_easing", get_template_directory_uri( __FILE__ )."/js/jquery.easing.1.3.min.js",array("jquery"));
 	wp_enqueue_script("v_html5", get_template_directory_uri( __FILE__ )."/js/html5.js",array("jquery"));
 	wp_enqueue_script("v_modernizr", get_template_directory_uri( __FILE__ )."/js/modernizr.js",array("jquery"),'1.0.0',true);
@@ -812,10 +812,6 @@ function vbegy_scripts_styles() {
 	wp_enqueue_script("v_nav", get_template_directory_uri( __FILE__ )."/js/jquery.nav.js",array("jquery"));
 	wp_enqueue_script("v_tags", get_template_directory_uri( __FILE__ )."/js/tags.js",array("jquery"));
 	wp_enqueue_script("v_theia", get_template_directory_uri( __FILE__ )."/js/theia.js",array("jquery"));
-	wp_enqueue_style('v_main', get_template_directory_uri( __FILE__ )."/js/main.js",array("jquery"));
-	wp_enqueue_script('main', get_template_directory_uri() .'/js/main.js', array('jquery'), null, true);
-
-
 	wp_enqueue_script("v_mCustomScrollbar", get_template_directory_uri( __FILE__ )."/js/mCustomScrollbar.js",array("jquery"));
 	wp_enqueue_script("v_nicescroll", get_template_directory_uri( __FILE__ )."/js/jquery.nicescroll.min.js",array("jquery"));
 	if (is_rtl()) {
@@ -865,7 +861,7 @@ function vbegy_scripts_styles() {
 	if (is_rtl()) {
 		wp_enqueue_script("v_custom_ar", get_template_directory_uri( __FILE__ )."/js/custom-ar.min.js",array("jquery"));
 	}
-
+	
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
@@ -899,7 +895,7 @@ function vbegy_load_theme() {
 		add_image_size('vbegy_img_7', 806,440, true );
 		add_image_size('vbegy_img_8', 660,330, true );
     }
-
+    
     /* Valid HTML5 */
     add_theme_support('html5', array('search-form', 'comment-form', 'comment-list') );
     /* This theme uses its own gallery styles */
@@ -918,24 +914,24 @@ function vbegy_head() {
 	    $iphone_icon_retina = vpanel_options("iphone_icon_retina");
 	    $ipad_icon          = vpanel_options("ipad_icon");
 	    $ipad_icon_retina   = vpanel_options("ipad_icon_retina");
-
+	    
 		echo '<link rel="shortcut icon" href="'.esc_url((isset($favicon) && $favicon != ""?$favicon:$default_favicon)).'" type="image/x-icon">' ."\n";
-
+	
 	    /* Favicon iPhone */
 	    if (isset($iphone_icon) && $iphone_icon != "") {
 	        echo '<link rel="apple-touch-icon-precomposed" href="'.esc_url($iphone_icon).'">' ."\n";
 	    }
-
+	
 	    /* Favicon iPhone 4 Retina display */
 	    if (isset($iphone_icon_retina) && $iphone_icon_retina != "") {
 	        echo '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="'.esc_url($iphone_icon_retina).'">' ."\n";
 	    }
-
+	
 	    /* Favicon iPad */
 	    if (isset($ipad_icon) && $ipad_icon != "") {
 	        echo '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="'.esc_url($ipad_icon).'">' ."\n";
 	    }
-
+	
 	    /* Favicon iPad Retina display */
 	    if (isset($ipad_icon_retina) && $ipad_icon_retina != "") {
 	        echo '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="'.esc_url($ipad_icon_retina).'">' ."\n";
@@ -947,10 +943,10 @@ function vbegy_head() {
 
     if (vpanel_options("seo_active") == 1) {
     	$fbShareImage = get_option('fb_share_image');
-
+    	
     	echo '<meta property="og:site_name" content="'.htmlspecialchars(get_bloginfo('name')).'" />'."\n";
     	echo '<meta property="og:type" content="website" />'."\n";
-
+    	
         if (is_single() || is_page()) {
         	if ( have_posts() ) : while ( have_posts() ) : the_post();
         		$vpanel_image = vpanel_image();
@@ -964,14 +960,14 @@ function vbegy_head() {
     		        }
     		    }else {
     		        $protocol = is_ssl() ? 'https' : 'http';
-
+    		        
     		        $video_id = rwmb_meta('vbegy_video_post_id',"select",$post->ID);
     		        $video_type = rwmb_meta('vbegy_video_post_type',"text",$post->ID);
     		        if (is_singular("question")) {
     		        	$video_id = get_post_meta($post->ID,'video_id',true);
     		        	$video_type = get_post_meta($post->ID,'video_type',true);
     		        }
-
+    		
     				if (!empty($video_id)) {
 			            if ($video_type == 'youtube') {
 			                $post_thumb = $protocol.'://img.youtube.com/vi/'.$video_id.'/0.jpg';
@@ -985,7 +981,7 @@ function vbegy_head() {
 			            }
 		            }
     		    }
-
+    		    
     		    if (!empty($post_thumb)) {
     		        echo '<meta property="og:image" content="' . $post_thumb . '" />' . "\n";
     		    }else {
@@ -998,7 +994,7 @@ function vbegy_head() {
     		        	echo '<meta property="og:image" content="' . $logo_img . '" />' . "\n";?>
     		        <?php }
     		    }
-
+        			
         		$title = the_title('', '', false);
         		$php_version = explode('.', phpversion());
         		if(count($php_version) && $php_version[0]>=5)
@@ -1010,7 +1006,7 @@ function vbegy_head() {
         				$description = trim(get_the_excerpt());
         			if ($description != '')
         			    	echo '<meta property="og:description" content="'.htmlspecialchars($description).'" />'."\n";
-
+        			    	
         	    if (is_singular("question")) {
         	    	if ($terms = wp_get_object_terms( $post->ID, 'question_tags')) :
         	    		$the_tags_post = '';
@@ -1046,7 +1042,7 @@ function vbegy_head() {
 	        echo "<meta name='keywords' content='".$the_seo."'>" ."\n";
         }
     }
-
+    
     /* head_code */
     if(vpanel_options("head_code")) {
         echo stripslashes(vpanel_options("head_code"));

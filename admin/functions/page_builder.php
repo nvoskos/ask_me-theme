@@ -141,7 +141,7 @@ function builder_slideshow() {
 add_action ('save_post','builder_meta_save',1,2);
 function builder_meta_save ($post_id,$post) {
 	global $wpdb;
-	if (!$_POST) return $post_id;
+	if (!isset($_POST)) return $post_id;
 	if ($post->post_type != 'page' && $post->post_type != 'question' && $post->post_type != 'post') return $post_id;
 	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return $post_id;
 	if (!isset($_POST['builder_save_meta_nonce']) || !wp_verify_nonce ($_POST['builder_save_meta_nonce'],'builder_save_meta')) return $post_id;

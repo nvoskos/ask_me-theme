@@ -50,22 +50,22 @@ function vbegy_register_meta_boxes() {
 		'priority' => 'high',
 		'fields' => array(
 			array(
-				'name' => "Post number",
-				'desc' => "put the post number",
+				'name' => esc_html__("Post number",'vbegy'),
+				'desc' => esc_html__("put the post number",'vbegy'),
 				'id' => $prefix.'post_number_b',
 				'type' => 'text',
 				'std' => "5"
 			),
 			array(
-				'name' => "Excerpt post",
-				'desc' => "Put here the excerpt post",
+				'name' => esc_html__("Excerpt post",'vbegy'),
+				'desc' => esc_html__("Put here the excerpt post",'vbegy'),
 				'id' => $prefix.'post_excerpt_b',
 				'type' => 'text',
 				'std' => "5"
 			),
 			array(
-				'name' => "Order by",
-				'desc' => "Select the post order by.",
+				'name' => esc_html__("Order by",'vbegy'),
+				'desc' => esc_html__("Select the post order by.",'vbegy'),
 				'id' => $prefix."orderby_post_b",
 				'std' => array("recent"),
 				'type' => "select",
@@ -76,7 +76,7 @@ function vbegy_register_meta_boxes() {
 				)
 			),
 			array(
-				'name'		=> "Display by",
+				'name'		=> esc_html__("Display by",'vbegy'),
 				'id'		=> $prefix."post_display_b",
 				'type'		=> 'select',
 				'options'	=> array(
@@ -88,21 +88,21 @@ function vbegy_register_meta_boxes() {
 				'std'		=> array('lasts'),
 			),
 			array(
-				'name'		=> 'Single category',
+				'name'		=> esc_html__('Single category','vbegy'),
 				'id'		=> $prefix.'post_single_category_b',
 				'type'		=> 'select',
 				'options'	=> $options_categories,
 			),
 			array(
-				'name' => "Post categories",
-				'desc' => "Select the post categories.",
+				'name' => esc_html__("Post categories",'vbegy'),
+				'desc' => esc_html__("Select the post categories.",'vbegy'),
 				'id' => $prefix."post_categories_b",
 				'options' => $options_categories,
 				'type' => 'checkbox_list'
 			),
 			array(
-				'name'     => "Post ids",
-				'desc'     => "Type the post ids.",
+				'name'     => esc_html__("Post ids",'vbegy'),
+				'desc'     => esc_html__("Type the post ids.",'vbegy'),
 				'id'       => $prefix."post_posts_b",
 				'std'      => '',
 				'type'     => 'text',
@@ -118,107 +118,107 @@ function vbegy_register_meta_boxes() {
 		'priority' => 'high',
 		'fields' => array(
 			array(
-				'name' => 'Map',
-				'desc' => 'Put the code iframe map.',
+				'name' => esc_html__('Map','vbegy'),
+				'desc' => esc_html__('Put the code iframe map.','vbegy'),
 				'id'   => $prefix.'contact_map',
 				'std'  => '<iframe height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=egypt&amp;hl=en&amp;sll=26.820553,30.802498&amp;sspn=16.874794,19.753418&amp;hnear=Egypt&amp;t=m&amp;z=6&amp;output=embed"></iframe>',
 				'type' => 'textarea'
 			),
 			array(
-				'name' => 'Form shortcode',
-				'desc' => 'Put the form shortcode.',
+				'name' => esc_html__('Form shortcode','vbegy'),
+				'desc' => esc_html__('Put the form shortcode.','vbegy'),
 				'id'   => $prefix.'contact_form',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'About widget enable or disable',
-				'desc' => 'About widget enable or disable.',
+				'name' => esc_html__('About widget enable or disable','vbegy'),
+				'desc' => esc_html__('About widget enable or disable.','vbegy'),
 				'id'   => $prefix.'about_widget',
 				'std'  => 1,
 				'type' => 'checkbox'
 			),
 			array(
-				'name' => 'About content',
-				'desc' => 'Put the about content.',
+				'name' => esc_html__('About content','vbegy'),
+				'desc' => esc_html__('Put the about content.','vbegy'),
 				'id'   => $prefix.'about_content',
 				'type' => 'textarea'
 			),
 			array(
-				'name' => 'Address',
-				'desc' => 'Put the address.',
+				'name' => esc_html__('Address','vbegy'),
+				'desc' => esc_html__('Put the address.','vbegy'),
 				'id'   => $prefix.'address',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Phone',
-				'desc' => 'Put the phone.',
+				'name' => esc_html__('Phone','vbegy'),
+				'desc' => esc_html__('Put the phone.','vbegy'),
 				'id'   => $prefix.'phone',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Email',
-				'desc' => 'Put the email.',
+				'name' => esc_html__('Email','vbegy'),
+				'desc' => esc_html__('Put the email.','vbegy'),
 				'id'   => $prefix.'email',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Social enable or disable',
-				'desc' => 'Social widget enable or disable.',
+				'name' => esc_html__('Social enable or disable','vbegy'),
+				'desc' => esc_html__('Social widget enable or disable.','vbegy'),
 				'id'   => $prefix.'social',
 				'std'  => 1,
 				'type' => 'checkbox'
 			),
 			array(
-				'name' => 'Facebook',
-				'desc' => 'Put the facebook.',
+				'name' => esc_html__('Facebook','vbegy'),
+				'desc' => esc_html__('Put the facebook.','vbegy'),
 				'id'   => $prefix.'facebook',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Twitter',
-				'desc' => 'Put the twitter.',
+				'name' => esc_html__('Twitter','vbegy'),
+				'desc' => esc_html__('Put the twitter.','vbegy'),
 				'id'   => $prefix.'twitter',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Youtube',
-				'desc' => 'Put the youtube.',
+				'name' => esc_html__('Youtube','vbegy'),
+				'desc' => esc_html__('Put the youtube.','vbegy'),
 				'id'   => $prefix.'youtube',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Linkedin',
-				'desc' => 'Put the linkedin.',
+				'name' => esc_html__('Linkedin','vbegy'),
+				'desc' => esc_html__('Put the linkedin.','vbegy'),
 				'id'   => $prefix.'linkedin',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Google plus',
-				'desc' => 'Put the google plus.',
+				'name' => esc_html__('Google plus','vbegy'),
+				'desc' => esc_html__('Put the google plus.','vbegy'),
 				'id'   => $prefix.'google_plus',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Instagram',
-				'desc' => 'Put the instagram.',
+				'name' => esc_html__('Instagram','vbegy'),
+				'desc' => esc_html__('Put the instagram.','vbegy'),
 				'id'   => $prefix.'instagram',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Dribbble',
-				'desc' => 'Put the dribbble.',
+				'name' => esc_html__('Dribbble','vbegy'),
+				'desc' => esc_html__('Put the dribbble.','vbegy'),
 				'id'   => $prefix.'dribbble',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Pinterest',
-				'desc' => 'Put the pinterest.',
+				'name' => esc_html__('Pinterest','vbegy'),
+				'desc' => esc_html__('Put the pinterest.','vbegy'),
 				'id'   => $prefix.'pinterest',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Rss enable or disable',
-				'desc' => 'Rss widget enable or disable.',
+				'name' => esc_html__('Rss enable or disable','vbegy'),
+				'desc' => esc_html__('Rss widget enable or disable.','vbegy'),
 				'id'   => $prefix.'rss',
 				'std'  => 1,
 				'type' => 'checkbox'
@@ -242,12 +242,12 @@ function vbegy_register_meta_boxes() {
 					array(
 						"type" => "text",
 						"id"   => "text",
-						"name" => "Title",
+						"name" => esc_html__("Title",'vbegy'),
 					),
 					array(
 						"type" => "textarea",
 						"id"   => "textarea",
-						"name" => "Content",
+						"name" => esc_html__("Content",'vbegy'),
 					),
 				),
 			),
@@ -262,21 +262,21 @@ function vbegy_register_meta_boxes() {
 		'priority' => 'high',
 		'fields' => array(
 			array(
-				'name' => 'Users per page',
-				'desc' => 'Put the users per page.',
+				'name' => esc_html__('Users per page','vbegy'),
+				'desc' => esc_html__('Put the users per page.','vbegy'),
 				'id'   => $prefix.'users_per_page',
 				'std'  => '10',
 				'type' => 'text'
 			),
 			array(
-				'name'    => 'Choose the user groups show',
+				'name'    => esc_html__('Choose the user groups show','vbegy'),
 				'id'      => $prefix.'user_group',
 				'type'    => 'checkbox_list',
 				'std'     => array("editor","administrator","author","contributor","subscriber"),
 				'options' => $options_groups,
 			),
 			array(
-				'name'    => 'Order by',
+				'name'    => esc_html__('Order by','vbegy'),
 				'id'      => $prefix.'user_sort',
 				'type'    => 'select',
 				'std' => array("registered"),
@@ -293,7 +293,7 @@ function vbegy_register_meta_boxes() {
 				),
 			),
 			array(
-				'name'    => 'Order',
+				'name'    => esc_html__('Order','vbegy'),
 				'id'      => $prefix.'user_order',
 				'std'     => array("DESC"),
 				'type'    => 'radio',
@@ -313,14 +313,14 @@ function vbegy_register_meta_boxes() {
 		'priority' => 'high',
 		'fields'   => array(
 			array(
-				'name' => 'Categories per page',
-				'desc' => 'Put the categories per page.',
+				'name' => esc_html__('Categories per page','vbegy'),
+				'desc' => esc_html__('Put the categories per page.','vbegy'),
 				'id'   => $prefix.'cats_per_page',
 				'std'  => '50',
 				'type' => 'text'
 			),
 			array(
-				'name'    => 'Categories type',
+				'name'    => esc_html__('Categories type','vbegy'),
 				'id'      => $prefix.'cats_tax',
 				'std'     => array("question"),
 				'type'    => 'radio',
@@ -331,7 +331,7 @@ function vbegy_register_meta_boxes() {
 				),
 			),
 			array(
-				'name'    => 'Order by',
+				'name'    => esc_html__('Order by','vbegy'),
 				'id'      => $prefix.'cat_sort',
 				'std'     => array("count"),
 				'type'    => 'radio',
@@ -341,7 +341,7 @@ function vbegy_register_meta_boxes() {
 				),
 			),
 			array(
-				'name'    => 'Order',
+				'name'    => esc_html__('Order','vbegy'),
 				'id'      => $prefix.'cat_order',
 				'std'     => array("DESC"),
 				'type'    => 'radio',
@@ -361,14 +361,14 @@ function vbegy_register_meta_boxes() {
 		'priority' => 'high',
 		'fields'   => array(
 			array(
-				'name' => 'Tags per page',
-				'desc' => 'Put the tags per page.',
+				'name' => esc_html__('Tags per page','vbegy'),
+				'desc' => esc_html__('Put the tags per page.','vbegy'),
 				'id'   => $prefix.'tags_per_page',
 				'std'  => '50',
 				'type' => 'text'
 			),
 			array(
-				'name'    => 'Tags type',
+				'name'    => esc_html__('Tags type','vbegy'),
 				'id'      => $prefix.'tags_tax',
 				'std'     => array("question"),
 				'type'    => 'radio',
@@ -379,7 +379,7 @@ function vbegy_register_meta_boxes() {
 				),
 			),
 			array(
-				'name'    => 'Order by',
+				'name'    => esc_html__('Order by','vbegy'),
 				'id'      => $prefix.'tag_sort',
 				'std'     => array("count"),
 				'type'    => 'radio',
@@ -389,8 +389,8 @@ function vbegy_register_meta_boxes() {
 				),
 			),
 			array(
-				'name'    => 'Tags style',
-				'desc'    => 'Choose the tags style.',
+				'name'    => esc_html__('Tags style','vbegy'),
+				'desc'    => esc_html__('Choose the tags style.','vbegy'),
 				'id'      => $prefix.'tag_style',
 				'options' => array(
 					'advanced' => 'Advanced',
@@ -400,7 +400,7 @@ function vbegy_register_meta_boxes() {
 				'type'    => 'radio'
 			),
 			array(
-				'name'    => 'Order',
+				'name'    => esc_html__('Order','vbegy'),
 				'id'      => $prefix.'tag_order',
 				'std'     => array("DESC"),
 				'type'    => 'radio',
@@ -420,8 +420,8 @@ function vbegy_register_meta_boxes() {
 		'priority' => 'high',
 		'fields' => array(
 			array(
-				'name' => 'Choose the categories show',
-				'desc' => 'Choose the categories show.',
+				'name' => esc_html__('Choose the categories show','vbegy'),
+				'desc' => esc_html__('Choose the categories show.','vbegy'),
 				'id'   => $prefix.'forum_categories',
 				'type' => 'questions_categories',
 				'show_all' => 'no'
@@ -437,15 +437,15 @@ function vbegy_register_meta_boxes() {
 		'priority' => 'high',
 		'fields' => array(
 			array(
-				'name' => 'Home top box enable or disable',
-				'desc' => 'Home top box enable or disable.',
+				'name' => esc_html__('Home top box enable or disable','vbegy'),
+				'desc' => esc_html__('Home top box enable or disable.','vbegy'),
 				'id'   => $prefix.'index_top_box',
 				'std'  => 1,
 				'type' => 'checkbox'
 			),
 			array(
-				'name'    => 'Home top box layout',
-				'desc'    => 'Home top box layout.',
+				'name'    => esc_html__('Home top box layout','vbegy'),
+				'desc'    => esc_html__('Home top box layout.','vbegy'),
 				'id'      => $prefix.'index_top_box_layout',
 				'std'     => '1',
 				'class'   => 'index_top_box_layout',
@@ -453,8 +453,8 @@ function vbegy_register_meta_boxes() {
 				'options' => array("1" => "Style 1","2" => "Style 2")
 			),
 			array(
-				'name'    => 'Question title or comment',
-				'desc'    => 'Question title or comment.',
+				'name'    => esc_html__('Question title or comment','vbegy'),
+				'desc'    => esc_html__('Question title or comment.','vbegy'),
 				'id'      => $prefix.'index_title_comment',
 				'std'     => 'title',
 				'class'   => 'index_title_comment',
@@ -462,14 +462,14 @@ function vbegy_register_meta_boxes() {
 				'options' => array("title" => "Title","comment" => "Comment")
 			),
 			array(
-				'name' => 'Remove the content ?',
-				'desc' => 'Remove the content ( Title, content, buttons and ask question ) ?',
+				'name' => esc_html__('Remove the content ?','vbegy'),
+				'desc' => esc_html__('Remove the content ( Title, content, buttons and ask question ) ?','vbegy'),
 				'id'   => $prefix.'remove_index_content',
 				'type' => 'checkbox'
 			),
 			array(
-				'name'    => 'Home top box background',
-				'desc'    => 'Home top box background.',
+				'name'    => esc_html__('Home top box background','vbegy'),
+				'desc'    => esc_html__('Home top box background.','vbegy'),
 				'id'      => $prefix.'index_top_box_background',
 				'std'     => 'background',
 				'class'   => 'index_top_box_background',
@@ -477,22 +477,22 @@ function vbegy_register_meta_boxes() {
 				'options' => array("background" => "Background","slideshow" => "Slideshow")
 			),
 			array(
-				'name'	=> 'Upload your images',
+				'name'	=> esc_html__('Upload your images','vbegy'),
 				'id'	=> $prefix."upload_images_home",
 				'type'	=> 'image_advanced',
 			),
 			array(
-				'name'		=> "Background color",
+				'name'		=> esc_html__("Background color",'vbegy'),
 				'id'		=> $prefix."background_color_home",
 				'type'		=> 'color',
 			),
 			array(
-				'name'		=> 'Background',
+				'name'		=> esc_html__('Background','vbegy'),
 				'id'		=> $prefix."background_img_home",
 				'type'		=> 'upload',
 			),
 			array(
-				'name'		=> "Background repeat",
+				'name'		=> esc_html__("Background repeat",'vbegy'),
 				'id'		=> $prefix."background_repeat_home",
 				'type'		=> 'select',
 				'options'	=> array(
@@ -503,7 +503,7 @@ function vbegy_register_meta_boxes() {
 				),
 			),
 			array(
-				'name'		=> "Background fixed",
+				'name'		=> esc_html__("Background fixed",'vbegy'),
 				'id'		=> $prefix."background_fixed_home",
 				'type'		=> 'select',
 				'options'	=> array(
@@ -512,7 +512,7 @@ function vbegy_register_meta_boxes() {
 				),
 			),
 			array(
-				'name'		=> "Background position x",
+				'name'		=> esc_html__("Background position x",'vbegy'),
 				'id'		=> $prefix."background_position_x_home",
 				'type'		=> 'select',
 				'options'	=> array(
@@ -522,7 +522,7 @@ function vbegy_register_meta_boxes() {
 				),
 			),
 			array(
-				'name'		=> "Background position y",
+				'name'		=> esc_html__("Background position y",'vbegy'),
 				'id'		=> $prefix."background_position_y_home",
 				'type'		=> 'select',
 				'options'	=> array(
@@ -532,83 +532,83 @@ function vbegy_register_meta_boxes() {
 				),
 			),
 			array(
-				'name' => "Full Screen Background",
+				'name' => esc_html__("Full Screen Background",'vbegy'),
 				'id'   => $prefix."background_full_home",
 				'type' => 'checkbox',
 				'std'  => 0,
 			),
 			array(
-				'name' => 'Home top box title',
-				'desc' => 'Put the Home top box title.',
+				'name' => esc_html__('Home top box title','vbegy'),
+				'desc' => esc_html__('Put the Home top box title.','vbegy'),
 				'id'   => $prefix.'index_title',
 				'std'  => 'Welcome to Ask me',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Home top box content',
-				'desc' => 'Put the Home top box content.',
+				'name' => esc_html__('Home top box content','vbegy'),
+				'desc' => esc_html__('Put the Home top box content.','vbegy'),
 				'id'   => $prefix.'index_content',
 				'std'  => 'Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis. Curabitur vitae velit in neque dictum blandit. Proin in iaculis neque.',
 				'type' => 'textarea'
 			),
 			array(
-				'name' => 'About Us title',
-				'desc' => 'Put the About Us title.',
+				'name' => esc_html__('About Us title','vbegy'),
+				'desc' => esc_html__('Put the About Us title.','vbegy'),
 				'id'   => $prefix.'index_about',
 				'std'  => 'About Us',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'About Us link',
-				'desc' => 'Put the About Us link.',
+				'name' => esc_html__('About Us link','vbegy'),
+				'desc' => esc_html__('Put the About Us link.','vbegy'),
 				'id'   => $prefix.'index_about_h',
 				'std'  => '#',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Join Now title',
-				'desc' => 'Put the Join Now title.',
+				'name' => esc_html__('Join Now title','vbegy'),
+				'desc' => esc_html__('Put the Join Now title.','vbegy'),
 				'id'   => $prefix.'index_join',
 				'std'  => 'Join Now',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Join Now link',
-				'desc' => 'Put the Join Now link.',
+				'name' => esc_html__('Join Now link','vbegy'),
+				'desc' => esc_html__('Put the Join Now link.','vbegy'),
 				'id'   => $prefix.'index_join_h',
 				'std'  => '#',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'About Us title if login',
-				'desc' => 'Put the About Us title if login.',
+				'name' => esc_html__('About Us title if login','vbegy'),
+				'desc' => esc_html__('Put the About Us title if login.','vbegy'),
 				'id'   => $prefix.'index_about_login',
 				'std'  => 'About Us',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'About Us link if login',
-				'desc' => 'Put the About Us link if login.',
+				'name' => esc_html__('About Us link if login','vbegy'),
+				'desc' => esc_html__('Put the About Us link if login.','vbegy'),
 				'id'   => $prefix.'index_about_h_login',
 				'std'  => '#',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Ask question title if login',
-				'desc' => 'Put the Ask question title if login.',
+				'name' => esc_html__('Ask question title if login','vbegy'),
+				'desc' => esc_html__('Put the Ask question title if login.','vbegy'),
 				'id'   => $prefix.'index_join_login',
 				'std'  => 'Ask question',
 				'type' => 'text'
 			),
 			array(
-				'name' => 'Ask question link if login',
-				'desc' => 'Put the Ask question link if login.',
+				'name' => esc_html__('Ask question link if login','vbegy'),
+				'desc' => esc_html__('Put the Ask question link if login.','vbegy'),
 				'id'   => $prefix.'index_join_h_login',
 				'std'  => '#',
 				'type' => 'text'
 			),
 			array(
-				'name'		=> "Page style",
+				'name'		=> esc_html__("Page style",'vbegy'),
 				'id'		=> $prefix."index_tabs",
 				'type'		=> 'select',
 				'options'	=> array(
@@ -618,28 +618,28 @@ function vbegy_register_meta_boxes() {
 				),
 			),
 			array(
-				'name' => 'Tabs pagination enable or disable',
-				'desc' => 'Tabs pagination enable or disable.',
+				'name' => esc_html__('Tabs pagination enable or disable','vbegy'),
+				'desc' => esc_html__('Tabs pagination enable or disable.','vbegy'),
 				'id'   => $prefix.'pagination_tabs',
 				'std'  => 1,
 				'type' => 'checkbox'
 			),
 			array(
-				'name'	  => 'Choose your tabs',
+				'name'	  => esc_html__('Choose your tabs','vbegy'),
 				'id'	  => $prefix.'what_tab',
 				'options' => array("recent_questions" => "Recent Questions","most_responses" => "Most Responses / answers","recently_answered" => "Recently Answered","no_answers" => "No answers","most_visit" => "Most Visit","most_vote" => "Most Vote","question_bump" => "Questions bump","recent_posts" => "Recent Posts"),
 				'std'  => array("recent_questions","most_responses","recently_answered","no_answers"),
 				'type'	  => 'checkbox_list'
 			),
 			array(
-				'name'  => 'Choose the categories show',
-				'desc'  => 'Choose the categories show.',
+				'name'  => esc_html__('Choose the categories show','vbegy'),
+				'desc'  => esc_html__('Choose the categories show.','vbegy'),
 				'id'    => $prefix.'categories_show',
 				'type'  => 'questions_categories',
 				'addto' => 'vbegy_sort_home_elements'
 			),
 			array(
-				'name'     => 'Sort the home elements',
+				'name'     => esc_html__('Sort the home elements','vbegy'),
 				'id'       => $prefix."sort_home_elements",
 				'std'      => array(array("value" => "recent_questions","name" => "Recent Questions"),array("value" => "most_responses","name" => "Most Responses / answers"),array("value" => "recently_answered","name" => "Recently Answered"),array("value" => "no_answers","name" => "No answers"),array("value" => "most_visit","name" => "Most Visit"),array("value" => "most_vote","name" => "Most Vote"),array("value" => "question_bump","name" => "Questions bump"),array("value" => "recent_posts","name" => "Recent Posts")),
 				'type'     => "sort",
@@ -655,14 +655,14 @@ function vbegy_register_meta_boxes() {
 				)
 			),
 			array(
-				'name' => 'Posts per page',
-				'desc' => 'Put the Posts per page.',
+				'name' => esc_html__('Posts per page','vbegy'),
+				'desc' => esc_html__('Put the Posts per page.','vbegy'),
 				'id'   => $prefix.'posts_per_page',
 				'std'  => '10',
 				'type' => 'text'
 			),
 			array(
-			    'name'    => 'Content before tabs',
+			    'name'    => esc_html__('Content before tabs','vbegy'),
 			    'id'      => $prefix.'content_before_tabs',
 			    'type'    => 'wysiwyg',
 			    'raw'     => false,
@@ -672,7 +672,7 @@ function vbegy_register_meta_boxes() {
 			    ),
 			),
 			array(
-			    'name'    => 'Content after tabs',
+			    'name'    => esc_html__('Content after tabs','vbegy'),
 			    'id'      => $prefix.'content_after_tabs',
 			    'type'    => 'wysiwyg',
 			    'raw'     => false,
@@ -693,13 +693,13 @@ function vbegy_register_meta_boxes() {
 			'context' => 'normal',
 			'fields' => array(
 				array(
-					'name' => 'Custom featured image size',
-					'desc' => 'Click ON to set the custom featured image size.',
+					'name' => esc_html__('Custom featured image size','vbegy'),
+					'desc' => esc_html__('Click ON to set the custom featured image size.','vbegy'),
 					'id'   =>  $prefix.'custom_featured_image_size',
 					'type' => 'checkbox'
 				),
 				array(
-					"name"       => "Featured image width",
+					"name"       => esc_html__("Featured image width",'vbegy'),
 					"id"         => $prefix."featured_image_width",
 					"type"       => "slider",
 					"std"        => "260",
@@ -710,7 +710,7 @@ function vbegy_register_meta_boxes() {
 					),
 				),
 				array(
-					"name"       => "Featured image height",
+					"name"       => esc_html__("Featured image height",'vbegy'),
 					"id"         => $prefix."featured_image_height",
 					"type"       => "slider",
 					"std"        => "185",
@@ -732,7 +732,7 @@ function vbegy_register_meta_boxes() {
 		'priority' => 'high',
 		'fields' => array(
 			array(
-				'name'		=> 'Layout',
+				'name'		=> esc_html__('Layout','vbegy'),
 				'id'		=> $prefix."layout",
 				'class'     => 'radio_no_margin',
 				'type'		=> 'radio',
@@ -745,7 +745,7 @@ function vbegy_register_meta_boxes() {
 				'std'		=> 'default',
 			),
 			array(
-				'name'		=> 'Choose page / post template',
+				'name'		=> esc_html__('Choose page / post template','vbegy'),
 				'id'		=> $prefix."home_template",
 				'class'     => 'radio_no_margin',
 				'type'		=> 'radio',
@@ -758,7 +758,7 @@ function vbegy_register_meta_boxes() {
 				'std'		=> 'default',
 			),
 			array(
-				'name'		=> 'Choose page / post skin',
+				'name'		=> esc_html__('Choose page / post skin','vbegy'),
 				'id'		=> $prefix."site_skin_l",
 				'class'     => 'radio_no_margin',
 				'type'		=> 'radio',
@@ -770,7 +770,7 @@ function vbegy_register_meta_boxes() {
 				'std'		=> 'default',
 			),
 			array(
-				'name'		=> 'Choose Your Skin',
+				'name'		=> esc_html__('Choose Your Skin','vbegy'),
 				'id'		=> $prefix."skin",
 				'class'		=> 'radio_no_margin',
 				'type'		=> 'radio',
@@ -790,22 +790,22 @@ function vbegy_register_meta_boxes() {
 				'std'		=> 'default',
 			),
 			array(
-				'name'		=> 'Primary Color',
+				'name'		=> esc_html__('Primary Color','vbegy'),
 				'id'		=> $prefix."primary_color",
 				'type'		=> 'color',
 			),
 			array(
-				'name'		=> 'Background',
+				'name'		=> esc_html__('Background','vbegy'),
 				'id'		=> $prefix."background_img",
 				'type'		=> 'upload',
 			),
 			array(
-				'name'		=> "Background color",
+				'name'		=> esc_html__("Background color",'vbegy'),
 				'id'		=> $prefix."background_color",
 				'type'		=> 'color',
 			),
 			array(
-				'name'		=> "Background repeat",
+				'name'		=> esc_html__("Background repeat",'vbegy'),
 				'id'		=> $prefix."background_repeat",
 				'type'		=> 'select',
 				'options'	=> array(
@@ -816,7 +816,7 @@ function vbegy_register_meta_boxes() {
 				),
 			),
 			array(
-				'name'		=> "Background fixed",
+				'name'		=> esc_html__("Background fixed",'vbegy'),
 				'id'		=> $prefix."background_fixed",
 				'type'		=> 'select',
 				'options'	=> array(
@@ -825,7 +825,7 @@ function vbegy_register_meta_boxes() {
 				),
 			),
 			array(
-				'name'		=> "Background position x",
+				'name'		=> esc_html__("Background position x",'vbegy'),
 				'id'		=> $prefix."background_position_x",
 				'type'		=> 'select',
 				'options'	=> array(
@@ -835,7 +835,7 @@ function vbegy_register_meta_boxes() {
 				),
 			),
 			array(
-				'name'		=> "Background position y",
+				'name'		=> esc_html__("Background position y",'vbegy'),
 				'id'		=> $prefix."background_position_y",
 				'type'		=> 'select',
 				'options'	=> array(
@@ -845,13 +845,13 @@ function vbegy_register_meta_boxes() {
 				),
 			),
 			array(
-				'name' => "Full Screen Background",
+				'name' => esc_html__("Full Screen Background",'vbegy'),
 				'id'   => $prefix."background_full",
 				'type' => 'checkbox',
 				'std'  => 0,
 			),
 			array(
-				'name'		=> 'Sidebar',
+				'name'		=> esc_html__('Sidebar','vbegy'),
 				'id'		=> $prefix."sidebar",
 				'class'   => 'radio_no_margin',
 				'type'		=> 'radio',
@@ -864,13 +864,13 @@ function vbegy_register_meta_boxes() {
 				'std'		=> 'default',
 			),
 			array(
-				'name'		=> 'Select your sidebar',
+				'name'		=> esc_html__('Select your sidebar','vbegy'),
 				'id'		=> $prefix.'what_sidebar',
 				'type'		=> 'select',
 				'options'	=> $new_sidebars,
 			),
 			array(
-				'name'		=> 'Head post',
+				'name'		=> esc_html__('Head post','vbegy'),
 				'id'		=> $prefix.'what_post',
 				'type'		=> 'select',
 				'options'	=> array(
@@ -881,18 +881,18 @@ function vbegy_register_meta_boxes() {
 					'video' => "Video",
 				),
 				'std'		=> array('image'),
-				'desc'		=> 'Choose from here the post type.'
+				'desc'		=> esc_html__('Choose from here the post type.','vbegy'),
 			),
 			array(
-				'name'		=> 'Google map',
-				'desc'		=> "Put your google map html",
+				'name'		=> esc_html__('Google map','vbegy'),
+				'desc'		=> esc_html__("Put your google map html",'vbegy'),
 				'id'		=> $prefix."google",
 				'type'		=> 'textarea',
 				'cols'		=> "40",
 				'rows'		=> "8"
 			),
 			array(
-				'name'		=> 'Slideshow ?',
+				'name'		=> esc_html__('Slideshow ?','vbegy'),
 				'id'		=> $prefix.'slideshow_type',
 				'type'		=> 'select',
 				'options'	=> array(
@@ -906,12 +906,12 @@ function vbegy_register_meta_boxes() {
 				'type'		=> 'note',
 			),
 			array(
-				'name'	=> 'Upload your images',
+				'name'	=> esc_html__('Upload your images','vbegy'),
 				'id'	=> $prefix."upload_images",
 				'type'	=> 'image_advanced',
 			),
 			array(
-				'name'		=> 'Video type',
+				'name'		=> esc_html__('Video type','vbegy'),
 				'id'		=> $prefix.'video_post_type',
 				'type'		=> 'select',
 				'options'	=> array(
@@ -921,61 +921,61 @@ function vbegy_register_meta_boxes() {
 					'html5' => "HTML 5",
 				),
 				'std'		=> array('youtube'),
-				'desc'		=> 'Choose from here the video type'
+				'desc'		=> esc_html__('Choose from here the video type','vbegy'),
 			),
 			array(
-				'name'		=> 'Video ID',
+				'name'		=> esc_html__('Video ID','vbegy'),
 				'id'		=> $prefix.'video_post_id',
-				'desc'		=> 'Put here the video id : https://www.youtube.com/watch?v=sdUUx5FdySs EX : "sdUUx5FdySs".',
+				'desc'		=> esc_html__('Put here the video id : https://www.youtube.com/watch?v=sdUUx5FdySs EX : "sdUUx5FdySs".','vbegy'),
 				'type'		=> 'text',
 				'std'		=> ''
 			),
 			array(
-				'name' => 'Video Image',
-				'desc' => 'Upload a image, or enter URL to an image if it is already uploaded. ',
+				'name' => esc_html__('Video Image','vbegy'),
+				'desc' => esc_html__('Upload a image, or enter URL to an image if it is already uploaded.','vbegy'),
 				'id'   => $prefix.'video_image',
 				'std'  => '',
 				'type' => 'upload'
 			),
 			array(
-				'name'		=> 'Mp4 video',
+				'name'		=> esc_html__('Mp4 video','vbegy'),
 				'id'		=> $prefix.'video_mp4',
-				'desc'		=> 'Put here the mp4 video',
+				'desc'		=> esc_html__('Put here the mp4 video','vbegy'),
 				'type'		=> 'text',
 				'std'		=> ''
 			),
 			array(
-				'name'		=> 'M4v video',
+				'name'		=> esc_html__('M4v video','vbegy'),
 				'id'		=> $prefix.'video_m4v',
-				'desc'		=> 'Put here the m4v video',
+				'desc'		=> esc_html__('Put here the m4v video','vbegy'),
 				'type'		=> 'text',
 				'std'		=> ''
 			),
 			array(
-				'name'		=> 'Webm video',
+				'name'		=> esc_html__('Webm video','vbegy'),
 				'id'		=> $prefix.'video_webm',
-				'desc'		=> 'Put here the webm video',
+				'desc'		=> esc_html__('Put here the webm video','vbegy'),
 				'type'		=> 'text',
 				'std'		=> ''
 			),
 			array(
-				'name'		=> 'Ogv video',
+				'name'		=> esc_html__('Ogv video','vbegy'),
 				'id'		=> $prefix.'video_ogv',
-				'desc'		=> 'Put here the ogv video',
+				'desc'		=> esc_html__('Put here the ogv video','vbegy'),
 				'type'		=> 'text',
 				'std'		=> ''
 			),
 			array(
-				'name'		=> 'Wmv video',
+				'name'		=> esc_html__('Wmv video','vbegy'),
 				'id'		=> $prefix.'video_wmv',
-				'desc'		=> 'Put here the wmv video',
+				'desc'		=> esc_html__('Put here the wmv video','vbegy'),
 				'type'		=> 'text',
 				'std'		=> ''
 			),
 			array(
-				'name'		=> 'Flv video',
+				'name'		=> esc_html__('Flv video','vbegy'),
 				'id'		=> $prefix.'video_flv',
-				'desc'		=> 'Put here the flv video',
+				'desc'		=> esc_html__('Put here the flv video','vbegy'),
 				'type'		=> 'text',
 				'std'		=> ''
 			),
@@ -990,56 +990,56 @@ function vbegy_register_meta_boxes() {
 		'priority' => 'default',
 		'fields' => array(
 			array(
-				'name' => 'Choose a custom page setting',
-				'desc' => 'Choose a custom page setting.',
+				'name' => esc_html__('Choose a custom page setting','vbegy'),
+				'desc' => esc_html__('Choose a custom page setting.','vbegy'),
 				'id'   => $prefix.'custom_page_setting',
 				'type' => 'checkbox'
 			),
 			array(
-				'name' => 'Sticky sidebar enable or disable',
-				'desc' => 'Sticky sidebar enable or disable.',
+				'name' => esc_html__('Sticky sidebar enable or disable','vbegy'),
+				'desc' => esc_html__('Sticky sidebar enable or disable.','vbegy'),
 				'id'   => $prefix.'sticky_sidebar_s',
 				'std'  => 1,
 				'type' => 'checkbox'
 			),
 			array(
-				'name' => 'Post meta enable or disable',
-				'desc' => 'Post meta enable or disable.',
+				'name' => esc_html__('Post meta enable or disable','vbegy'),
+				'desc' => esc_html__('Post meta enable or disable.','vbegy'),
 				'id'   => $prefix.'post_meta_s',
 				'std'  => 1,
 				'type' => 'checkbox'
 			),
 			array(
-				'name' => 'Share enable or disable',
-				'desc' => 'Share enable or disable.',
+				'name' => esc_html__('Share enable or disable','vbegy'),
+				'desc' => esc_html__('Share enable or disable.','vbegy'),
 				'id'   => $prefix.'post_share_s',
 				'std'  => 1,
 				'type' => 'checkbox'
 			),
 			array(
-				'name' => 'Author info box enable or disable',
-				'desc' => 'Author info box enable or disable.',
+				'name' => esc_html__('Author info box enable or disable','vbegy'),
+				'desc' => esc_html__('Author info box enable or disable.','vbegy'),
 				'id'   =>  $prefix.'post_author_box_s',
 				'std'  => 1,
 				'type' => 'checkbox'
 			),
 			array(
-				'name' => 'Related post enable or disable',
-				'desc' => 'Related post enable or disable.',
+				'name' => esc_html__('Related post enable or disable','vbegy'),
+				'desc' => esc_html__('Related post enable or disable.','vbegy'),
 				'id'   =>  $prefix.'related_post_s',
 				'std'  => 1,
 				'type' => 'checkbox'
 			),
 			array(
-				'name' => 'Comments enable or disable',
-				'desc' => 'Comments enable or disable.',
+				'name' => esc_html__('Comments enable or disable','vbegy'),
+				'desc' => esc_html__('Comments enable or disable.','vbegy'),
 				'id'   =>  $prefix.'post_comments_s',
 				'std'  => 1,
 				'type' => 'checkbox'
 			),
 			array(
-				'name' => 'Navigation post enable or disable',
-				'desc' => 'Navigation post ( next and previous posts) enable or disable.',
+				'name' => esc_html__('Navigation post enable or disable','vbegy'),
+				'desc' => esc_html__('Navigation post ( next and previous posts) enable or disable.','vbegy'),
 				'id'   =>  $prefix.'post_navigation_s',
 				'std'  => 1,
 				'type' => 'checkbox'
@@ -1055,13 +1055,13 @@ function vbegy_register_meta_boxes() {
 		'priority' => 'high',
 		'fields' => array(
 			array(
-				'name'  => "Advertising after header",
+				'name'  => esc_html__("Advertising after header",'vbegy'),
 				'id'    => $prefix.'header_adv_n',
 				'type'  => 'heading'
 			),
 			array(
-				'name'    => 'Advertising type',
-				'desc'    => 'Advertising type.',
+				'name'    => esc_html__('Advertising type','vbegy'),
+				'desc'    => esc_html__('Advertising type.','vbegy'),
 				'id'      => $prefix.'header_adv_type',
 				'std'     => 'custom_image',
 				'type'    => 'radio',
@@ -1069,34 +1069,34 @@ function vbegy_register_meta_boxes() {
 				'options' => array("display_code" => "Display code","custom_image" => "Custom Image")
 			),
 			array(
-				'name' => 'Image URL',
-				'desc' => 'Upload a image, or enter URL to an image if it is already uploaded. ',
+				'name' => esc_html__('Image URL','vbegy'),
+				'desc' => esc_html__('Upload a image, or enter URL to an image if it is already uploaded. ','vbegy'),
 				'id'   => $prefix.'header_adv_img',
 				'std'  => '',
 				'type' => 'upload'
 			),
 			array(
-				'name' => 'Advertising url',
-				'desc' => 'Advertising url. ',
+				'name' => esc_html__('Advertising url','vbegy'),
+				'desc' => esc_html__('Advertising url. ','vbegy'),
 				'id'   => $prefix.'header_adv_href',
 				'std'  => '#',
 				'type' => 'text'
 			),
 			array(
-				'name' => "Advertising Code html ( Ex: Google ads)",
-				'desc' => "Advertising Code html ( Ex: Google ads)",
+				'name' => esc_html__("Advertising Code html ( Ex: Google ads)",'vbegy'),
+				'desc' => esc_html__("Advertising Code html ( Ex: Google ads)",'vbegy'),
 				'id'   => $prefix.'header_adv_code',
 				'std'  => '',
 				'type' => 'textarea'
 			),
 			array(
-				'name'  => "Advertising 1 in post and question",
+				'name'  => esc_html__("Advertising 1 in post and question",'vbegy'),
 				'id'    => $prefix.'share_adv_n',
 				'type'  => 'heading'
 			),
 			array(
-				'name' => 'Advertising type',
-				'desc' => 'Advertising type.',
+				'name' => esc_html__('Advertising type','vbegy'),
+				'desc' => esc_html__('Advertising type.','vbegy'),
 				'id'   => $prefix.'share_adv_type',
 				'std'  => 'custom_image',
 				'type' => 'radio',
@@ -1104,34 +1104,34 @@ function vbegy_register_meta_boxes() {
 				'options' => array("display_code" => "Display code","custom_image" => "Custom Image")
 			),
 			array(
-				'name' => 'Image URL',
-				'desc' => 'Upload a image, or enter URL to an image if it is already uploaded. ',
+				'name' => esc_html__('Image URL','vbegy'),
+				'desc' => esc_html__('Upload a image, or enter URL to an image if it is already uploaded. ','vbegy'),
 				'id'   => $prefix.'share_adv_img',
 				'std'  => '',
 				'type' => 'upload'
 			),
 			array(
-				'name' => 'Advertising url',
-				'desc' => 'Advertising url. ',
+				'name' => esc_html__('Advertising url','vbegy'),
+				'desc' => esc_html__('Advertising url. ','vbegy'),
 				'id'   => $prefix.'share_adv_href',
 				'std'  => '#',
 				'type' => 'text'
 			),
 			array(
-				'name' => "Advertising Code html ( Ex: Google ads)",
-				'desc' => "Advertising Code html ( Ex: Google ads)",
+				'name' => esc_html__("Advertising Code html ( Ex: Google ads)",'vbegy'),
+				'desc' => esc_html__("Advertising Code html ( Ex: Google ads)",'vbegy'),
 				'id'   => $prefix.'share_adv_code',
 				'std'  => '',
 				'type' => 'textarea'
 			),
 			array(
-				'name'  => "Advertising 2 in post and question",
+				'name'  => esc_html__("Advertising 2 in post and question",'vbegy'),
 				'id'    => $prefix.'related_adv_n',
 				'type'  => 'heading'
 			),
 			array(
-				'name' => 'Advertising type',
-				'desc' => 'Advertising type.',
+				'name' => esc_html__('Advertising type','vbegy'),
+				'desc' => esc_html__('Advertising type.','vbegy'),
 				'id'   => $prefix.'related_adv_type',
 				'std'  => 'custom_image',
 				'type' => 'radio',
@@ -1139,34 +1139,34 @@ function vbegy_register_meta_boxes() {
 				'options' => array("display_code" => "Display code","custom_image" => "Custom Image")
 			),
 			array(
-				'name' => 'Image URL',
-				'desc' => 'Upload a image, or enter URL to an image if it is already uploaded. ',
+				'name' => esc_html__('Image URL','vbegy'),
+				'desc' => esc_html__('Upload a image, or enter URL to an image if it is already uploaded. ','vbegy'),
 				'id'   => $prefix.'related_adv_img',
 				'std'  => '',
 				'type' => 'upload'
 			),
 			array(
-				'name' => 'Advertising url',
-				'desc' => 'Advertising url. ',
+				'name' => esc_html__('Advertising url','vbegy'),
+				'desc' => esc_html__('Advertising url. ','vbegy'),
 				'id'   => $prefix.'related_adv_href',
 				'std'  => '#',
 				'type' => 'text'
 			),
 			array(
-				'name' => "Advertising Code html ( Ex: Google ads)",
-				'desc' => "Advertising Code html ( Ex: Google ads)",
+				'name' => esc_html__("Advertising Code html ( Ex: Google ads)",'vbegy'),
+				'desc' => esc_html__("Advertising Code html ( Ex: Google ads)",'vbegy'),
 				'id'   => $prefix.'related_adv_code',
 				'std'  => '',
 				'type' => 'textarea'
 			),
 			array(
-				'name'  => "Advertising after content",
+				'name'  => esc_html__("Advertising after content",'vbegy'),
 				'id'    => $prefix.'content_adv_n',
 				'type'  => 'heading'
 			),
 			array(
-				'name'    => 'Advertising type',
-				'desc'    => 'Advertising type.',
+				'name'    => esc_html__('Advertising type','vbegy'),
+				'desc'    => esc_html__('Advertising type.','vbegy'),
 				'id'      => $prefix.'content_adv_type',
 				'std'     => 'custom_image',
 				'type'    => 'radio',
@@ -1174,22 +1174,22 @@ function vbegy_register_meta_boxes() {
 				'options' => array("display_code" => "Display code","custom_image" => "Custom Image")
 			),
 			array(
-				'name' => 'Image URL',
-				'desc' => 'Upload a image, or enter URL to an image if it is already uploaded. ',
+				'name' => esc_html__('Image URL','vbegy'),
+				'desc' => esc_html__('Upload a image, or enter URL to an image if it is already uploaded. ','vbegy'),
 				'id'   => $prefix.'content_adv_img',
 				'std'  => '',
 				'type' => 'upload'
 			),
 			array(
-				'name' => 'Advertising url',
-				'desc' => 'Advertising url. ',
+				'name' => esc_html__('Advertising url','vbegy'),
+				'desc' => esc_html__('Advertising url. ','vbegy'),
 				'id'   => $prefix.'content_adv_href',
 				'std'  => '#',
 				'type' => 'text'
 			),
 			array(
-				'name' => "Advertising Code html ( Ex: Google ads)",
-				'desc' => "Advertising Code html ( Ex: Google ads)",
+				'name' => esc_html__("Advertising Code html ( Ex: Google ads)",'vbegy'),
+				'desc' => esc_html__("Advertising Code html ( Ex: Google ads)",'vbegy'),
 				'id'   => $prefix.'content_adv_code',
 				'std'  => '',
 				'type' => 'textarea'

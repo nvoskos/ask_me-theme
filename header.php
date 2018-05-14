@@ -1193,7 +1193,7 @@ if (is_user_logged_in) {
 					if ($best_answer_done != "yes") {
 						$get_posts_count = array();
 						$best_answer_option = get_option("best_answer_option");
-						if (!$best_answer_option) {
+						if ($best_answer_option == "") {
 							$the_query = new WP_Query(array("post_type" => "question","meta_key" => "the_best_answer","nopaging" => true));
 							foreach ($the_query->posts as $key => $value) {
 								$get_posts_count[] = get_post_meta($value->ID,"the_best_answer",true)."<br>";

@@ -8,7 +8,7 @@ function ask_me_categories_checklist ($args = array()) {
 		'selected_cats' => false,
 		'taxonomy' => 'category',
 	);
-
+	
 	$r = wp_parse_args( $args, $defaults );
 	$taxonomy = $r['taxonomy'];
 	$args['name'] = $r['name'];
@@ -41,7 +41,7 @@ if (!function_exists('ask_me_select_categories')) {
 			$show_option_none = $attr['show_option_none'];
 			$class            = ' ask_'.$attr['name'].'_'.$rand;
 			$div_class        = 'ask_'.$attr['name'].'_'.$rand;
-
+			
 			$terms = array();
 			if ($post_id) {
 				$terms = wp_get_post_terms($post_id,$taxonomy,array('fields' => 'ids'));
@@ -52,7 +52,7 @@ if (!function_exists('ask_me_select_categories')) {
 				if ($child_c->parent > 0) {
 					$terms[] = $child_c->parent;
 				}
-
+				
 				while ($child_c->parent > 0) {
 					$child_c = get_term($child_c->parent,$taxonomy);
 					if (!is_wp_error($child_c)) {
@@ -73,7 +73,7 @@ if (!function_exists('ask_me_select_categories')) {
 			if (!empty($terms) && is_array($terms)) {
 				$terms = array_unique($terms);
 			}
-
+			
 			$out .= '<span class="category-wrap'.$class.'">';
 				if (empty($terms) || (is_array($terms) && !count($terms))) {
 					$out .= '<span id="level-0" data-level="0">'.
@@ -116,12 +116,12 @@ if (!function_exists('ask_me_child_cats')) {
 		$taxonomy   = esc_html($_POST['field_attr']['taxonomy']);
 		$terms = null;
 		$result = '';
-
+		
 		if ($parentCat < 1) {
 			echo $result;
 			die();
 		}
-
+		
 		$terms = get_terms(array('taxonomy' => $taxonomy,'child_of'=> $parentCat,'hide_empty'=> 0));
 		if ($terms) {
 			$field_attr['parent_cat'] = $parentCat;
@@ -134,7 +134,7 @@ if (!function_exists('ask_me_child_cats')) {
 		}else {
 			die();
 		}
-
+		
 		echo $result;
 		die();
 	}
@@ -152,7 +152,7 @@ if (!function_exists('ask_categories_select')) {
 		$class            = ' ask_'.$attr['name'].'_'.$rand.'_'.$level;
 		$multi            = (isset($attr['multi'])?$attr['multi']:'[]');
 		$show_option_none = (isset($attr['show_option_none'])?$attr['show_option_none']:__('Select a Category','vbegy'));
-
+		
 		$select = wp_dropdown_categories(array(
 			'show_option_none' => $show_option_none,
 			'hierarchical'     => 1,
@@ -169,7 +169,7 @@ if (!function_exists('ask_categories_select')) {
 			'depth'            => 1,
 			'child_of'         => isset($attr['parent_cat'])?$attr['parent_cat']:''
 		));
-
+		
 		$attr = array(
 			'required'     => $attr['required'],
 			'name'         => $attr['name'],
@@ -178,9 +178,9 @@ if (!function_exists('ask_categories_select')) {
 			'name'         => $attr['name'],
 			'taxonomy'     => $attr['taxonomy'],
 		);
-
+		
 		$out .= '<span class="styled-select">'.str_replace('<select','<select data-taxonomy='.json_encode($attr).' '.$required,$select).'</span>';
-
+		
 		return $out;
 	}
 }
@@ -203,14 +203,14 @@ function ask_question_shortcode($atts, $content = null) {
 	$currency_code = vpanel_options("currency_code");
 	$currency_code = (isset($currency_code) && $currency_code != ""?$currency_code:"USD");
 	$payment_group = vpanel_options("payment_group");
-
+	
 	if (is_user_logged_in) {
 		$user_get_current_user_id = get_current_user_id();
 		$user_is_login = get_userdata($user_get_current_user_id);
 		$user_login_group = key($user_is_login->caps);
 		$roles = $user_is_login->allcaps;
 	}
-
+	
 	if (($custom_permission == 1 && is_user_logged_in && empty($roles["ask_question"])) || ($custom_permission == 1 && !is_user_logged_in && $ask_question != 1)) {
 		$out .= '<div class="note_error"><strong>'.__("Sorry, you do not have a permission to add a question.","vbegy").'</strong></div>';
 		if (!is_user_logged_in) {
@@ -225,7 +225,7 @@ function ask_question_shortcode($atts, $content = null) {
 			$_allow_to_ask = get_user_meta($user_get_current_user_id,$user_get_current_user_id."_allow_to_ask",true);
 			if (isset($_POST["process"]) && $_POST["process"] == "ask") {
 				/* Number allow to ask question */
-				if (!$_allow_to_ask) {
+				if ($_allow_to_ask == "") {
 					$_allow_to_ask = 0;
 				}
 				$_allow_to_ask++;
@@ -233,53 +233,58 @@ function ask_question_shortcode($atts, $content = null) {
 				wp_safe_redirect(esc_url(get_page_link(vpanel_options('add_question'))));
 				die();
 			}
-
+			
 			if (isset($_allow_to_ask) && (int)$_allow_to_ask < 1 && $pay_ask == 1 && !isset($payment_group[$user_login_group])) {
 				$pay_ask_payment = $last_payment = (int)vpanel_options("pay_ask_payment");
-				if ($active_coupons == 1 && isset($_POST["add_coupon"]) && $_POST["add_coupon"] == "submit") {
-					$coupon_name = esc_attr($_POST["coupon_name"]);
-					$coupons_not_exist = "no";
-
-					if (isset($coupons) && is_array($coupons)) {
-						foreach ($coupons as $coupons_k => $coupons_v) {
-							if (is_array($coupons_v) && in_array($coupon_name,$coupons_v)) {
-								$coupons_not_exist = "yes";
-
-								if (isset($coupons_v["coupon_date"]) && $coupons_v["coupon_date"] != "") {
-									$coupons_v["coupon_date"] = !is_numeric($coupons_v["coupon_date"]) ? strtotime($coupons_v["coupon_date"]):$coupons_v["coupon_date"];
-								}
-
-								if (isset($coupons_v["coupon_date"]) && $coupons_v["coupon_date"] != "" && current_time( 'timestamp' ) > $coupons_v["coupon_date"]) {
-									echo '<div class="alert-message error"><p>'.__("This coupon has expired.","vbegy").'</p></div>';
-								}else if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "percent" && (int)$coupons_v["coupon_amount"] > 100) {
-									echo '<div class="alert-message error"><p>'.__("This coupon is not valid.","vbegy").'</p></div>';
-								}else if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "discount" && (int)$coupons_v["coupon_amount"] > $pay_ask_payment) {
-									echo '<div class="alert-message error"><p>'.__("This coupon is not valid.","vbegy").'</p></div>';
-								}else {
-									if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "percent") {
-										$the_discount = ($pay_ask_payment*$coupons_v["coupon_amount"])/100;
-										$last_payment = $pay_ask_payment-$the_discount;
-									}else if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "discount") {
-										$last_payment = $pay_ask_payment-$coupons_v["coupon_amount"];
+				if ($active_coupons == 1) {
+					if (isset($_POST["add_coupon"]) && $_POST["add_coupon"] == "submit") {
+						$coupon_name = esc_attr($_POST["coupon_name"]);
+						$coupons_not_exist = "no";
+						
+						if (isset($coupons) && is_array($coupons)) {
+							foreach ($coupons as $coupons_k => $coupons_v) {
+								if (is_array($coupons_v) && in_array($coupon_name,$coupons_v)) {
+									$coupons_not_exist = "yes";
+									
+									if (isset($coupons_v["coupon_date"]) && $coupons_v["coupon_date"] != "") {
+										$coupons_v["coupon_date"] = !is_numeric($coupons_v["coupon_date"]) ? strtotime($coupons_v["coupon_date"]):$coupons_v["coupon_date"];
 									}
-									echo '<div class="alert-message success"><p>'.sprintf(__("Coupon ".'"%s"'." applied successfully.","vbegy"),$coupon_name).'</p></div>';
-
-									update_user_meta($user_get_current_user_id,$user_get_current_user_id."_coupon",esc_attr($coupons_v["coupon_name"]));
-									update_user_meta($user_get_current_user_id,$user_get_current_user_id."_coupon_value",($last_payment <= 0?"free":$last_payment));
+									
+									if (isset($coupons_v["coupon_date"]) && $coupons_v["coupon_date"] != "" && current_time( 'timestamp' ) > $coupons_v["coupon_date"]) {
+										echo '<div class="alert-message error"><p>'.__("This coupon has expired.","vbegy").'</p></div>';
+									}else if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "percent" && (int)$coupons_v["coupon_amount"] > 100) {
+										echo '<div class="alert-message error"><p>'.__("This coupon is not valid.","vbegy").'</p></div>';
+									}else if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "discount" && (int)$coupons_v["coupon_amount"] > $pay_ask_payment) {
+										echo '<div class="alert-message error"><p>'.__("This coupon is not valid.","vbegy").'</p></div>';
+									}else {
+										if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "percent") {
+											$the_discount = ($pay_ask_payment*$coupons_v["coupon_amount"])/100;
+											$last_payment = $pay_ask_payment-$the_discount;
+										}else if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "discount") {
+											$last_payment = $pay_ask_payment-$coupons_v["coupon_amount"];
+										}
+										echo '<div class="alert-message success"><p>'.sprintf(__("Coupon ".'"%s"'." applied successfully.","vbegy"),$coupon_name).'</p></div>';
+										
+										update_user_meta($user_get_current_user_id,$user_get_current_user_id."_coupon",esc_attr($coupons_v["coupon_name"]));
+										update_user_meta($user_get_current_user_id,$user_get_current_user_id."_coupon_value",($last_payment <= 0?"free":$last_payment));
+									}
 								}
 							}
 						}
-					}
-
-					if ($coupons_not_exist == "no" && $coupon_name == "") {
-						echo '<div class="alert-message error"><p>'.__("Coupon does not exist!.","vbegy").'</p></div>';
-					}else if ($coupons_not_exist == "no") {
-						echo '<div class="alert-message error"><p>'.sprintf(__("Coupon ".'"%s"'." does not exist!.","vbegy"),$coupon_name).'</p></div>';
+						
+						if ($coupons_not_exist == "no" && $coupon_name == "") {
+							echo '<div class="alert-message error"><p>'.__("Coupon does not exist!.","vbegy").'</p></div>';
+						}else if ($coupons_not_exist == "no") {
+							echo '<div class="alert-message error"><p>'.sprintf(__("Coupon ".'"%s"'." does not exist!.","vbegy"),$coupon_name).'</p></div>';
+						}
+					}else {
+						delete_user_meta($user_get_current_user_id,$user_get_current_user_id."_coupon");
+						delete_user_meta($user_get_current_user_id,$user_get_current_user_id."_coupon_value");
 					}
 				}
-
+				
 				echo '<div class="alert-message success"><i class="icon-ok"></i><p><span>'.__("Pay to ask","vbegy").'</span><br>'.__("Please make a payment to allow to be able to add a question.","vbegy").' "'.$last_payment." ".$currency_code.'"</p></div>';
-
+				
 				if (isset($coupons) && is_array($coupons) && $free_coupons == 1 && $active_coupons == 1) {
 					foreach ($coupons as $coupons_k => $coupons_v) {
 						$pay_ask_payments = $last_payments = (int)vpanel_options("pay_ask_payment");
@@ -289,21 +294,21 @@ function ask_question_shortcode($atts, $content = null) {
 						}else if (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "discount") {
 							$last_payments = $pay_ask_payments-$coupons_v["coupon_amount"];
 						}
-
+						
 						if ($last_payments <= 0) {
 							if (isset($coupons_v["coupon_date"]) && $coupons_v["coupon_date"] != "") {
 								$coupons_v["coupon_date"] = !is_numeric($coupons_v["coupon_date"]) ? strtotime($coupons_v["coupon_date"]):$coupons_v["coupon_date"];
 							}
-
+							
 							if ((isset($coupons_v["coupon_date"]) && $coupons_v["coupon_date"] != "" && current_time( 'timestamp' ) > $coupons_v["coupon_date"]) && (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "percent" && (int)$coupons_v["coupon_amount"] > 100) && (isset($coupons_v["coupon_type"]) && $coupons_v["coupon_type"] == "discount" && (int)$coupons_v["coupon_amount"] > $pay_ask_payments)) {
-
+								
 							}else {
 								echo '<div class="alert-message warning"><i class="icon-ok"></i><p><span>'.__("Free","vbegy").'</span><br>'.__("Ask a free question? Add this coupon.","vbegy").' "'.$coupons_v["coupon_name"].'"</p></div>';
 							}
 						}
 					}
 				}
-
+				
 				if ($active_coupons == 1) {
 					echo '<div class="coupon_area">
 						<form method="post" action="">
@@ -313,7 +318,7 @@ function ask_question_shortcode($atts, $content = null) {
 						</form>
 					</div>';
 				}
-
+				
 				echo '<div class="clearfix"></div>';
 				if ($last_payment > 0) {
 					echo '<div class="payment_area">
@@ -332,7 +337,7 @@ function ask_question_shortcode($atts, $content = null) {
 					</div>';
 				}else {
 					$ask_find_coupons = ask_find_coupons($coupons,$_POST["coupon_name"]);
-
+					
 					echo '<div class="process_area">
 						<form method="post" action="'.esc_url(get_page_link(vpanel_options('add_question'))).'">
 							<input type="submit" class="button" value="'.__("Process","vbegy").'">
@@ -357,11 +362,11 @@ function ask_question_shortcode($atts, $content = null) {
 				}else {
 					$post_type = "";
 				}
-
+				
 				if (isset($_POST["post_type"]) && $_POST["post_type"] == "add_question") {
 					do_action('new_post');
 				}
-
+				
 				if (($question_points_active == 0 || ($points >= $question_points && $question_points_active == 1)) && $post_type != "edit_question" && $post_type != "add_post") {
 					$users_by_id = $get_user_id = 0;
 					if (isset($_GET["user_id"]) && $_GET["user_id"] != "") {
@@ -371,7 +376,7 @@ function ask_question_shortcode($atts, $content = null) {
 							$users_by_id = 1;
 						}
 					}
-
+					
 					if (is_user_logged_in && $user_get_current_user_id == $get_user_id) {
 						echo '<div class="alert-message error"><p>'.__("You can't ask yourself.","vbegy").'</p></div>';
 					}else {
@@ -388,7 +393,7 @@ function ask_question_shortcode($atts, $content = null) {
 												}else {
 													poll.parent().parent().find(".poll_options").slideUp(500);
 												}
-
+												
 												poll.click(function () {
 													var poll = jQuery(this);
 													if (poll.is(':checked')) {
@@ -414,21 +419,21 @@ function ask_question_shortcode($atts, $content = null) {
 													<input name="username" id="question-username-'.$rand_q.'" class="the-username" type="text" value="'.(isset($posted['username'])?$posted['username']:'').'">
 													<span class="form-description">'.__("Please type your username .","vbegy").'</span>
 												</p>
-
+												
 												<p>
 													<label for="question-email-'.$rand_q.'" class="required">'.__("E-Mail","vbegy").'<span>*</span></label>
 													<input name="email" id="question-email-'.$rand_q.'" class="the-email" type="text" value="'.(isset($posted['email'])?$posted['email']:'').'">
 													<span class="form-description">'.__("Please type your E-Mail .","vbegy").'</span>
 												</p>';
 											}
-
+											
 											$out .= apply_filters('askme_add_question_before_title',false,$posted);
-
+											
 											if ($title_question == 1) {
 												$out .= '<p>
 													<label for="question-title-'.$rand_q.'" class="required">'.__("Question Title","vbegy").'<span>*</span></label>
 													<input name="title" id="question-title-'.$rand_q.'" class="the-title" type="text" value="'.(isset($posted['title'])?ask_kses_stip($posted['title']):(isset($_POST["title"])?ask_kses_stip($_POST["title"]):"")).'">
-													<span class="error"></span>
+													<span class="form-description">'.__("Please choose an appropriate title for the question to answer it even easier .","vbegy").'</span>
 												</p>';
 											}
 											if ($users_by_id == 0) {
@@ -441,7 +446,7 @@ function ask_question_shortcode($atts, $content = null) {
 														<span class="form-description">'.__("Please choose the appropriate section so easily search for your question .","vbegy").'</span>
 													</div>';
 												}
-
+												
 												if ($tags_question == 1) {
 													$out .= '<p>
 														<label for="question_tags-'.$rand_q.'">'.__("Tags","vbegy").'</label>
@@ -449,7 +454,7 @@ function ask_question_shortcode($atts, $content = null) {
 														<span class="form-description">'.__("Please choose  suitable Keywords Ex : ","vbegy").'<span class="color">'.__("question , poll","vbegy").'</span> .</span>
 													</p>';
 												}
-
+											
 												if ($poll_question == 1) {
 													$out .= '<p class="question_poll_p">
 														<label for="question_poll-'.$rand_q.'">'.__("Poll","vbegy").'</label>
@@ -457,12 +462,11 @@ function ask_question_shortcode($atts, $content = null) {
 														<span class="question_poll">'.__("This question is a poll ?","vbegy").'</span>
 														<span class="poll-description">'.__("If you want to be doing a poll click here .","vbegy").'</span>
 													</p>
-
+													
 													<div class="clearfix"></div>
 													<div class="poll_options">
 														<p class="form-submit add_poll">
 															<button type="button" class="button color small submit add_poll_button add_poll_button_js"><i class="icon-plus"></i>'.__("Add Field","vbegy").'</button>
-
 														</p>
 														<ul class="question_poll_item question_polls_item">';
 															if (isset($_POST['ask']) && is_array($_POST['ask'])) {
@@ -495,22 +499,20 @@ function ask_question_shortcode($atts, $content = null) {
 														<div class="clearfix"></div>
 													</div>';
 												}
-
+												
 												if ($attachment_question == 1) {
 													$out .= '<label>'.__("Attachment","vbegy").'</label>
 													<div class="question-multiple-upload">
 														<div class="clearfix"></div>
 														<p class="form-submit add_poll">
 															<button type="button" class="button color small submit add_poll_button add_upload_button_js"><i class="icon-plus"></i>'.__("Add Field","vbegy").'</button>
-															<span>Please upload JPEG, PNG and PDF files only</span>
-
 														</p>
 														<ul class="question_poll_item question_upload_item"></ul>
 														<script> var next_attachment = 1;</script>
 														<div class="clearfix"></div>
 													</div>';
 												}
-
+												
 												$featured_image_question = vpanel_options('featured_image_question');
 												if ($featured_image_question == 1) {
 													$out .= '<label for="featured_image-'.$rand_q.'">'.__("Featured image","vbegy").'</label>
@@ -523,7 +525,7 @@ function ask_question_shortcode($atts, $content = null) {
 													</div>';
 												}
 											}
-
+										
 										$comment_question = "";
 										if ($title_question != 1) {
 											$comment_question = "required";
@@ -532,23 +534,23 @@ function ask_question_shortcode($atts, $content = null) {
 											if ($comment_question == 1) {
 												$comment_question = "required";
 											}
-										}
+										}	
 										$out .= '
 										</div>
 										<div class="details-area">
 											<label for="question-details-'.$rand_q.'" '.($comment_question == "required"?'class="required"':'').'>'.__("Details","vbegy").($comment_question == "required"?'<span>*</span>':'').'</label>';
-
+											
 											if ($editor_question_details == 1) {
 												ob_start();
 												wp_editor((isset($posted['comment'])?ask_kses_stip_wpautop($posted['comment']):(isset($_POST["comment"])?wp_kses_post($_POST["comment"]):"")),"question-details-".$rand_q,$settings);
 												$editor_contents = ob_get_clean();
-
+												
 												$out .= '<div class="the-details the-textarea">'.$editor_contents.'</div>';
 											}else {
-												$out .= '<textarea style="font-family:"Open Sans","Droid Arabic Kufi", Arial, sans-serif; font-weight: bold;" name="comment" id="question-details-'.$rand_q.'" class="the-textarea" aria-required="true" cols="58" rows="8">'.(isset($posted['comment'])?ask_kses_stip($posted['comment']):(isset($_POST["comment"])?ask_kses_stip($_POST["comment"]):"")).'</textarea>';
+												$out .= '<textarea name="comment" id="question-details-'.$rand_q.'" class="the-textarea" aria-required="true" cols="58" rows="8">'.(isset($posted['comment'])?ask_kses_stip($posted['comment']):(isset($_POST["comment"])?ask_kses_stip($_POST["comment"]):"")).'</textarea>';
 											}
 										$out .= '<div class="clearfix"></div></div>
-
+										
 										<div class="form-inputs clearfix">';
 											if ($users_by_id == 0 && vpanel_options("video_desc_active") == 1) {
 												$out .= '
@@ -557,7 +559,7 @@ function ask_question_shortcode($atts, $content = null) {
 													<input type="checkbox" id="video_description-'.$rand_q.'" class="video_description_input" name="video_description" value="1" '.(isset($posted['video_description']) && $posted['video_description'] == 1?"checked='checked'":"").'>
 													<span class="question_poll">'.__("Do you need a video to description the problem better ?","vbegy").'</span>
 												</p>
-
+												
 												<div class="video_description" '.(isset($posted['video_description']) && $posted['video_description'] == 1?"style='display:block;'":"").'>
 													<p>
 														<label for="video_type-'.$rand_q.'">'.__("Video type","vbegy").'</label>
@@ -570,7 +572,7 @@ function ask_question_shortcode($atts, $content = null) {
 														</span>
 														<span class="form-description">'.__("Choose from here the video type .","vbegy").'</span>
 													</p>
-
+													
 													<p>
 														<label for="video_id-'.$rand_q.'">'.__("Video ID","vbegy").'</label>
 														<input name="video_id" id="video_id-'.$rand_q.'" class="video_id" type="text" value="'.(isset($posted['video_id'])?$posted['video_id']:'').'">
@@ -578,17 +580,17 @@ function ask_question_shortcode($atts, $content = null) {
 													</p>
 												</div>';
 											}
-
+										
 										$active_notified = vpanel_options("active_notified");
 										if ($active_notified == 1) {
 											$out .= '
 											<p class="question_poll_p">
 												<label for="remember_answer-'.$rand_q.'">'.__("Notified","vbegy").'</label>
-												<input type="checkbox" id="remember_answer-'.$rand_q.'" name="remember_answer" value="1" '.(isset($posted['remember_answer']) && $posted['remember_answer'] == 1?"checked='checked'":"").'>
+												<input type="checkbox" id="remember_answer-'.$rand_q.'" name="remember_answer" value="1" '.(isset($posted['remember_answer']) && $posted['remember_answer'] == 1?"checked='checked'":(empty($posted)?"checked='checked'":"")).'>
 												<span class="question_poll">'.__("Notified by e-mail at incoming answers.","vbegy").'</span>
 											</p>';
 										}
-
+										
 										$private_question = vpanel_options("private_question");
 										if (is_user_logged_in && $private_question == 1) {
 											$out .= '
@@ -598,7 +600,7 @@ function ask_question_shortcode($atts, $content = null) {
 												<span class="question_poll">'.__("Active this question as a private question.","vbegy").'</span>
 											</p>';
 										}
-
+										
 										$anonymously_question = vpanel_options("anonymously_question");
 										if ($anonymously_question == 1 && $username_email_no_register == 1) {
 											$out .= '
@@ -625,7 +627,7 @@ function ask_question_shortcode($atts, $content = null) {
 												}
 											$out .= '</p>';
 										}
-
+										
 										$the_captcha = vpanel_options("the_captcha");
 										$captcha_style = vpanel_options("captcha_style");
 										$captcha_question = vpanel_options("captcha_question");
@@ -648,19 +650,20 @@ function ask_question_shortcode($atts, $content = null) {
 												</p>";
 											}
 										}
-
+										
 										$terms_active = vpanel_options("terms_active");
 										$terms_link = vpanel_options("terms_link");
 										if ($terms_active == 1) {
 											$terms_link_page = vpanel_options("terms_page");
 											$out .= '<p class="question_poll_p">
-												<input type="hidden" id="agree_terms-'.$rand_q.'" name="agree_terms" value="1" '.(isset($posted['agree_terms']) && $posted['agree_terms'] == 1?"checked='checked'":"checked").'>
-												<span class="question_poll">'.sprintf(wp_kses(__("By publishing your post, you agree to the <a target='%s' href='%s'>terms and conditions</a>.","vbegy"),array('a' => array('href' => array(),'target' => array()))),(vpanel_options("terms_active_target") == "same_page"?"_self":"_blank"),(isset($terms_link) && $terms_link != ""?$terms_link:(isset($terms_link_page) && $terms_link_page != ""?get_page_link($terms_link_page):"#"))).'</span>
+												<label for="agree_terms-'.$rand_q.'" class="required">'.__("Terms","vbegy").'<span>*</span></label>
+												<input type="checkbox" id="agree_terms-'.$rand_q.'" name="agree_terms" value="1" '.(isset($posted['agree_terms']) && $posted['agree_terms'] == 1?"checked='checked'":"").'>
+												<span class="question_poll">'.sprintf(wp_kses(__("By posting your question, you agree to the <a target='%s' href='%s'>terms of service</a>.","vbegy"),array('a' => array('href' => array(),'target' => array()))),(vpanel_options("terms_active_target") == "same_page"?"_self":"_blank"),(isset($terms_link) && $terms_link != ""?$terms_link:(isset($terms_link_page) && $terms_link_page != ""?get_page_link($terms_link_page):"#"))).'</span>
 											</p>';
 										}
-
+										
 										$out .= '</div>
-
+										
 										<p class="form-submit">
 											<input type="hidden" name="post_type" value="add_question">';
 											if (isset($a["type"]) && $a["type"] == "popup") {
@@ -673,7 +676,7 @@ function ask_question_shortcode($atts, $content = null) {
 											}
 											$out .= '<input type="submit" value="'.__("Publish Your Question","vbegy").'" class="button color small submit add_qu publish-question">
 										</p>
-
+									
 									</form>
 								</div>
 							</div>
@@ -708,13 +711,13 @@ function edit_question_shortcode($atts, $content = null) {
 				$q_tag = implode(' , ', $terms_array);
 			endforeach;
 		endif;
-
+		
 		$question_category = wp_get_post_terms($get_question,ask_question_category,array("fields" => "ids"));
 		if (isset($_POST["post_type"]) && $_POST["post_type"] == "edit_question") {
 			do_action('edit_question');
 		}
 		$get_question_user_id = get_post_meta($get_question,"user_id",true);
-
+		
 		$out .= '<div class="form-posts"><div class="form-style form-style-3 question-submit">
 			<div class="ask_question">
 				<div '.(!is_user_logged_in?"class='if_no_login'":"").'>';
@@ -723,18 +726,18 @@ function edit_question_shortcode($atts, $content = null) {
 					<form class="new-question-form" method="post" enctype="multipart/form-data">
 						<div class="note_error display"></div>
 						<div class="form-inputs clearfix">';
-
+							
 							$out .= apply_filters('askme_edit_question_before_title',false,$posted,$get_question);
-
+							
 							$title_question = vpanel_options("title_question");
 							if ($title_question == 1) {
 								$out .= '<p>
 									<label for="question-title-'.$rand_e.'" class="required">'.__("Question Title","vbegy").'<span>*</span></label>
 									<input name="title" id="question-title-'.$rand_e.'" class="the-title" type="text" value="'.(isset($posted['title'])?ask_kses_stip($posted['title']):ask_kses_stip($get_post_q->post_title)).'">
-									<span class="error"></span>
+									<span class="form-description">'.__("Please choose an appropriate title for the question to answer it even easier .","vbegy").'</span>
 								</p>';
 							}
-
+							
 							if (empty($get_question_user_id)) {
 								$category_question = vpanel_options("category_question");
 								$category_question_required = vpanel_options("category_question_required");
@@ -745,7 +748,7 @@ function edit_question_shortcode($atts, $content = null) {
 										<span class="form-description">'.__("Please choose the appropriate section so easily search for your question .","vbegy").'</span>
 									</div>';
 								}
-
+								
 								if ($tags_question == 1) {
 									$out .= '<p>
 										<label for="question_tags-'.$rand_e.'">'.__("Tags","vbegy").'</label>
@@ -753,7 +756,7 @@ function edit_question_shortcode($atts, $content = null) {
 										<span class="form-description">'.__("Please choose  suitable Keywords Ex : ","vbegy").'<span class="color">'.__("question , poll","vbegy").'</span> .</span>
 									</p>';
 								}
-
+							
 								if ($poll_question == 1) {
 									$out .= '<p class="question_poll_p">
 										<label for="question_poll-'.$rand_e.'">'.__("Poll","vbegy").'</label>
@@ -761,7 +764,7 @@ function edit_question_shortcode($atts, $content = null) {
 										<span class="question_poll">'.__("This question is a poll ?","vbegy").'</span>
 										<span class="poll-description">'.__("If you want to be doing a poll click here .","vbegy").'</span>
 									</p>
-
+									
 									<div class="clearfix"></div>
 									<div class="poll_options">
 										<p class="form-submit add_poll">
@@ -803,7 +806,7 @@ function edit_question_shortcode($atts, $content = null) {
 										<div class="clearfix"></div>
 									</div>';
 								}
-
+								
 								$featured_image_question = vpanel_options('featured_image_question');
 								if ($featured_image_question == 1) {
 									$out .= '<label for="featured_image-'.$rand_e.'">'.__("Featured image","vbegy").'</label>
@@ -816,7 +819,7 @@ function edit_question_shortcode($atts, $content = null) {
 									</div>';
 								}
 							}
-
+						
 						$comment_question = "";
 						if ($title_question != 1) {
 							$comment_question = "required";
@@ -829,24 +832,24 @@ function edit_question_shortcode($atts, $content = null) {
 						$out .= '</div>
 						<div class="details-area">
 							<label for="question-details-'.$rand_e.'" '.($comment_question == "required"?'class="required"':'').'>'.__("Details","vbegy").($comment_question == "required"?'<span>*</span>':'').'</label>';
-
+							
 							if ($editor_question_details == 1) {
 								ob_start();
 								wp_editor((isset($posted['comment'])?ask_kses_stip_wpautop($posted['comment']):$get_post_q->post_content),"question-details-".$rand_e,$settings);
 								$editor_contents = ob_get_clean();
-
+								
 								$out .= '<div class="the-details the-textarea">'.$editor_contents.'</div>';
 							}else {
 								$out .= '<textarea name="comment" id="question-details-'.$rand_e.'" class="the-textarea" aria-required="true" cols="58" rows="8">'.(isset($posted['comment'])?ask_kses_stip($posted['comment']):ask_kses_stip($get_post_q->post_content,"yes")).'</textarea>';
 							}
 						$out .= '<div class="clearfix"></div></div>
-
+						
 						<div class="form-inputs clearfix">';
 							if (empty($get_question_user_id)) {
 								$q_video_description = get_post_meta($get_question,"video_description",true);
 								$q_video_type = get_post_meta($get_question,"video_type",true);
 								$q_video_id = get_post_meta($get_question,"video_id",true);
-
+								
 								if (vpanel_options("video_desc_active") == 1) {
 									$out .= '
 									<p class="question_poll_p">
@@ -854,7 +857,7 @@ function edit_question_shortcode($atts, $content = null) {
 										<input type="checkbox" id="video_description-'.$rand_e.'" class="video_description_input" name="video_description" value="1" '.(isset($posted['video_description']) && $posted['video_description'] == 1 || $q_video_description == 1?"checked='checked'":"").'>
 										<span class="question_poll">'.__("Do you need a video to description the problem better ?","vbegy").'</span>
 									</p>
-
+									
 									<div class="video_description" '.(isset($posted['video_description']) && $posted['video_description'] == 1 || $q_video_description == 1?"style='display:block;'":"").'>
 										<p>
 											<label for="video_type-'.$rand_e.'">'.__("Video type","vbegy").'</label>
@@ -867,7 +870,7 @@ function edit_question_shortcode($atts, $content = null) {
 											</span>
 											<span class="form-description">'.__("Choose from here the video type .","vbegy").'</span>
 										</p>
-
+										
 										<p>
 											<label for="video_id-'.$rand_e.'">'.__("Video ID","vbegy").'</label>
 											<input name="video_id" id="video_id-'.$rand_e.'" class="video_id" type="text" value="'.(isset($posted['video_id'])?$posted['video_id']:$q_video_id).'">
@@ -876,7 +879,7 @@ function edit_question_shortcode($atts, $content = null) {
 									</div>';
 								}
 							}
-
+							
 							$active_notified = vpanel_options("active_notified");
 							if ($active_notified == 1) {
 								$q_remember_answer = get_post_meta($get_question,"remember_answer",true);
@@ -886,7 +889,7 @@ function edit_question_shortcode($atts, $content = null) {
 									<span class="question_poll">'.__("Notified by e-mail at incoming answers.","vbegy").'</span>
 								</p>';
 							}
-
+							
 							$private_question = vpanel_options("private_question");
 							if ($private_question == 1) {
 								$q_private_question = get_post_meta($get_question,"private_question",true);
@@ -896,14 +899,14 @@ function edit_question_shortcode($atts, $content = null) {
 									<span class="question_poll">'.__("Active this question as a private question.","vbegy").'</span>
 								</p>';
 							}
-
+						
 						$out .= '</div>
 						<p class="form-submit">
 							<input type="hidden" name="ID" value="'.$get_question.'">
 							<input type="hidden" name="post_type" value="edit_question">
 							<input type="submit" value="'.__("Edit Your Question","vbegy").'" class="button color small submit add_qu publish-question">
 						</p>
-
+					
 					</form>
 				</div>
 			</div>
@@ -925,7 +928,7 @@ function add_post_shortcode($atts, $content = null) {
 		$user_login_group = key($user_is_login->caps);
 		$roles = $user_is_login->allcaps;
 	}
-
+	
 	$out = '';
 	if (($custom_permission == 1 && is_user_logged_in && empty($roles["add_post"])) || ($custom_permission == 1 && !is_user_logged_in && $add_post != 1)) {
 		$out .= '<div class="note_error"><strong>'.__("Sorry, you do not have a permission to add a post .","vbegy").'</strong></div>';
@@ -939,11 +942,11 @@ function add_post_shortcode($atts, $content = null) {
 		}else {
 			$post_type = "";
 		}
-
+		
 		if (isset($_POST["post_type"]) && $_POST["post_type"] == "add_post") {
 			do_action('new_post');
 		}
-
+		
 		if ($post_type != "edit_post" && $post_type != "add_question") {
 			$out .= '<div class="form-posts"><div class="form-style form-style-3 post-submit">
 				<div class="add_post">
@@ -959,7 +962,7 @@ function add_post_shortcode($atts, $content = null) {
 										<input name="username" id="post-username-'.$rand_p.'" class="the-username" type="text" value="'.(isset($posted['username'])?$posted['username']:'').'">
 										<span class="form-description">'.__("Please type your username .","vbegy").'</span>
 									</p>
-
+									
 									<p>
 										<label for="post-email-'.$rand_p.'" class="required">'.__("E-Mail","vbegy").'<span>*</span></label>
 										<input name="email" id="post-email-'.$rand_p.'" class="the-email" type="text" value="'.(isset($posted['email'])?$posted['email']:'').'">
@@ -969,9 +972,9 @@ function add_post_shortcode($atts, $content = null) {
 								$out .= '<p>
 									<label for="post-title-'.$rand_p.'" class="required">'.__("Post Title","vbegy").'<span>*</span></label>
 									<input name="title" id="post-title-'.$rand_p.'" class="the-title" type="text" value="'.(isset($posted['title'])?ask_kses_stip($posted['title']):'').'">
-									<span class="error"></span>
+									<span class="form-description">'.__("Please choose an appropriate title for the post .","vbegy").'</span>
 								</p>';
-
+								
 								if ($tags_post == 1) {
 									$out .= '<p>
 										<label for="post_tag-'.$rand_p.'">'.__("Tags","vbegy").'</label>
@@ -979,7 +982,7 @@ function add_post_shortcode($atts, $content = null) {
 										<span class="form-description">'.__("Please choose  suitable Keywords Ex : ","vbegy").'<span class="color">'.__("post , video","vbegy").'</span> .</span>
 									</p>';
 								}
-
+								
 								$category_post = vpanel_options("category_post");
 								$category_post_required = vpanel_options("category_post_required");
 								$category_post = $category_post_required = 1;
@@ -990,7 +993,7 @@ function add_post_shortcode($atts, $content = null) {
 										<span class="form-description">'.__("Please choose the appropriate section so easily search for your post .","vbegy").'</span>
 									</div>';
 								}
-
+								
 								if ($attachment_post == 1) {
 									$out .= '<label for="attachment-'.$rand_p.'">'.__("Attachment","vbegy").'</label>
 									<div class="fileinputs">
@@ -1001,25 +1004,25 @@ function add_post_shortcode($atts, $content = null) {
 										</div>
 									</div>';
 								}
-
+								
 							$out .= '
 							</div>
 							<div class="details-area">
 								<label for="post-details-'.$rand_p.'" '.(vpanel_options("content_post") == 1?'class="required"':'').'>'.__("Details","vbegy").(vpanel_options("content_post") == 1?'<span>*</span>':'').'</label>';
-
+								
 								if ($editor_post_details == 1) {
 									ob_start();
 									wp_editor((isset($posted['comment'])?ask_kses_stip_wpautop($posted['comment']):""),"post-details-".$rand_p,$settings);
 									$editor_contents = ob_get_clean();
-
+									
 									$out .= '<div class="the-details the-textarea">'.$editor_contents.'</div>';
 								}else {
 									$out .= '<textarea name="comment" id="post-details-'.$rand_p.'" class="the-textarea" aria-required="true" cols="58" rows="8">'.(isset($posted['comment'])?ask_kses_stip($posted['comment']):"").'</textarea>';
 								}
 							$out .= '<div class="clearfix"></div></div>
-
+							
 							<div class="form-inputs clearfix">';
-
+								
 							$the_captcha_post = vpanel_options("the_captcha_post");
 							$captcha_style = vpanel_options("captcha_style");
 							$captcha_question = vpanel_options("captcha_question");
@@ -1042,14 +1045,14 @@ function add_post_shortcode($atts, $content = null) {
 									</p>";
 								}
 							}
-
+							
 							$out .= '</div>
-
+							
 							<p class="form-submit margin_0">
 								<input type="hidden" name="post_type" value="add_post">
 								<input type="submit" value="'.__("Publish Your Post","vbegy").'" class="button color small submit add_qu publish-post">
 							</p>
-
+						
 						</form>
 					</div>
 				</div>
@@ -1065,7 +1068,7 @@ function vpanel_edit_post_shortcode($atts, $content = null) {
 	$tags_post = vpanel_options("tags_post");
 	$attachment_post = vpanel_options("attachment_post");
 	$editor_post_details = vpanel_options("editor_post_details");
-
+	
 	$out = '';
 	if (!is_user_logged_in) {
 		$out .= '<div class="form-style form-style-3"><div class="note_error"><strong>'.__("You must login to add post .","vbegy").'</strong></div>'.do_shortcode("[ask_login register_2='yes']").'</div>';
@@ -1080,16 +1083,16 @@ function vpanel_edit_post_shortcode($atts, $content = null) {
 				$p_tag = implode(' , ', $terms_array);
 			endforeach;
 		endif;
-
+		
 		$category = wp_get_post_terms($get_post,'category',array("fields" => "ids"));
 		if (isset($category) && is_array($category)) {
 			$category = $category[0];
 		}
-
+		
 		if (isset($_POST["post_type"]) && $_POST["post_type"] == "edit_post") {
 			do_action('vpanel_edit_post');
 		}
-
+		
 		$out .= '<div class="form-posts"><div class="form-style form-style-3 post-submit">
 			<div class="add_post">
 				<div '.(!is_user_logged_in?"class='if_no_login'":"").'>';
@@ -1101,9 +1104,9 @@ function vpanel_edit_post_shortcode($atts, $content = null) {
 							<p>
 								<label for="post-title-'.$rand_e.'" class="required">'.__("Post Title","vbegy").'<span>*</span></label>
 								<input name="title" id="post-title-'.$rand_e.'" class="the-title" type="text" value="'.(isset($posted['title'])?ask_kses_stip($posted['title']):ask_kses_stip($get_post_p->post_title)).'">
-								<span class="error"></span>
+								<span class="form-description">'.__("Please choose an appropriate title for the post .","vbegy").'</span>
 							</p>';
-
+							
 							if ($tags_post == 1) {
 								$out .= '<p>
 									<label for="post_tag-'.$rand_e.'">'.__("Tags","vbegy").'</label>
@@ -1111,7 +1114,7 @@ function vpanel_edit_post_shortcode($atts, $content = null) {
 									<span class="form-description">'.__("Please choose  suitable Keywords Ex : ","vbegy").'<span class="color">'.__("post , video","vbegy").'</span> .</span>
 								</p>';
 							}
-
+							
 							$category_post = vpanel_options("category_post");
 							$category_post_required = vpanel_options("category_post_required");
 							$category_post = $category_post_required = 1;
@@ -1122,22 +1125,22 @@ function vpanel_edit_post_shortcode($atts, $content = null) {
 									<span class="form-description">'.__("Please choose the appropriate section so easily search for your post .","vbegy").'</span>
 								</div>';
 							}
-
+							
 						$out .= '</div>
 						<div class="details-area">
 							<label for="post-details-'.$rand_e.'" '.(vpanel_options("content_post") == 1?'class="required"':'').'>'.__("Details","vbegy").(vpanel_options("content_post") == 1?'<span>*</span>':'').'</label>';
-
+							
 							if ($editor_post_details == 1) {
 								ob_start();
 								wp_editor((isset($posted['comment'])?ask_kses_stip_wpautop($posted['comment']):$get_post_p->post_content),"post-details-".$rand_e,$settings);
 								$editor_contents = ob_get_clean();
-
+								
 								$out .= '<div class="the-details the-textarea">'.$editor_contents.'</div>';
 							}else {
 								$out .= '<textarea name="comment" id="post-details-'.$rand_e.'" class="the-textarea" aria-required="true" cols="58" rows="8">'.(isset($posted['comment'])?ask_kses_stip($posted['comment']):ask_kses_stip($get_post_p->post_content,"yes")).'</textarea>';
 							}
 						$out .= '<div class="clearfix"></div></div>';
-
+						
 						if ($attachment_post == 1) {
 							$out .= '<label for="attachment-'.$rand_e.'">'.__("Attachment","vbegy").'</label>
 							<div class="fileinputs">
@@ -1148,16 +1151,16 @@ function vpanel_edit_post_shortcode($atts, $content = null) {
 								</div>
 							</div>';
 						}
-
+						
 						$out .= '<div class="form-inputs clearfix">
-
+						
 						</div>
 						<p class="form-submit margin_0">
 							<input type="hidden" name="ID" value="'.$get_post.'">
 							<input type="hidden" name="post_type" value="edit_post">
 							<input type="submit" value="'.__("Edit Your post","vbegy").'" class="button color small submit add_qu publish-post">
 						</p>
-
+					
 					</form>
 				</div>
 			</div>
@@ -1258,13 +1261,13 @@ function is_user_logged_in_data ($user_links = array("profile" => 1,"messages" =
 					$out .= '</div>
 				</div>';
 			}
-
+			
 			$get_lang = esc_attr(get_query_var("lang"));
 			$get_lang_array = array();
 			if (isset($get_lang) && $get_lang != "") {
 				$get_lang_array = array("lang" => $get_lang);
 			}
-
+			
 			$out .= '<div class="'.($profile_widget != "on"?"col-md-4":"col-md-12").'">';
 				$active_points = vpanel_options("active_points");
 				if (isset($user_links) && is_array($user_links) && ((isset($user_links["profile"]) && ($user_links["profile"] == 1 || $user_links["profile"] == "on")) || (isset($user_links["messages"]) && ($user_links["messages"] == 1 || $user_links["messages"] == "on")) || (isset($user_links["questions"]) && ($user_links["questions"] == 1 || $user_links["questions"] == "on")) || (isset($user_links["polls"]) && ($user_links["polls"] == 1 || $user_links["polls"] == "on")) || (isset($user_links["best_answers"]) && ($user_links["best_answers"] == 1 || $user_links["best_answers"] == "on")) || (isset($user_links["asked_questions"]) && ($user_links["asked_questions"] == 1 || $user_links["asked_questions"] == "on")) || (isset($user_links["paid_questions"]) && ($user_links["paid_questions"] == 1 || $user_links["paid_questions"] == "on")) || (isset($user_links["answers"]) && ($user_links["answers"] == 1 || $user_links["answers"] == "on")) || (isset($user_links["favorite"]) && ($user_links["favorite"] == 1 || $user_links["favorite"] == "on")) || (isset($user_links["followed"]) && ($user_links["followed"] == 1 || $user_links["followed"] == "on")) || (isset($user_links["points"]) && ($user_links["points"] == 1 || $user_links["points"] == "on")) || (isset($user_links["i_follow"]) && ($user_links["i_follow"] == 1 || $user_links["i_follow"] == "on")) || (isset($user_links["followers"]) && ($user_links["followers"] == 1 || $user_links["followers"] == "on")) || (isset($user_links["posts"]) && ($user_links["posts"] == 1 || $user_links["posts"] == "on")) || (isset($user_links["follow_questions"]) && ($user_links["follow_questions"] == 1 || $user_links["follow_questions"] == "on")) || (isset($user_links["follow_answers"]) && ($user_links["follow_answers"] == 1 || $user_links["follow_answers"] == "on")) || (isset($user_links["follow_posts"]) && ($user_links["follow_posts"] == 1 || $user_links["follow_posts"] == "on")) || (isset($user_links["follow_comments"]) && ($user_links["follow_comments"] == 1 || $user_links["follow_comments"] == "on")) || (isset($user_links["edit_profile"]) && ($user_links["edit_profile"] == 1 || $user_links["edit_profile"] == "on")) || (isset($user_links["logout"]) && ($user_links["logout"] == 1 || $user_links["logout"] == "on")))) {
@@ -1375,7 +1378,7 @@ function ask_login ($atts, $content = null) {
 		$out .= do_action('askme_social_login').do_action('oa_social_login').(shortcode_exists('wordpress_social_login')?'<div class="clearfix"></div><br>'.do_shortcode("[wordpress_social_login]"):"").(shortcode_exists('apsl-login-lite')?'<div class="clearfix"></div><br>'.do_shortcode("[apsl-login-lite]"):"").'<div class="ask_form inputs">
 			<form class="login-form ask_login" action="'.home_url('/').'" method="post">
 				<div class="ask_error"></div>
-
+				
 				<div class="form-inputs clearfix">
 					<p class="login-text">
 						<input class="required-item" type="text" value="'.__("Username","vbegy").'" onfocus="if (this.value == \''.__("Username","vbegy").'\') {this.value = \'\';}" onblur="if (this.value == \'\') {this.value = \''.__("Username","vbegy").'\';}" name="log">
@@ -1386,7 +1389,7 @@ function ask_login ($atts, $content = null) {
 						<i class="icon-lock"></i>
 						'.(isset($a["forget"]) && $a["forget"] == "false"?'':'<a href="#">'.__("Forget","vbegy").'</a>').'
 					</p>';
-
+					
 					$the_captcha_login = vpanel_options("the_captcha_login");
 					if ($the_captcha_login == 1) {
 						$rand_l = rand(1,1000);
@@ -1413,17 +1416,17 @@ function ask_login ($atts, $content = null) {
 					}
 				$out .= '
 				</div>
-
+				
 				<p class="form-submit login-submit">
 					<span class="loader_2"></span>
 					<input type="submit" value="'.__("Log in","vbegy").'" class="button color small login-submit submit sidebar_submit">
 					'.(isset($a["register"]) && $a["register"] == "button"?'<input type="button" class="signup button color small submit sidebar_submit" value="'.__("Register","vbegy").'">':'').'
 				</p>
-
+				
 				<div class="rememberme">
 					<label><input type="checkbox"input name="rememberme" checked="checked"> '.__("Remember Me","vbegy").'</label>
 				</div>
-
+				
 				<input type="hidden" name="redirect_to" value="'.wp_unslash( $protocol.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']).'">
 				<input type="hidden" name="login_nonce" value="'.wp_create_nonce("ask-login-action").'">
 				<input type="hidden" name="ajax_url" value="'.$ajax_file.'">
@@ -1446,10 +1449,10 @@ function ask_login_jquery() {
 	}
 	$after_login = vpanel_options("after_login");
 	$after_login_link = vpanel_options("after_login_link");
-
+	
 	if ( is_ssl() && force_ssl_admin() && !force_ssl_admin() && ( 0 !== strpos($redirect_to, 'https') ) && ( 0 === strpos($redirect_to, 'http') ) )$secure_cookie = false; else $secure_cookie = '';
 	$user = wp_signon('', $secure_cookie);
-
+	
 	if (isset($_REQUEST['redirect_to']) && $after_login == "same_page") {
 		$redirect_to = $_REQUEST['redirect_to'];
 	}else if (isset($user->ID) && $user->ID > 0 && $after_login == "profile") {
@@ -1459,12 +1462,12 @@ function ask_login_jquery() {
 	}else {
 		$redirect_to = esc_url(home_url('/'));
 	}
-
+	
 	// Check the username
-	if ( !$_POST['log'] ) :
+	if ( !isset($_POST['log']) ) :
 		$user = new WP_Error();
 		$user->add('empty_username', __('<strong>Error :&nbsp;</strong>please insert your name .','vbegy'));
-	elseif ( !$_POST['pwd'] ) :
+	elseif ( !isset($_POST['pwd']) ) :
 		$user = new WP_Error();
 		$user->add('empty_username', __('<strong>Error :&nbsp;</strong>please insert your password .','vbegy'));
 	endif;
@@ -1560,7 +1563,7 @@ function ask_signup_shortcode($atts, $content = null) {
 							</div>
 						</div>';
 					}
-
+					
 					$country_register = vpanel_options("country_register");
 					$country_required = vpanel_options("country_required");
 					$city_register = vpanel_options("city_register");
@@ -1573,7 +1576,7 @@ function ask_signup_shortcode($atts, $content = null) {
 					$sex_required = vpanel_options("sex_required");
 					$names_register = vpanel_options("names_register");
 					$names_required = vpanel_options("names_required");
-
+					
 					if ($names_register == 1) {
 						$out .= '
 						<p>
@@ -1630,7 +1633,7 @@ function ask_signup_shortcode($atts, $content = null) {
 							<label for="sex_female_'.$rand_w.'">'.__("Female","vbegy").'</label>
 						</p>';
 					}
-
+					
 					$the_captcha_register = vpanel_options("the_captcha_register");
 					$captcha_style = vpanel_options("captcha_style");
 					$captcha_question = vpanel_options("captcha_question");
@@ -1653,7 +1656,7 @@ function ask_signup_shortcode($atts, $content = null) {
 							</p>";
 						}
 					}
-
+					
 					$terms_active_register = vpanel_options("terms_active_register");
 					$terms_link_register = vpanel_options("terms_link_register");
 					if ($terms_active_register == 1) {
@@ -1663,7 +1666,7 @@ function ask_signup_shortcode($atts, $content = null) {
 							<span class="question_poll">'.sprintf(__("By registering, you agree to the <a target='%s' href='%s'>terms of service</a>.","vbegy"),(vpanel_options("terms_active_target_register") == "same_page"?"_self":"_blank"),(isset($terms_link_register) && $terms_link_register != ""?$terms_link_register:get_page_link(vpanel_options('terms_page_register')))).'</span>
 						</p>';
 					}
-
+					
 				$out .= '</div>
 				<p class="form-submit">
 					<input type="hidden" name="redirect_to" value="'.wp_unslash( $protocol.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']).'">
@@ -1704,7 +1707,7 @@ function ask_signup_process() {
 		if ( empty($posted['pass1']) ) $errors->add('required-pass1',__("Please enter your password.","vbegy"));
 		if ( empty($posted['pass2']) ) $errors->add('required-pass2',__("Please rewrite password.","vbegy"));
 		if ( $posted['pass1']!==$posted['pass2'] ) $errors->add('required-pass1',__("Password does not match.","vbegy"));
-
+		
 		$the_captcha_register = vpanel_options("the_captcha_register");
 		$captcha_style = vpanel_options("captcha_style");
 		$captcha_question = vpanel_options("captcha_question");
@@ -1722,7 +1725,7 @@ function ask_signup_process() {
 		$sex_required = vpanel_options("sex_required");
 		$names_register = vpanel_options("names_register");
 		$names_required = vpanel_options("names_required");
-
+		
 		if ($the_captcha_register == 1) {
 			if (empty($posted["ask_captcha"])) {
 				$errors->add('required-captcha', __("There are required fields ( captcha ).","vbegy"));
@@ -1739,7 +1742,7 @@ function ask_signup_process() {
 		}
 		$profile_picture = vpanel_options("profile_picture");
 		$profile_picture_required = vpanel_options("profile_picture_required");
-
+		
 		if(isset($_FILES['you_avatar']) && !empty($_FILES['you_avatar']['name'])) :
 			$mime = $_FILES["you_avatar"]["type"];
 			if (($mime != 'image/jpeg') && ($mime != 'image/jpg') && ($mime != 'image/png')) {
@@ -1766,7 +1769,7 @@ function ask_signup_process() {
 			}
 			return $errors;
 		endif;
-
+		
 		if ($country_register == 1 && $country_required == 1 && empty($posted['country'])) {
 			$errors->add('required-country', __("There are required fields ( Country ).","vbegy"));
 		}
@@ -1791,7 +1794,7 @@ function ask_signup_process() {
 		if ($names_register == 1 && $names_required == 1 && empty($posted['display_name'])) {
 			$errors->add('required-display_name', __("There are required fields ( Display Name ).","vbegy"));
 		}
-
+		
 		$terms_active_register = vpanel_options("terms_active_register");
 		if ($terms_active_register == 1 && $posted['agree_terms'] != 1) {
 			$errors->add('required-terms', __("There are required fields ( Agree of the terms ).","vbegy"));
@@ -1823,9 +1826,9 @@ function ask_signup_process() {
 						$filename = $you_avatar["file"];
 						$filetype = wp_check_filetype( basename( $filename ), null );
 						$wp_upload_dir = wp_upload_dir();
-
+						
 						$attachment = array(
-							'guid'           => $wp_upload_dir['url'] . '/' . basename( $filename ),
+							'guid'           => $wp_upload_dir['url'] . '/' . basename( $filename ), 
 							'post_mime_type' => $filetype['type'],
 							'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $filename ) ),
 							'post_content'   => '',
@@ -1887,21 +1890,21 @@ function ask_signup_process() {
 						$current_user = get_user_by("id",$user_id);
 						$_points = get_user_meta($user_id,$current_user->user_login."_points",true);
 						$_points++;
-
+						
 						update_user_meta($user_id,$current_user->user_login."_points",$_points);
 						add_user_meta($user_id,$current_user->user_login."_points_".$_points,array(date_i18n('Y/m/d',current_time('timestamp')),date_i18n('g:i a',current_time('timestamp')),$point_new_user,"+","gift_site",$post_id,$id));
-
+					
 						$points_user = get_user_meta($user_id,"points",true);
 						update_user_meta($user_id,"points",$points_user+$point_new_user);
-
+						
 						askme_notifications_activities($user_id,"","","","","gift_site","notifications");
 					}
 					$secure_cookie = is_ssl() ? true : false;
 					wp_set_auth_cookie($user_id, true, $secure_cookie);
-
+					
 					$after_register = vpanel_options("after_register");
 					$after_register_link = vpanel_options("after_register_link");
-
+					
 					if (isset($posted['redirect_to']) && $after_register == "same_page") {
 						$redirect_to = $posted['redirect_to'];
 					}else if (isset($user_id) && $user_id > 0 && $after_register == "profile") {
@@ -1927,13 +1930,13 @@ function ask_registration_save ($user_id) {
 		$current_user = get_user_by("id",$user_id);
 		$_points = get_user_meta($user_id,$current_user->user_login."_points",true);
 		$_points++;
-
+	
 		update_user_meta($user_id,$current_user->user_login."_points",$_points);
 		add_user_meta($user_id,$current_user->user_login."_points_".$_points,array(date_i18n('Y/m/d',current_time('timestamp')),date_i18n('g:i a',current_time('timestamp')),$point_new_user,"+","gift_site",$post_id,$id));
-
+	
 		$points_user = get_user_meta($user_id,"points",true);
 		update_user_meta($user_id,"points",$points_user+$point_new_user);
-
+		
 		askme_notifications_activities($user_id,"","","","","gift_site","notifications");
 	}
 }
@@ -1981,13 +1984,13 @@ function ask_process_lost_pass() {
 	global $posted,$wpdb,$vpanel_emails,$vpanel_emails_2,$vpanel_emails_3;
 	$errors = new WP_Error();
 	$fields = array('user_mail','form_type');
-
+	
 	foreach ($fields as $field) :
 		if (isset($_POST[$field])) $posted[$field] = $_POST[$field]; else $posted[$field] = '';
 	endforeach;
-
+	
 	$posted = array_map('stripslashes', $posted);
-
+	
 	if ( is_user_logged_in ) :
 		$user_id = get_current_user_id();
 		$errors->add('already_logged', sprintf(wp_kses(__("You are already logged in, If you want to change your password go to <a href='%s'>edit profile</a>.","vbegy"),array('a' => array('href' => array()))),esc_url(get_page_link(vpanel_options('user_edit_profile_page')))));
@@ -1996,7 +1999,7 @@ function ask_process_lost_pass() {
 	elseif ( !email_exists($posted['user_mail']) ) :
 		$errors->add('invalid_email', sprintf(esc_html__('There is no user registered with that email address.','vbegy'),'<strong>','</strong>'));
 	endif;
-
+	
 	$get_user_by_mail = get_user_by('email',$posted['user_mail']);
 	if ( $errors->get_error_code() ) return $errors;
 	if ($_POST['form_type']) {
@@ -2065,7 +2068,7 @@ function ask_edit_profile_shortcode($atts, $content = null) {
 	}else {
 		do_action('ask_edit_profile_form');
 		$out .= '<form class="edit-profile-form vpanel_form" method="post" enctype="multipart/form-data">';
-
+		
 			$user_info = get_userdata(get_current_user_id());
 			$you_avatar = get_the_author_meta('you_avatar',$user_info->ID);
 			$url = get_the_author_meta('url',$user_info->ID);
@@ -2084,7 +2087,7 @@ function ask_edit_profile_shortcode($atts, $content = null) {
 			$sex = get_the_author_meta('sex',$user_info->ID);
 			$instagram = get_the_author_meta('instagram',$user_info->ID);
 			$pinterest = get_the_author_meta('pinterest',$user_info->ID);
-
+			
 			$show_point_favorite = get_the_author_meta('show_point_favorite',$user_info->ID);
 			$received_email = get_the_author_meta('received_email',$user_info->ID);
 			$received_message = get_the_author_meta('received_message',$user_info->ID);
@@ -2092,7 +2095,7 @@ function ask_edit_profile_shortcode($atts, $content = null) {
 			$names_required_profile = vpanel_options("names_required_profile");
 			$phone_profile = vpanel_options("phone_profile");
 			$phone_required_profile = vpanel_options("phone_required_profile");
-
+			
 			$country_profile = vpanel_options("country_profile");
 			$country_required_profile = vpanel_options("country_required_profile");
 			$city_profile = vpanel_options("city_profile");
@@ -2103,12 +2106,12 @@ function ask_edit_profile_shortcode($atts, $content = null) {
 			$sex_required_profile = vpanel_options("sex_required_profile");
 			$url_profile = vpanel_options("url_profile");
 			$url_required_profile = vpanel_options("url_required_profile");
-
+			
 			$out .= '<div class="form-inputs clearfix">
-				<span class="nickname">
+				<p>
 					<label>'.__("Nickname","vbegy").'</label>
-					<input name="nickname" id="nickname" type="text" value="'.$user_info->nickname.'" readonly>
-				</span>';
+					<input name="nickname" id="nickname" type="text" value="'.$user_info->nickname.'">
+				</p>';
 				if ($names_profile == 1) {
 					$out .= '
 					<p>
@@ -2117,33 +2120,34 @@ function ask_edit_profile_shortcode($atts, $content = null) {
 					</p>
 					<p>
 						<label '.($names_required_profile == 1?'class="required"':'').'>'.__("Last Name","vbegy").($names_required_profile == 1?'<span>*</span>':'').'</label>
-						<input style="" name="last_name" id="last_name" type="text" value="'.$user_info->last_name.'">
+						<input name="last_name" id="last_name" type="text" value="'.$user_info->last_name.'">
 					</p>
-					<span class="displayname">
+					<p>
 						<label '.($names_required_profile == 1?'class="required"':'').'>'.__("Display name","vbegy").($names_required_profile == 1?'<span>*</span>':'').'</label>
-						<input name="display_name" id="display_name" type="text" value="'.$user_info->display_name.'" readonly>
-					</span>';
+						<input name="display_name" id="display_name" type="text" value="'.$user_info->display_name.'">
+					</p>';
 				}
-
-				$out .= '<span class="emailname">
+				
+				$out .= '<p>
 					<label for="email" class="required">'.__("E-Mail","vbegy").'<span>*</span></label>
-					<input name="email" id="email" type="email" value="'.$user_info->user_email.'" readonly>
-				</span>
-				';
-				if ($url_profile == 1) {
-									$out .= '<p>
-										<label '.($url_required_profile == 1?'class="required"':'').'>'.__("Website","vbegy").($url_required_profile == 1?'<span>*</span>':'').'</label>
-										<input name="url" id="url" type="text" value="'.$url.'">
-									</p>';
-								}
-								$out .= '';
+					<input name="email" id="email" type="email" value="'.$user_info->user_email.'">
+				</p>
+				<p>
+					<label for="newpassword" class="required">'.__("Password","vbegy").'<span>*</span></label>
+					<input name="pass1" id="newpassword" type="password" value="">
+				</p>
+				<p>
+					<label for="newpassword2" class="required">'.__("Confirm Password","vbegy").'<span>*</span></label>
+					<input name="pass2" id="newpassword2" type="password" value="">
+				</p>';
+				
 				if ($phone_profile == 1) {
 					$out .= '<p>
 						<label for="phone" '.($phone_required_profile == 1?'class="required"':'').'>'.__("Phone","vbegy").($phone_required_profile == 1?'<span>*</span>':'').'</label>
 						<input type="text" '.($phone_required_profile == 1?'class="required-item"':'').' name="phone" id="phone" value="'.$phone.'">
 					</p>';
 				}
-
+				
 				if ($country_profile == 1) {
 					$out .= '
 					<p>
@@ -2163,9 +2167,9 @@ function ask_edit_profile_shortcode($atts, $content = null) {
 						<input type="text" '.($city_required_profile == 1?'class="required-item"':'').' name="city" id="city" value="'.$city.'">
 					</p>';
 				}
-
+				
 				$out .= apply_filters('askme_edit_profile_after_city',false,(isset($_POST)?$_POST:array()),$user_info->ID);
-
+				
 				if ($age_profile == 1) {
 					$out .= '<p>
 						<label for="age" '.($age_required_profile == 1?'class="required"':'').'>'.__("Age","vbegy").($age_required_profile == 1?'<span>*</span>':'').'</label>
@@ -2189,7 +2193,7 @@ function ask_edit_profile_shortcode($atts, $content = null) {
 					if ($you_avatar) {
 						$out .= "<div class='user-profile-img edit-profile-img'>".askme_user_avatar($you_avatar,79,79,$user_info->ID,$user_info->display_name)."</div>";
 					}
-
+					
 					$out .= '
 						<label '.($profile_picture_required_profile == 1?'class="required"':'').' for="you_avatar">'.__("Profile Picture","vbegy").($profile_picture_required_profile == 1?'<span>*</span>':'').'</label>
 						<div class="fileinputs">
@@ -2202,21 +2206,59 @@ function ask_edit_profile_shortcode($atts, $content = null) {
 					<div class="clearfix"></div>
 					<p></p>';
 				}
-
+				
 				$out .= '<p>
 					<label for="description">'.__("About Yourself","vbegy").'</label>
 					<textarea name="description" id="description" cols="58" rows="8">'.$user_info->description.'</textarea>
 				</p>
 			</div>
-
-
-
-			<label for="terms-and-conditionsl">
-				'.__("Please indicate that you have read and accepted the <a style='color:#006bb4' href='/terms-and-conditions'>terms and conditions</a> ","vbegy").'
-				<input type="checkbox" name="follow_email" id="follow_email" value="1" '.checked($follow_email,1,false).'>
+			<div class="form-inputs clearfix">';
+				if ($url_profile == 1) {
+					$out .= '<p>
+						<label '.($url_required_profile == 1?'class="required"':'').'>'.__("Website","vbegy").($url_required_profile == 1?'<span>*</span>':'').'</label>
+						<input name="url" id="url" type="text" value="'.$url.'">
+					</p>';
+				}
+				$out .= '<p>
+					<label for="facebook">'.__("Facebook","vbegy").'</label>
+					<input type="text" name="facebook" id="facebook" value="'.$facebook.'">
+				</p>
+				<p>
+					<label for="twitter">'.__("Twitter","vbegy").'</label>
+					<input type="text" name="twitter" id="twitter" value="'.$twitter.'">
+				</p>
+				<p>
+					<label for="youtube">'.__("Youtube","vbegy").'</label>
+					<input type="text" name="youtube" id="youtube" value="'.$youtube.'">
+				</p>
+				<p>
+					<label for="linkedin">'.__("Linkedin","vbegy").'</label>
+					<input type="text" name="linkedin" id="linkedin" value="'.$linkedin.'">
+				</p>
+				<p>
+					<label for="google">'.__("Google plus","vbegy").'</label>
+					<input type="text" name="google" id="google" value="'.$google.'">
+				</p>
+				<p>
+					<label for="instagram">'.__("Instagram","vbegy").'</label>
+					<input type="text" name="instagram" id="instagram" value="'.$instagram.'">
+				</p>
+				<p>
+					<label for="pinterest">'.__("Pinterest","vbegy").'</label>
+					<input type="text" name="pinterest" id="pinterest" value="'.$pinterest.'">
+				</p>
+			</div>
+			
+			<label for="show_point_favorite">
+				<input type="checkbox" name="show_point_favorite" id="show_point_favorite" value="1" '.checked($show_point_favorite,1,false).'>
+				'.__("Show your private pages for all the users?","vbegy").'
 			</label>
-			';
 
+			<label for="follow_email">
+				<input type="checkbox" name="follow_email" id="follow_email" value="1" '.checked($follow_email,1,false).'>
+				'.__("Follow-up email","vbegy").'
+			</label>';
+			
 			$send_email_question_groups = vpanel_options("send_email_question_groups");
 			if (isset($send_email_question_groups) && is_array($send_email_question_groups)) {
 				foreach ($send_email_question_groups as $key => $value) {
@@ -2228,14 +2270,20 @@ function ask_edit_profile_shortcode($atts, $content = null) {
 				}
 			}
 			if (is_array($send_email_question_groups) && in_array($user_info->roles[0],$send_email_question_groups)) {
-				$out .= '';
+				$out .= '<label for="received_email">
+					<input type="checkbox" name="received_email" id="received_email" value="1" '.checked($received_email,1,false).'>
+					'.__("Received mail when user add a new question","vbegy").'
+				</label>';
 			}
-
+			
 			$active_message = vpanel_options("active_message");
 			if ($active_message = 1) {
-				$out .= '';
+				$out .= '<label for="received_message">
+					<input type="checkbox" name="received_message" id="received_message" value="1" '.checked($received_message,($received_message == ""?"":1),false).'>
+					'.__("Received message from another users?","vbegy").'
+				</label>';
 			}
-
+			
 			$out .= '<p class="form-submit">
 				<input type="hidden" name="user_action" value="edit_profile">
 				<input type="hidden" name="action" value="update">
@@ -2244,12 +2292,12 @@ function ask_edit_profile_shortcode($atts, $content = null) {
 				<input type="hidden" name="user_login" id="user_login" value="'.$user_info->user_login.'">
 				<input type="submit" value="'.__("Save","vbegy").'" class="button color small login-submit submit">
 			</p>
-
+		
 		</form>';
 	}
 	return $out;
 }
-/* ask_sanitize_user */
+/* ask_sanitize_user */ 
 function ask_sanitize_user ($username, $raw_username, $strict) {
 	$username = wp_strip_all_tags ($raw_username);
 	$username = remove_accents ($username);

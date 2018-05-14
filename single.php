@@ -79,7 +79,7 @@
 					$post_email = get_post_meta($post->ID, 'post_email',true);?>
 					<div class="post-meta">
 					    <span class="meta-author" itemprop="author" rel="author"><i class="icon-user"></i>
-						    <?php
+						    <?php 
 						    if ($post->post_author > 0) {
 						    	the_author_posts_link();
 						    }else {
@@ -98,20 +98,20 @@
 				<?php }?>
 				<div class="post-content" itemprop="mainContentOfPage">
 					<?php the_content();
-
+					
 					$added_file = get_post_meta($post->ID, 'added_file', true);
 					if ($added_file != "") {
 						echo "<div class='clear'></div><br><a class='attachment-link' href='".wp_get_attachment_url($added_file)."'><i class='icon-link'></i>".__("Attachment","vbegy")."</a>";
 					}
 					?>
 				</div>
-
+				
 				<?php  wp_link_pages(array('before' => '<div class="pagination post-pagination">','after' => '</div>','link_before' => '<span>','link_after' => '</span>'));?>
 				<div class="clearfix"></div>
-
+				
 			</div><!-- End post-inner -->
 		</article><!-- End article.post -->
-
+		
 		<?php $post_share = vpanel_options("post_share");
 		if (has_tag() || (($post_share == 1 && $post_share_s == "") || ($post_share == 1 && isset($custom_page_setting) && $custom_page_setting == 0) || ($post_share == 1 && isset($custom_page_setting) && $custom_page_setting == 1 && isset($post_share_s) && $post_share_s != 0) || (isset($custom_page_setting) && $custom_page_setting == 1 && isset($post_share_s) && $post_share_s == 1))) {?>
 			<div class="share-tags page-content">
@@ -195,9 +195,9 @@
 		<?php }else {
 			echo "<br>";
 		}
-
+		
 	endwhile; endif;
-
+	
 	$vbegy_custom_sections = get_post_meta($post->ID,"vbegy_custom_sections",true);
 	if (isset($vbegy_custom_sections) && $vbegy_custom_sections == 1) {
 		$order_sections = get_post_meta($post->ID,"order_sections_li",true);
@@ -216,7 +216,7 @@
 				$vbegy_share_adv_code = rwmb_meta('vbegy_share_adv_code','textarea',$post->ID);
 				$vbegy_share_adv_href = rwmb_meta('vbegy_share_adv_href','text',$post->ID);
 				$vbegy_share_adv_img = rwmb_meta('vbegy_share_adv_img','upload',$post->ID);
-
+				
 				if ((is_single() || is_page()) && (($vbegy_share_adv_type == "display_code" && $vbegy_share_adv_code != "") || ($vbegy_share_adv_type == "custom_image" && $vbegy_share_adv_img != ""))) {
 					$share_adv_type = $vbegy_share_adv_type;
 					$share_adv_code = $vbegy_share_adv_code;
@@ -250,7 +250,7 @@
 				$vbegy_related_adv_code = rwmb_meta('vbegy_related_adv_code','textarea',$post->ID);
 				$vbegy_related_adv_href = rwmb_meta('vbegy_related_adv_href','text',$post->ID);
 				$vbegy_related_adv_img = rwmb_meta('vbegy_related_adv_img','upload',$post->ID);
-
+				
 				if ((is_single() || is_page()) && (($vbegy_related_adv_type == "display_code" && $vbegy_related_adv_code != "") || ($vbegy_related_adv_type == "custom_image" && $vbegy_related_adv_img != ""))) {
 					$related_adv_type = $vbegy_related_adv_type;
 					$related_adv_code = $vbegy_related_adv_code;
@@ -387,10 +387,10 @@
 					$related_no = vpanel_options('related_number') ? vpanel_options('related_number') : 5;
 					global $post;
 					$orig_post = $post;
-
+					
 					$related_query_ = array();
 					$related_cat_tag = vpanel_options("related_query");
-
+					
 					if ($related_cat_tag == "tags") {
 						$tags = wp_get_post_tags($post->ID);
 						$tags_ids = array();
@@ -402,7 +402,7 @@
 						foreach($categories as $q_category) $category_ids[] = $q_category->term_id;
 						$related_query_ = array('category__in' => $category_ids);
 					}
-
+					
 					$args = array_merge($related_query_,array('post__not_in' => array($post->ID),'posts_per_page'=> $related_no));
 					$related_query = new wp_query( $args );
 					if ($related_query->have_posts()) : ;?>

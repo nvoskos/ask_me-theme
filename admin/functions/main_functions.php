@@ -3013,7 +3013,7 @@ function askme_notifications_activities($user_id = "",$another_user_id = "",$use
 	if (($type == "notifications" && $active_notifications == 1) || ($type == "activities" && $active_activity_log == 1)) {
 		/* Number of my types */
 		$_types = get_user_meta($user_id,$user_id."_".$type,true);
-		if (!$_types) {
+		if ($_types == "") {
 			$_types = 0;
 		}
 		$_types++;
@@ -3037,7 +3037,7 @@ function askme_notifications_activities($user_id = "",$another_user_id = "",$use
 		
 		/* New */
 		$_new_types = get_user_meta($user_id,$user_id."_new_".$type,true);
-		if (!$_new_types) {
+		if ($_new_types == "") {
 			$_new_types = 0;
 		}
 		$_new_types++;
