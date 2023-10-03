@@ -14,7 +14,5 @@ get_header();
 		vpanel_pagination();
 		remove_filter( 'posts_where', 'ask_filter_where' );
 		wp_reset_query();
-	}else {
-		echo "<div class='page-content page-content-user'><p class='no-item'>".__("This page is not active .","vbegy")."</p></div>";
 	}
 get_footer();?>
